@@ -15,8 +15,8 @@ abstract class Sort<E>(
 )
 {
 	/**
-	 * Whether the algorithm is stable (e.g., the order of equivalent elements
-	 * is preserved).
+	 * Whether the algorithm is stable (the order of equivalent elements is
+	 * always preserved).
 	 */
 	abstract val stable: Boolean
 	

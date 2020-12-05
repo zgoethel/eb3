@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory
  * due to heavy usage of random index accesses (e.g. array-lists), but has been
  * adapted to have additional space complexity to better support linked-lists.
  * 
- * Each iteration's partition is one more more elements wide, meaning that
+ * Each iteration's partition is one or more elements wide, meaning that
  * elements with a comparation of zero against the pivot will not be sorted any
  * further by any child iterations; put another way, each partition created is
  * between one extremity of the previous partition until the closest element
@@ -117,7 +117,7 @@ class QuickSort<E>(
 		{
 			// This is a linked-list; create an array copy
 			if (frame.linked != null)
-				stack.push(CopyBackFrame(frame.elements, linked = frame.linked))
+				stack.push(CopyBackFrame(frame.elements, frame.linked))
 			// Push first pivot frame on the array-list or copied array
 			stack.push(PivotFrame(frame.elements))
 		}
@@ -169,6 +169,6 @@ class QuickSort<E>(
 	class CopyBackFrame<E>(
 		elements: MutableList<E>,
 		
-		linked: LinkedList<E>? = null
+		linked: LinkedList<E>
 	) : Frame<E>(elements, linked);
 }
