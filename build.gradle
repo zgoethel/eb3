@@ -1,0 +1,54 @@
+import org.gradle.plugins.ide.eclipse.model.SourceFolder
+
+plugins {
+	id 'java-library'
+	id 'eclipse'
+	id 'application'
+
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'org.springframework.boot' version '2.3.3.RELEASE'
+
+	id "org.jetbrains.kotlin.jvm" version "1.4.10"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+eclipse {
+	classpath {
+		file.whenMerged {
+			classPath -> classPath.entries.add(new SourceFolder('src/main/webapp/WEB-INF/jsp', null))
+		}
+	}
+}
+
+repositories {
+	jcenter()
+
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web',
+			'org.springframework.boot:spring-boot-starter-tomcat',
+
+			'javax.servlet:jstl:1.2',
+			'org.apache.tomcat.embed:tomcat-embed-jasper',
+
+			'com.google.code.gson:gson:2.8.6',
+
+			'org.springframework.boot:spring-boot-starter-webflux',
+			'org.projectreactor:reactor-spring:1.0.1.RELEASE'
+
+	api 'org.json:json:20200518'
+
+	testImplementation 'junit:junit:4.12'
+}
+
+ext {
+   javaMainClass = "net.jibini.eb.EasyButton"
+}
+
+application {
+	mainClassName = javaMainClass
+}

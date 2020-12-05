@@ -1,0 +1,93 @@
+@font-face
+{
+	font-family: 'secular-one';
+	
+	src: url('/font/secularone-regular-webfont.woff2') format('woff2'),
+		url('/font/secularone-regular-webfont.woff') format('woff');
+		
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: 'montserrat';
+	
+	src: url('/font/montserrat-regular-webfont.woff2') format('woff2'),
+		url('/font/montserrat-regular-webfont.woff') format('woff');
+		
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: 'montserrat';
+	
+	src: url('/font/montserrat-lightitalic-webfont.woff2') format('woff2'),
+		url('/font/montserrat-lightitalic-webfont.woff') format('woff');
+		
+	font-weight: light;
+	font-style: italic;
+}
+
+.head
+{
+	font-size: 3em;
+	line-height: 1em;
+	
+	font-family: 'secular-one',
+		'Halvetica',
+		arial,
+		sans-serif;
+	
+	font-weight: normal;
+	font-style: normal;
+	
+	margin: 0;
+}
+
+.sub-head
+{	
+	font-size: 2em;
+	line-height: 1em;
+	
+	font-family: 'montserrat',
+		'Halvetica',
+		arial,
+		sans-serif;
+	
+	font-weight: light;
+	font-style: italic;
+	
+	margin: 0;
+}
+
+.section
+{
+	font-size: 1.7em;
+	line-height: 1em;
+	
+	font-family: 'secular-one',
+		'Halvetica',
+		arial,
+		sans-serif;
+	
+	font-weight: normal;
+	font-style: normal;
+	
+	margin-bottom: 0;
+}
+
+p, li
+{
+	line-height: 1.4em;
+}
+
+*
+{
+	font-family: 'montserrat',
+		'Halvetica',
+		arial,
+		sans-serif;
+}

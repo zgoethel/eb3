@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="results-paths.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 141.4545 76.489655"
+   height="76.489655mm"
+   width="141.4545mm">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient2755"
+       inkscape:collect="always">
+      <stop
+         id="stop2751"
+         offset="0"
+         style="stop-color:#9c009c;stop-opacity:1;" />
+      <stop
+         id="stop2753"
+         offset="1"
+         style="stop-color:#9c009c;stop-opacity:0;" />
+    </linearGradient>
+    <marker
+       inkscape:stockid="TriangleInL"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1380"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1378"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="scale(-0.8)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path970" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path973" />
+    </marker>
+    <linearGradient
+       gradientTransform="matrix(1,0,0,0.98015706,7.019043e-4,1.0252254)"
+       gradientUnits="userSpaceOnUse"
+       y2="44.013054"
+       x2="186.35876"
+       y1="43.745487"
+       x1="170.99268"
+       id="linearGradient2757"
+       xlink:href="#linearGradient2755"
+       inkscape:collect="always" />
+  </defs>
+  <sodipodi:namedview
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     inkscape:window-maximized="0"
+     inkscape:window-y="85"
+     inkscape:window-x="381"
+     inkscape:window-height="1208"
+     inkscape:window-width="1424"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="g1681"
+     inkscape:document-units="mm"
+     inkscape:cy="36.462558"
+     inkscape:cx="242.16391"
+     inkscape:zoom="1.1023643"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-8.4295887,-7.1650231)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <g
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       id="text936" />
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+       id="text849-1-0"
+       aria-label="MetalCo Ltd.">
+      <g
+         transform="translate(-39.061437,-27.7268)"
+         id="g1681">
+        <path
+           d="M 48.320328,36.325996 H 92.518982 V 51.701311 H 48.320328 Z"
+           style="fill:#9c009c;stroke:none;stroke-width:0.543499;stroke-linejoin:bevel;stroke-opacity:1"
+           id="rect877-8-2" />
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7"
+           aria-label="P\N">
+          <path
+             id="path2869"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 55.671878,44.070371 h 1.601971 q 0.227376,0 0.399631,-0.106798 0.172255,-0.106798 0.265272,-0.303169 0.09646,-0.19637 0.09646,-0.451307 v 0 q 0,-0.258383 -0.09646,-0.454753 -0.09302,-0.196371 -0.265272,-0.303169 -0.172255,-0.110243 -0.399631,-0.110243 h -1.601971 v -0.668349 h 1.577855 q 0.447863,0 0.788927,0.192925 0.341065,0.189481 0.5271,0.537436 0.189481,0.347955 0.189481,0.806153 v 0 q 0,0.458198 -0.189481,0.806152 -0.186035,0.34451 -0.5271,0.533991 -0.341064,0.18948 -0.788927,0.18948 h -1.577855 z m -0.361735,-2.397788 h 0.7028 v 5.009172 h -0.7028 z" />
+          <path
+             id="path2871"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 59.464931,41.080026 2.325441,6.552576 h -0.671794 l -2.325441,-6.552576 z" />
+          <path
+             id="path2873"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 62.379484,41.672583 h 0.637343 l 2.449464,3.87229 -0.08268,0.08957 v -3.961862 h 0.69591 v 5.005727 h -0.644234 l -2.442574,-3.813723 0.08268,-0.08957 v 3.903296 h -0.695909 z" />
+        </g>
+        <path
+           d="M 92.518982,36.325996 H 166.08165 V 51.701309 H 92.518982 Z"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9c009c;fill-opacity:1;stroke:none;stroke-width:0.701171;stroke-linejoin:bevel;stroke-opacity:1"
+           id="rect877-8-2-0" />
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-7"
+           aria-label="Description">
+          <path
+             id="path2877"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 99.984221,46.013406 h 1.133439 q 0.55466,0 0.85783,-0.285943 0.30661,-0.289388 0.30661,-0.813043 v -1.474502 q 0,-0.523655 -0.30661,-0.809598 -0.30317,-0.289388 -0.85783,-0.289388 h -1.133439 v -0.668349 h 1.112769 q 0.60289,0 1.03008,0.210151 0.42719,0.210151 0.65112,0.613227 0.22394,0.403077 0.22394,0.971518 v 1.41938 q 0,0.568441 -0.22394,0.971518 -0.22393,0.403076 -0.65456,0.613227 -0.4272,0.210151 -1.03009,0.210151 h -1.109319 z m -0.475424,-4.340823 h 0.702803 v 5.009172 h -0.702803 z" />
+          <path
+             id="path2879"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 105.53427,46.733432 q -0.49609,0 -0.84749,-0.186036 -0.3514,-0.186035 -0.53744,-0.544325 -0.18259,-0.361735 -0.18259,-0.87161 v -0.403076 q 0,-0.530545 0.1757,-0.906061 0.17915,-0.375516 0.51677,-0.571886 0.33762,-0.196371 0.81304,-0.196371 0.44786,0 0.76481,0.223932 0.31695,0.223931 0.48232,0.647678 0.16881,0.423747 0.16881,1.016304 v 0.234266 h -2.41157 v -0.564996 h 1.74322 v 0 q -0.031,-0.437527 -0.22738,-0.678684 -0.19292,-0.244602 -0.52021,-0.244602 -0.39963,0 -0.62012,0.261828 -0.21704,0.261827 -0.21704,0.740696 v 0.454752 q 0,0.444418 0.23427,0.68213 0.23427,0.237712 0.6649,0.237712 0.2136,0 0.42375,-0.08613 0.21015,-0.08613 0.37552,-0.241157 v 0 l 0.46164,0.461643 v 0 q -0.26527,0.254938 -0.596,0.396187 -0.33073,0.137804 -0.66491,0.137804 z" />
+          <path
+             id="path2881"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 109.12406,46.733432 q -0.31694,0 -0.596,-0.06201 -0.2756,-0.06201 -0.51676,-0.186036 -0.24116,-0.124023 -0.44442,-0.310058 v 0 l 0.41686,-0.51332 v 0 q 0.28939,0.220486 0.57533,0.33073 0.28594,0.110243 0.56499,0.110243 0.41686,0 0.62357,-0.127469 0.21015,-0.130914 0.21015,-0.389296 0,-0.172255 -0.11369,-0.258382 -0.11369,-0.08613 -0.2825,-0.113689 -0.16881,-0.03101 -0.47542,-0.05512 -0.0276,0 -0.0586,0 -0.031,-0.0034 -0.0586,-0.0069 -0.0138,0 -0.0276,0 -0.0138,-0.0034 -0.0276,-0.0034 -0.34795,-0.02756 -0.58911,-0.09991 -0.24115,-0.07579 -0.40307,-0.279053 -0.15848,-0.203261 -0.15848,-0.582222 0,-0.37896 0.15503,-0.630453 0.15503,-0.251492 0.46164,-0.375515 0.30662,-0.127469 0.76826,-0.127469 0.27905,0 0.53055,0.05168 0.25493,0.05168 0.48575,0.155029 0.23083,0.09991 0.44442,0.254937 v 0 l -0.42375,0.51332 v 0 q -0.26871,-0.172255 -0.53054,-0.258382 -0.25838,-0.08613 -0.50643,-0.08613 -0.35829,0 -0.53743,0.124024 -0.17915,0.120578 -0.17915,0.36518 0,0.144694 0.0999,0.217041 0.10335,0.07235 0.25838,0.09646 0.15503,0.02412 0.44097,0.04134 0.0207,0.0034 0.0413,0.0034 0.0241,0 0.0482,0.0034 0.0103,0 0.0207,0 0.0103,0 0.0207,0.0034 0.37551,0.02412 0.63734,0.09991 0.26527,0.07579 0.44442,0.299724 0.17914,0.223931 0.17914,0.647678 0,0.385851 -0.16536,0.640788 -0.16537,0.251492 -0.49954,0.378961 -0.33073,0.127469 -0.83372,0.127469 z" />
+          <path
+             id="path2883"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 112.96879,46.733432 q -0.4892,0 -0.83716,-0.182591 -0.3445,-0.18259 -0.5271,-0.530545 -0.18259,-0.347955 -0.18259,-0.840604 v -0.589111 q 0,-0.485759 0.18259,-0.830269 0.1826,-0.34451 0.5271,-0.523655 0.34796,-0.18259 0.83716,-0.18259 0.27906,0 0.52366,0.0689 0.24805,0.06546 0.44442,0.192926 0.19637,0.127468 0.32728,0.310058 v 0 l -0.50643,0.454753 v 0 q -0.15158,-0.172255 -0.35484,-0.265272 -0.20326,-0.09302 -0.42375,-0.09302 -0.40652,0 -0.63045,0.227377 -0.22394,0.227376 -0.22394,0.640788 v 0.589111 q 0,0.423747 0.22049,0.654569 0.22393,0.230822 0.6339,0.230822 0.22393,0 0.42719,-0.09991 0.20326,-0.09991 0.3514,-0.282498 v 0 l 0.50643,0.489204 v 0 q -0.13436,0.179145 -0.33073,0.306613 -0.19637,0.124024 -0.44442,0.189481 -0.2446,0.06546 -0.52021,0.06546 z" />
+          <path
+             id="path2885"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 115.0393,43.105744 h 0.7028 v 3.576011 h -0.7028 z m 1.96715,0.847494 q -0.093,-0.113689 -0.23427,-0.172255 -0.14125,-0.05857 -0.32728,-0.05857 -0.33418,0 -0.52021,0.186035 -0.18259,0.182591 -0.18259,0.509875 l -0.0724,-0.68902 q 0.16537,-0.320394 0.42719,-0.496094 0.26183,-0.179145 0.57878,-0.179145 0.2446,0 0.44097,0.07235 0.19982,0.0689 0.34796,0.206706 z" />
+          <path
+             id="path2887"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 118.0572,41.672583 h 0.7028 v 0.7028 h -0.7028 z m 0,1.433161 h 0.7028 v 3.576011 h -0.7028 z" />
+          <path
+             id="path2889"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 119.83487,43.105744 h 0.7028 v 5.029842 h -0.7028 z m 1.60197,3.627688 q -0.33417,0 -0.58222,-0.158475 -0.24805,-0.16192 -0.36518,-0.454753 l 0.0482,-0.747586 q 0,0.230821 0.0827,0.392741 0.0827,0.16192 0.23772,0.248047 0.15847,0.08613 0.3824,0.08613 0.34796,0 0.53744,-0.210151 0.19292,-0.213596 0.19292,-0.599447 v -0.775147 q 0,-0.392742 -0.19292,-0.609783 -0.18948,-0.217041 -0.53744,-0.217041 -0.22393,0 -0.3824,0.08268 -0.15503,0.08268 -0.23772,0.244601 -0.0827,0.158475 -0.0827,0.382406 l -0.0723,-0.689019 q 0.16192,-0.313504 0.42374,-0.482314 0.26183,-0.172255 0.58222,-0.172255 0.37896,0 0.64768,0.172255 0.27217,0.16881 0.41341,0.496094 0.14125,0.327284 0.14125,0.788928 v 0.778592 q 0,0.454752 -0.14469,0.778592 -0.14469,0.323839 -0.42375,0.496094 -0.27905,0.16881 -0.66835,0.16881 z" />
+          <path
+             id="path2891"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 124.60978,46.698981 q -0.43408,0 -0.63734,-0.237712 -0.19982,-0.241157 -0.19982,-0.70969 v -3.686255 h 0.7028 v 3.693145 q 0,0.130914 0.0517,0.203261 0.0517,0.0689 0.15158,0.0689 h 0.33762 v 0.668349 z M 123.404,43.105744 h 1.6123 v 0.633898 h -1.6123 z" />
+          <path
+             id="path2893"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 125.98093,41.672583 h 0.7028 v 0.7028 h -0.7028 z m 0,1.433161 h 0.7028 v 3.576011 h -0.7028 z" />
+          <path
+             id="path2895"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 129.12975,46.733432 q -0.46509,0 -0.79582,-0.182591 -0.33073,-0.18259 -0.50643,-0.530545 -0.17226,-0.3514 -0.17226,-0.844049 v -0.582221 q 0,-0.485759 0.17226,-0.830269 0.1757,-0.347955 0.50643,-0.5271 0.33073,-0.18259 0.79582,-0.18259 0.46508,0 0.79581,0.18259 0.33073,0.179145 0.50299,0.5271 0.1757,0.34451 0.1757,0.830269 v 0.592557 q 0,0.489204 -0.1757,0.837158 -0.17226,0.34451 -0.50299,0.5271 -0.33073,0.182591 -0.79581,0.182591 z m 0,-0.668349 q 0.36862,0 0.56844,-0.230822 0.20326,-0.230822 0.20326,-0.647678 v -0.592557 q 0,-0.416857 -0.20326,-0.644233 -0.19982,-0.227377 -0.56844,-0.227377 -0.36863,0 -0.57189,0.227377 -0.19982,0.227376 -0.19982,0.644233 v 0.592557 q 0,0.416856 0.19982,0.647678 0.20326,0.230822 0.57189,0.230822 z" />
+          <path
+             id="path2897"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 131.60333,43.105744 h 0.7028 v 3.576011 h -0.7028 z m 2.17041,1.409045 q 0,-0.378961 -0.19637,-0.585667 -0.19637,-0.206706 -0.55122,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18603,0.18259 -0.18603,0.51332 l -0.0724,-0.68902 q 0.16537,-0.323839 0.43064,-0.499539 0.26872,-0.1757 0.59256,-0.1757 0.58222,0 0.89917,0.382406 0.32039,0.378961 0.32039,1.074871 v 2.170411 h -0.7028 z" />
+        </g>
+        <path
+           d="m 166.08165,36.325996 h 22.29568 v 15.375313 h -22.29568 z"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient2757);fill-opacity:1;stroke:none;stroke-width:0.386016;stroke-linejoin:bevel;stroke-opacity:1"
+           id="rect877-8-2-6" />
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-3"
+           aria-label="V ...">
+          <path
+             id="path2901"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 171.04468,41.59511 h 0.76481 l 1.20234,3.927412 1.20234,-3.927412 h 0.76481 l -1.63297,5.009172 h -0.66835 z" />
+          <path
+             id="path2903"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 177.42156,45.867031 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path2905"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 179.02008,45.867031 h 0.73726 v 0.737251 h -0.73726 z" />
+          <path
+             id="path2907"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:none;stroke-width:0.103086"
+             d="m 180.61861,45.867031 h 0.73725 v 0.737251 h -0.73725 z" />
+        </g>
+        <path
+           id="path2759"
+           d="M 92.518981,36.325996 V 108.20514"
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="M 166.08165,36.325996 V 108.20515"
+           id="path2759-4" />
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-5"
+           aria-label="120C 2013">
+          <path
+             id="path2910"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 56.687103,62.118851 h -0.7028 V 57.87449 l -0.713135,0.437528 v -0.726916 l 0.713135,-0.475423 h 0.7028 z" />
+          <path
+             id="path2912"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 57.744748,61.509068 1.746665,-2.328886 q 0.151584,-0.199815 0.234266,-0.413411 0.08613,-0.217042 0.08613,-0.403077 v -0.0069 q 0,-0.299723 -0.1757,-0.465088 -0.1757,-0.165365 -0.499539,-0.165365 -0.306614,0 -0.496095,0.18259 -0.18948,0.179145 -0.230821,0.509875 v 0.0034 h -0.726916 v -0.0034 q 0.06201,-0.430637 0.251492,-0.733806 0.192926,-0.306614 0.496095,-0.465088 0.303168,-0.16192 0.699354,-0.16192 0.447863,0 0.764812,0.15503 0.316949,0.151584 0.482314,0.444417 0.165364,0.292833 0.165364,0.706245 v 0.0034 q 0,0.265273 -0.110243,0.554661 -0.110243,0.289388 -0.306613,0.558106 l -1.450387,1.970596 h 1.894804 v 0.668349 h -2.82498 z" />
+          <path
+             id="path2914"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 62.902059,62.170527 q -0.7028,0 -1.06798,-0.375515 -0.361736,-0.375516 -0.361736,-1.04731 v -2.27721 q 0,-0.675239 0.365181,-1.047309 0.36518,-0.375516 1.064535,-0.375516 0.7028,0 1.064535,0.37207 0.365181,0.372071 0.365181,1.050755 v 2.27721 q 0,0.675239 -0.365181,1.050755 -0.36518,0.37207 -1.064535,0.37207 z m 0,-0.668349 q 0.372071,0 0.547771,-0.192925 0.179145,-0.196371 0.179145,-0.561551 v -2.27721 q 0,-0.36518 -0.1757,-0.558106 -0.1757,-0.19637 -0.551216,-0.19637 -0.375516,0 -0.551216,0.19637 -0.1757,0.192926 -0.1757,0.558106 v 2.27721 q 0,0.36518 0.1757,0.561551 0.179145,0.192925 0.551216,0.192925 z" />
+          <path
+             id="path2916"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 66.97761,62.170527 q -0.52021,0 -0.916396,-0.230821 Q 65.668473,61.708884 65.451431,61.285137 65.23439,60.86139 65.23439,60.303284 V 58.92869 q 0,-0.558106 0.217041,-0.981853 0.217042,-0.423747 0.609783,-0.654568 0.396186,-0.234267 0.916396,-0.234267 0.430637,0 0.792372,0.186035 0.361735,0.182591 0.602892,0.52021 0.244602,0.33762 0.33073,0.782037 v 0 h -0.720026 v 0 q -0.06546,-0.234266 -0.220486,-0.416856 -0.151584,-0.186036 -0.35829,-0.285944 -0.206706,-0.09991 -0.427192,-0.09991 -0.306614,0 -0.537436,0.148139 -0.230821,0.148139 -0.35829,0.416857 -0.127468,0.265272 -0.127468,0.620117 v 1.374594 q 0,0.3514 0.127468,0.620118 0.127469,0.268717 0.35829,0.416857 0.230822,0.144694 0.537436,0.144694 0.223931,0 0.427192,-0.09302 0.206706,-0.09302 0.35829,-0.275608 0.155029,-0.18259 0.220486,-0.434082 v 0 h 0.720026 v 0 q -0.08613,0.444418 -0.33073,0.782037 -0.244602,0.33762 -0.606337,0.523655 -0.361735,0.18259 -0.788927,0.18259 z" />
+          <path
+             id="path2918"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 71.428676,61.509068 1.746664,-2.328886 q 0.151585,-0.199815 0.234267,-0.413411 0.08613,-0.217042 0.08613,-0.403077 v -0.0069 q 0,-0.299723 -0.1757,-0.465088 -0.1757,-0.165365 -0.499539,-0.165365 -0.306613,0 -0.496094,0.18259 -0.18948,0.179145 -0.230821,0.509875 v 0.0034 h -0.726916 v -0.0034 q 0.06201,-0.430637 0.251492,-0.733806 0.192926,-0.306614 0.496094,-0.465088 0.303169,-0.16192 0.699355,-0.16192 0.447863,0 0.764812,0.15503 0.316949,0.151584 0.482313,0.444417 0.165365,0.292833 0.165365,0.706245 v 0.0034 q 0,0.265273 -0.110243,0.554661 -0.110243,0.289388 -0.306614,0.558106 l -1.450386,1.970596 h 1.894804 v 0.668349 h -2.82498 z" />
+          <path
+             id="path2920"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 76.585988,62.170527 q -0.7028,0 -1.067981,-0.375515 -0.361735,-0.375516 -0.361735,-1.04731 v -2.27721 q 0,-0.675239 0.36518,-1.047309 0.365181,-0.375516 1.064536,-0.375516 0.702799,0 1.064535,0.37207 0.36518,0.372071 0.36518,1.050755 v 2.27721 q 0,0.675239 -0.36518,1.050755 -0.365181,0.37207 -1.064535,0.37207 z m 0,-0.668349 q 0.37207,0 0.54777,-0.192925 0.179145,-0.196371 0.179145,-0.561551 v -2.27721 q 0,-0.36518 -0.1757,-0.558106 -0.1757,-0.19637 -0.551215,-0.19637 -0.375516,0 -0.551216,0.19637 -0.1757,0.192926 -0.1757,0.558106 v 2.27721 q 0,0.36518 0.1757,0.561551 0.179145,0.192925 0.551216,0.192925 z" />
+          <path
+             id="path2922"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 80.265352,62.118851 h -0.7028 V 57.87449 l -0.713135,0.437528 v -0.726916 l 0.713135,-0.475423 h 0.7028 z" />
+          <path
+             id="path2924"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 82.694146,62.170527 q -0.420302,0 -0.740696,-0.151584 -0.320394,-0.15503 -0.516765,-0.444418 -0.192925,-0.292833 -0.244601,-0.7028 v 0 h 0.71658 v 0 q 0.03101,0.213596 0.134359,0.3514 0.103353,0.137804 0.265272,0.206706 0.165365,0.06546 0.385851,0.06546 0.347955,0 0.540881,-0.186035 0.192925,-0.186036 0.192925,-0.523655 v -0.151584 q 0,-0.375516 -0.18259,-0.578777 -0.18259,-0.206706 -0.516765,-0.206706 h -0.354845 v -0.668349 h 0.354845 q 0.292833,0 0.454753,-0.1757 0.16192,-0.1757 0.16192,-0.496094 v -0.155029 q 0,-0.296278 -0.172255,-0.458198 -0.16881,-0.16192 -0.482314,-0.16192 -0.179145,0 -0.320394,0.0689 -0.141249,0.06546 -0.241157,0.206706 -0.09646,0.137804 -0.141249,0.347955 v 0 h -0.713135 v 0 q 0.0689,-0.409967 0.258382,-0.7028 0.192926,-0.292833 0.485759,-0.444418 0.292833,-0.151584 0.671794,-0.151584 0.647678,0 1.002523,0.341065 0.354846,0.341065 0.354846,0.961182 v 0.08268 q 0,0.375516 -0.203261,0.654569 -0.203261,0.279053 -0.575332,0.406522 0.409967,0.08957 0.633898,0.403076 0.227377,0.313504 0.227377,0.799263 v 0.08268 q 0,0.437527 -0.16881,0.747586 -0.16881,0.310059 -0.492649,0.471979 -0.320394,0.161919 -0.775147,0.161919 z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-7-7"
+           aria-label="Aluminum bar, 20 ...">
+          <path
+             id="path2927"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 101.14414,57.109679 h 0.59945 l 1.84657,5.009172 h -0.75792 l -1.38837,-4.0411 -1.38838,4.0411 h -0.757919 z m -0.99563,3.241837 h 2.6355 v 0.668349 h -2.6355 z" />
+          <path
+             id="path2929"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 104.98887,61.195565 q 0,0.130913 0.0551,0.20326 0.0586,0.0689 0.16192,0.0689 h 0.33073 v 0.668349 h -0.41341 q -0.39963,0 -0.62012,-0.248047 -0.21704,-0.248047 -0.21704,-0.699355 v -4.078995 h 0.7028 z" />
+          <path
+             id="path2931"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 108.45464,58.542839 h 0.69936 v 3.576012 h -0.69936 z m -1.45383,2.173857 q 0,0.375516 0.18948,0.582221 0.19293,0.203261 0.54088,0.203261 0.34451,0 0.53399,-0.18259 0.18948,-0.18259 0.18948,-0.52021 l 0.0482,0.747586 q -0.11024,0.265273 -0.35829,0.444418 -0.24804,0.179145 -0.60978,0.179145 -0.59256,0 -0.9164,-0.378961 -0.32039,-0.382405 -0.32039,-1.07487 v -2.173857 h 0.7028 z" />
+          <path
+             id="path2933"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 114.49734,59.951884 q 0,-0.378961 -0.19637,-0.585666 -0.19637,-0.206706 -0.55121,-0.206706 -0.32729,0 -0.50643,0.199815 -0.17915,0.199816 -0.17915,0.564996 l -0.14125,-0.689019 q 0.16881,-0.354845 0.44442,-0.547771 0.27905,-0.19637 0.61323,-0.19637 0.38585,0 0.65801,0.172255 0.27561,0.168809 0.41686,0.496094 0.14469,0.327284 0.14469,0.788927 v 2.170412 h -0.7028 z m -4.27192,-1.409045 h 0.7028 v 3.576012 h -0.7028 z m 2.13596,1.409045 q 0,-0.378961 -0.18603,-0.585666 -0.18604,-0.206706 -0.5271,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18604,0.18259 -0.18604,0.51332 l -0.0724,-0.68902 q 0.16537,-0.323839 0.43064,-0.499539 0.26872,-0.1757 0.59256,-0.1757 0.37551,0 0.64079,0.172255 0.26527,0.168809 0.40307,0.496094 0.14125,0.327284 0.14125,0.788927 v 2.170412 h -0.7028 z" />
+          <path
+             id="path2935"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 116.27501,57.109679 h 0.7028 v 0.7028 h -0.7028 z m 0,1.43316 h 0.7028 v 3.576012 h -0.7028 z" />
+          <path
+             id="path2937"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 118.05268,58.542839 h 0.7028 v 3.576012 h -0.7028 z m 2.17041,1.409045 q 0,-0.378961 -0.19637,-0.585666 -0.19637,-0.206706 -0.55121,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18604,0.18259 -0.18604,0.51332 l -0.0723,-0.68902 q 0.16536,-0.323839 0.43063,-0.499539 0.26872,-0.1757 0.59256,-0.1757 0.58222,0 0.89917,0.382406 0.32039,0.37896 0.32039,1.07487 v 2.170412 h -0.7028 z" />
+          <path
+             id="path2939"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 124.15051,58.542839 h 0.69935 v 3.576012 h -0.69935 z m -1.45384,2.173857 q 0,0.375516 0.18949,0.582221 0.19292,0.203261 0.54088,0.203261 0.34451,0 0.53399,-0.18259 0.18948,-0.18259 0.18948,-0.52021 l 0.0482,0.747586 q -0.11025,0.265273 -0.35829,0.444418 -0.24805,0.179145 -0.60978,0.179145 -0.59256,0 -0.9164,-0.378961 -0.32039,-0.382405 -0.32039,-1.07487 v -2.173857 h 0.70279 z" />
+          <path
+             id="path2941"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 130.19321,59.951884 q 0,-0.378961 -0.19637,-0.585666 -0.19637,-0.206706 -0.55122,-0.206706 -0.32728,0 -0.50643,0.199815 -0.17914,0.199816 -0.17914,0.564996 l -0.14125,-0.689019 q 0.16881,-0.354845 0.44442,-0.547771 0.27905,-0.19637 0.61322,-0.19637 0.38585,0 0.65802,0.172255 0.27561,0.168809 0.41685,0.496094 0.1447,0.327284 0.1447,0.788927 v 2.170412 h -0.7028 z m -4.27192,-1.409045 h 0.7028 v 3.576012 h -0.7028 z m 2.13596,1.409045 q 0,-0.378961 -0.18604,-0.585666 -0.18603,-0.206706 -0.5271,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18603,0.18259 -0.18603,0.51332 l -0.0724,-0.68902 q 0.16536,-0.323839 0.43064,-0.499539 0.26871,-0.1757 0.59255,-0.1757 0.37552,0 0.64079,0.172255 0.26527,0.168809 0.40308,0.496094 0.14125,0.327284 0.14125,0.788927 v 2.170412 h -0.7028 z" />
+          <path
+             id="path2943"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 135.47454,62.170527 q -0.33417,0 -0.58222,-0.158474 -0.24804,-0.16192 -0.36518,-0.454753 l 0.0482,-0.747586 q 0,0.230821 0.0827,0.392741 0.0827,0.161919 0.23771,0.248047 0.15847,0.08613 0.3824,0.08613 0.34796,0 0.53744,-0.210151 0.19292,-0.213596 0.19292,-0.599447 v -0.775147 q 0,-0.392741 -0.19292,-0.609782 -0.18948,-0.217041 -0.53744,-0.217041 -0.22393,0 -0.3824,0.08268 -0.15503,0.08268 -0.23771,0.244602 -0.0827,0.158475 -0.0827,0.382406 l -0.0723,-0.68902 q 0.16192,-0.313504 0.42374,-0.482313 0.26183,-0.172255 0.58222,-0.172255 0.37897,0 0.64768,0.172255 0.27217,0.168809 0.41341,0.496094 0.14125,0.327284 0.14125,0.788927 v 0.778592 q 0,0.454753 -0.14469,0.778592 -0.14469,0.32384 -0.42375,0.496094 -0.27905,0.16881 -0.66835,0.16881 z m -1.60197,-5.060848 h 0.7028 v 5.009172 h -0.7028 z" />
+          <path
+             id="path2945"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 139.73613,59.851976 q 0,-0.3514 -0.18948,-0.544325 -0.18604,-0.196371 -0.53055,-0.196371 -0.21359,0 -0.4203,0.06546 -0.20326,0.06546 -0.36174,0.18259 l -0.51331,-0.3514 q 0.20326,-0.244601 0.53399,-0.37896 0.33417,-0.137804 0.74069,-0.137804 0.44442,0 0.76137,0.158474 0.31695,0.15503 0.48231,0.454753 0.16537,0.296279 0.16537,0.716581 v 2.29788 h -0.66835 z m -0.87506,2.318551 q -0.66146,0 -0.98874,-0.272163 -0.32728,-0.275607 -0.32728,-0.833713 0,-0.530545 0.29972,-0.795818 0.29972,-0.265272 0.90606,-0.265272 h 1.0163 l 0.0482,0.564996 h -1.06109 q -0.2756,0 -0.41341,0.124023 -0.13436,0.120579 -0.13436,0.372071 0,0.272163 0.17915,0.403076 0.18259,0.130914 0.55121,0.130914 0.40308,0 0.59945,-0.08613 0.19982,-0.08613 0.19982,-0.268718 l 0.0723,0.502984 q -0.093,0.144694 -0.23082,0.237712 -0.13436,0.09302 -0.3135,0.137804 -0.17915,0.04823 -0.40308,0.04823 z" />
+          <path
+             id="path2947"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 141.47935,58.542839 h 0.7028 v 3.576012 h -0.7028 z m 1.96715,0.847494 q -0.093,-0.113688 -0.23427,-0.172255 -0.14125,-0.05857 -0.32728,-0.05857 -0.33418,0 -0.52021,0.186035 -0.18259,0.18259 -0.18259,0.509875 l -0.0724,-0.68902 q 0.16536,-0.320394 0.42719,-0.496094 0.26183,-0.179145 0.57878,-0.179145 0.2446,0 0.44097,0.07235 0.19982,0.0689 0.34796,0.206706 z" />
+          <path
+             id="path2949"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 143.9357,61.3816 h 0.73725 v 1.116211 l -0.73725,0.764812 z" />
+          <path
+             id="path2951"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 147.44626,61.509068 1.74666,-2.328886 q 0.15158,-0.199815 0.23427,-0.413411 0.0861,-0.217042 0.0861,-0.403077 v -0.0069 q 0,-0.299723 -0.1757,-0.465088 -0.1757,-0.165365 -0.49953,-0.165365 -0.30662,0 -0.4961,0.18259 -0.18948,0.179145 -0.23082,0.509875 v 0.0034 h -0.72692 v -0.0034 q 0.062,-0.430637 0.2515,-0.733806 0.19292,-0.306614 0.49609,-0.465088 0.30317,-0.16192 0.69936,-0.16192 0.44786,0 0.76481,0.15503 0.31695,0.151584 0.48231,0.444417 0.16537,0.292833 0.16537,0.706245 v 0.0034 q 0,0.265273 -0.11025,0.554661 -0.11024,0.289388 -0.30661,0.558106 l -1.45039,1.970596 h 1.89481 v 0.668349 h -2.82498 z" />
+          <path
+             id="path2953"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 152.60357,62.170527 q -0.7028,0 -1.06798,-0.375515 -0.36174,-0.375516 -0.36174,-1.04731 v -2.27721 q 0,-0.675239 0.36518,-1.047309 0.36518,-0.375516 1.06454,-0.375516 0.7028,0 1.06453,0.37207 0.36518,0.372071 0.36518,1.050755 v 2.27721 q 0,0.675239 -0.36518,1.050755 -0.36518,0.37207 -1.06453,0.37207 z m 0,-0.668349 q 0.37207,0 0.54777,-0.192925 0.17915,-0.196371 0.17915,-0.561551 v -2.27721 q 0,-0.36518 -0.1757,-0.558106 -0.1757,-0.19637 -0.55122,-0.19637 -0.37552,0 -0.55122,0.19637 -0.1757,0.192926 -0.1757,0.558106 v 2.27721 q 0,0.36518 0.1757,0.561551 0.17915,0.192925 0.55122,0.192925 z" />
+          <path
+             id="path2955"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 156.88927,61.3816 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path2957"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 158.48779,61.3816 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path2959"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 160.08632,61.3816 h 0.73725 v 0.737251 h -0.73725 z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-3-4"
+           aria-label="Me ...">
+          <path
+             id="path2962"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 175.43268,57.03221 h 0.65801 v 5.009172 h -0.68557 V 58.28967 l 0.0344,0.220487 -1.23335,2.835315 h -0.4892 l -1.23335,-2.766413 0.0345,-0.289389 v 3.751712 h -0.68557 V 57.03221 h 0.65801 l 1.47106,3.307294 z" />
+          <path
+             id="path2964"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 178.72619,62.093058 q -0.49609,0 -0.84749,-0.186035 -0.3514,-0.186035 -0.53744,-0.544325 -0.18259,-0.361736 -0.18259,-0.87161 v -0.403077 q 0,-0.530545 0.1757,-0.90606 0.17915,-0.375516 0.51677,-0.571886 0.33762,-0.196371 0.81304,-0.196371 0.44786,0 0.76481,0.223931 0.31695,0.223932 0.48231,0.647679 0.16881,0.423747 0.16881,1.016303 v 0.234267 h -2.41156 v -0.564996 h 1.74322 v 0 q -0.031,-0.437527 -0.22738,-0.678684 -0.19293,-0.244602 -0.52021,-0.244602 -0.39963,0 -0.62012,0.261827 -0.21704,0.261828 -0.21704,0.740696 v 0.454753 q 0,0.444418 0.23427,0.68213 0.23426,0.237711 0.6649,0.237711 0.2136,0 0.42375,-0.08613 0.21015,-0.08613 0.37551,-0.241157 v 0 l 0.46165,0.461643 v 0 q -0.26528,0.254937 -0.59601,0.396186 -0.33072,0.137804 -0.6649,0.137804 z" />
+          <path
+             id="path2966"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="M 182.83275,61.304131 H 183.57 v 0.737251 h -0.73725 z" />
+          <path
+             id="path2968"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 184.43127,61.304131 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path2970"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 186.0298,61.304131 h 0.73725 v 0.737251 h -0.73725 z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-5-7"
+           aria-label="120D 20AL">
+          <path
+             id="path2973"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 56.687103,72.702179 h -0.7028 v -4.24436 l -0.713135,0.437527 V 68.16843 l 0.713135,-0.475423 h 0.7028 z" />
+          <path
+             id="path2975"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 57.744748,72.092397 1.746665,-2.328886 q 0.151584,-0.199816 0.234266,-0.413412 0.08613,-0.217041 0.08613,-0.403077 v -0.0069 q 0,-0.299723 -0.1757,-0.465088 -0.1757,-0.165365 -0.499539,-0.165365 -0.306614,0 -0.496095,0.182591 -0.18948,0.179145 -0.230821,0.509874 v 0.0034 h -0.726916 v -0.0034 q 0.06201,-0.430637 0.251492,-0.733806 0.192926,-0.306613 0.496095,-0.465088 0.303168,-0.16192 0.699354,-0.16192 0.447863,0 0.764812,0.15503 0.316949,0.151584 0.482314,0.444417 0.165364,0.292834 0.165364,0.706245 v 0.0034 q 0,0.265272 -0.110243,0.55466 -0.110243,0.289388 -0.306613,0.558106 l -1.450387,1.970596 h 1.894804 v 0.668349 h -2.82498 z" />
+          <path
+             id="path2977"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 62.902059,72.753855 q -0.7028,0 -1.06798,-0.375515 -0.361736,-0.375516 -0.361736,-1.04731 v -2.27721 q 0,-0.675239 0.365181,-1.047309 0.36518,-0.375516 1.064535,-0.375516 0.7028,0 1.064535,0.372071 0.365181,0.37207 0.365181,1.050754 v 2.27721 q 0,0.675239 -0.365181,1.050755 -0.36518,0.37207 -1.064535,0.37207 z m 0,-0.668349 q 0.372071,0 0.547771,-0.192925 0.179145,-0.196371 0.179145,-0.561551 v -2.27721 q 0,-0.36518 -0.1757,-0.558105 -0.1757,-0.196371 -0.551216,-0.196371 -0.375516,0 -0.551216,0.196371 -0.1757,0.192925 -0.1757,0.558105 v 2.27721 q 0,0.36518 0.1757,0.561551 0.179145,0.192925 0.551216,0.192925 z" />
+          <path
+             id="path2979"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 65.882069,72.03383 h 1.133437 q 0.554661,0 0.857829,-0.285943 0.306614,-0.289388 0.306614,-0.813043 v -1.474502 q 0,-0.523655 -0.306614,-0.809598 -0.303168,-0.289388 -0.857829,-0.289388 h -1.133437 v -0.668349 h 1.112766 q 0.602892,0 1.030084,0.210151 0.427193,0.210151 0.651124,0.613227 0.223931,0.403077 0.223931,0.971518 v 1.41938 q 0,0.568441 -0.223931,0.971518 -0.223931,0.403076 -0.654569,0.613227 -0.427192,0.210151 -1.030084,0.210151 h -1.109321 z m -0.475424,-4.340823 h 0.7028 v 5.009172 h -0.7028 z" />
+          <path
+             id="path2981"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 71.759406,72.092397 1.746665,-2.328886 q 0.151584,-0.199816 0.234266,-0.413412 0.08613,-0.217041 0.08613,-0.403077 v -0.0069 q 0,-0.299723 -0.1757,-0.465088 -0.1757,-0.165365 -0.499539,-0.165365 -0.306614,0 -0.496094,0.182591 -0.189481,0.179145 -0.230822,0.509874 v 0.0034 h -0.726915 v -0.0034 q 0.06201,-0.430637 0.251492,-0.733806 0.192925,-0.306613 0.496094,-0.465088 0.303168,-0.16192 0.699355,-0.16192 0.447862,0 0.764811,0.15503 0.316949,0.151584 0.482314,0.444417 0.165365,0.292834 0.165365,0.706245 v 0.0034 q 0,0.265272 -0.110244,0.55466 -0.110243,0.289388 -0.306613,0.558106 l -1.450386,1.970596 h 1.894803 v 0.668349 h -2.82498 z" />
+          <path
+             id="path2983"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 76.916716,72.753855 q -0.7028,0 -1.06798,-0.375515 Q 75.487,72.002824 75.487,71.33103 v -2.27721 q 0,-0.675239 0.365181,-1.047309 0.36518,-0.375516 1.064535,-0.375516 0.7028,0 1.064535,0.372071 0.365181,0.37207 0.365181,1.050754 v 2.27721 q 0,0.675239 -0.365181,1.050755 -0.36518,0.37207 -1.064535,0.37207 z m 0,-0.668349 q 0.372071,0 0.547771,-0.192925 0.179145,-0.196371 0.179145,-0.561551 v -2.27721 q 0,-0.36518 -0.1757,-0.558105 -0.1757,-0.196371 -0.551216,-0.196371 -0.375516,0 -0.551216,0.196371 -0.1757,0.192925 -0.1757,0.558105 v 2.27721 q 0,0.36518 0.1757,0.561551 0.179145,0.192925 0.551216,0.192925 z" />
+          <path
+             id="path2985"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 80.647758,67.693007 h 0.599447 l 1.846572,5.009172 h -0.757921 l -1.388375,-4.0411 -1.388374,4.0411 h -0.757922 z m -0.995633,3.241837 h 2.635499 v 0.668349 h -2.635499 z" />
+          <path
+             id="path2987"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 83.85859,67.693007 h 0.7028 v 5.009172 h -0.7028 z m 0.3514,4.340823 h 2.866321 v 0.668349 H 84.20999 Z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-7-7-0"
+           aria-label="Extruded aluminu ...">
+          <path
+             id="path2990"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 99.779885,67.693007 h 0.702795 v 5.009172 h -0.702795 z m 0.341065,4.340823 h 2.87666 v 0.668349 h -2.87666 z m 0,-2.153186 h 2.4977 v 0.668349 h -2.4977 z m 0,-2.187637 h 2.87666 v 0.668349 h -2.87666 z" />
+          <path
+             id="path2992"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 104.95442,71.076093 -1.31603,-1.949925 h 0.78204 l 1.02664,1.60197 1.35392,1.974041 h -0.77859 z m -0.0207,-0.347955 0.33762,0.647678 -0.90951,1.326363 h -0.77859 z m 0.24805,-0.334175 0.78204,-1.267795 h 0.78203 l -1.26779,1.929254 z" />
+          <path
+             id="path2994"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 108.50976,72.719404 q -0.43408,0 -0.63734,-0.237711 -0.19982,-0.241157 -0.19982,-0.70969 v -3.686255 h 0.7028 v 3.693145 q 0,0.130913 0.0517,0.203261 0.0517,0.0689 0.15158,0.0689 h 0.33762 v 0.668349 z m -1.20578,-3.593236 h 1.6123 v 0.633898 h -1.6123 z" />
+          <path
+             id="path2996"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 109.88091,69.126168 h 0.7028 v 3.576011 h -0.7028 z m 1.96715,0.847494 q -0.093,-0.113689 -0.23426,-0.172255 -0.14125,-0.05857 -0.32729,-0.05857 -0.33417,0 -0.52021,0.186035 -0.18259,0.18259 -0.18259,0.509875 l -0.0724,-0.68902 q 0.16537,-0.320394 0.4272,-0.496094 0.26182,-0.179145 0.57877,-0.179145 0.2446,0 0.44098,0.07235 0.19981,0.0689 0.34795,0.206706 z" />
+          <path
+             id="path2998"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 115.05545,69.126168 h 0.69935 v 3.576011 h -0.69935 z m -1.45383,2.173856 q 0,0.375516 0.18948,0.582222 0.19292,0.20326 0.54088,0.20326 0.34451,0 0.53399,-0.18259 0.18948,-0.18259 0.18948,-0.520209 l 0.0482,0.747586 q -0.11024,0.265272 -0.35829,0.444417 -0.24805,0.179145 -0.60978,0.179145 -0.59256,0 -0.9164,-0.37896 -0.32039,-0.382406 -0.32039,-1.074871 v -2.173856 h 0.7028 z" />
+          <path
+             id="path3000"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 118.85884,67.693007 h 0.7028 v 5.009172 h -0.7028 z m -0.89917,5.071184 q -0.39275,0 -0.6718,-0.16881 -0.27561,-0.172255 -0.4203,-0.499539 -0.14469,-0.327285 -0.14469,-0.785483 v -0.788927 q 0,-0.461643 0.14124,-0.788927 0.14125,-0.327285 0.40997,-0.496094 0.27216,-0.172255 0.65112,-0.172255 0.31695,0 0.57878,0.165364 0.26527,0.165365 0.42719,0.465089 l -0.0723,0.73036 q 0,-0.227376 -0.0827,-0.389296 -0.0827,-0.161919 -0.24115,-0.244602 -0.15503,-0.08613 -0.37896,-0.08613 -0.34796,0 -0.54088,0.217041 -0.18948,0.217041 -0.18948,0.609782 v 0.778592 q 0,0.389297 0.18948,0.602893 0.19292,0.210151 0.54088,0.210151 0.22393,0 0.37896,-0.08613 0.15847,-0.08957 0.24115,-0.254937 0.0827,-0.165365 0.0827,-0.396186 l 0.0482,0.754476 q -0.1068,0.265273 -0.3514,0.444418 -0.24116,0.179145 -0.596,0.179145 z" />
+          <path
+             id="path3002"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 122.09378,72.753855 q -0.49609,0 -0.84749,-0.186035 -0.3514,-0.186035 -0.53744,-0.544325 -0.18259,-0.361736 -0.18259,-0.87161 v -0.403076 q 0,-0.530545 0.1757,-0.906061 0.17915,-0.375516 0.51677,-0.571886 0.33762,-0.196371 0.81304,-0.196371 0.44786,0 0.76481,0.223931 0.31695,0.223932 0.48232,0.647679 0.16881,0.423747 0.16881,1.016304 v 0.234266 h -2.41157 v -0.564996 h 1.74322 v 0 q -0.031,-0.437527 -0.22738,-0.678684 -0.19293,-0.244602 -0.52021,-0.244602 -0.39963,0 -0.62012,0.261827 -0.21704,0.261828 -0.21704,0.740696 v 0.454753 q 0,0.444418 0.23427,0.68213 0.23426,0.237711 0.6649,0.237711 0.2136,0 0.42375,-0.08613 0.21015,-0.08613 0.37551,-0.241157 v 0 l 0.46165,0.461643 v 0 q -0.26527,0.254938 -0.596,0.396187 -0.33073,0.137803 -0.66491,0.137803 z" />
+          <path
+             id="path3004"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 126.45183,67.693007 h 0.7028 v 5.009172 h -0.7028 z m -0.89917,5.071184 q -0.39274,0 -0.67179,-0.16881 -0.27561,-0.172255 -0.42031,-0.499539 -0.14469,-0.327285 -0.14469,-0.785483 v -0.788927 q 0,-0.461643 0.14125,-0.788927 0.14125,-0.327285 0.40997,-0.496094 0.27216,-0.172255 0.65112,-0.172255 0.31695,0 0.57878,0.165364 0.26527,0.165365 0.42719,0.465089 l -0.0724,0.73036 q 0,-0.227376 -0.0827,-0.389296 -0.0827,-0.161919 -0.24116,-0.244602 -0.15503,-0.08613 -0.37896,-0.08613 -0.34795,0 -0.54088,0.217041 -0.18948,0.217041 -0.18948,0.609782 v 0.778592 q 0,0.389297 0.18948,0.602893 0.19293,0.210151 0.54088,0.210151 0.22393,0 0.37896,-0.08613 0.15848,-0.08957 0.24116,-0.254937 0.0827,-0.165365 0.0827,-0.396186 l 0.0482,0.754476 q -0.1068,0.265273 -0.3514,0.444418 -0.24115,0.179145 -0.596,0.179145 z" />
+          <path
+             id="path3006"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 132.14313,70.435305 q 0,-0.3514 -0.18948,-0.544326 -0.18603,-0.19637 -0.53054,-0.19637 -0.2136,0 -0.4203,0.06546 -0.20327,0.06546 -0.36174,0.18259 l -0.51332,-0.3514 q 0.20326,-0.244602 0.53399,-0.378961 0.33417,-0.137804 0.7407,-0.137804 0.44441,0 0.76136,0.158475 0.31695,0.155029 0.48232,0.454752 0.16536,0.296279 0.16536,0.716581 v 2.29788 h -0.66835 z m -0.87505,2.31855 q -0.66146,0 -0.98875,-0.272162 -0.32728,-0.275608 -0.32728,-0.833714 0,-0.530545 0.29972,-0.795818 0.29973,-0.265272 0.90606,-0.265272 h 1.01631 l 0.0482,0.564996 h -1.06109 q -0.27561,0 -0.41341,0.124024 -0.13436,0.120578 -0.13436,0.37207 0,0.272163 0.17914,0.403076 0.18259,0.130914 0.55122,0.130914 0.40308,0 0.59945,-0.08613 0.19981,-0.08613 0.19981,-0.268718 l 0.0724,0.502984 q -0.093,0.144695 -0.23082,0.237712 -0.13436,0.09302 -0.31351,0.137804 -0.17914,0.04823 -0.40307,0.04823 z" />
+          <path
+             id="path3008"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 134.58915,71.778893 q 0,0.130913 0.0551,0.203261 0.0586,0.0689 0.16192,0.0689 h 0.33073 v 0.668349 h -0.41341 q -0.39963,0 -0.62012,-0.248047 -0.21704,-0.248047 -0.21704,-0.699354 v -4.078996 h 0.7028 z" />
+          <path
+             id="path3010"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 138.05492,69.126168 h 0.69935 v 3.576011 h -0.69935 z m -1.45383,2.173856 q 0,0.375516 0.18948,0.582222 0.19292,0.20326 0.54088,0.20326 0.34451,0 0.53399,-0.18259 0.18948,-0.18259 0.18948,-0.520209 l 0.0482,0.747586 q -0.11024,0.265272 -0.35829,0.444417 -0.24805,0.179145 -0.60978,0.179145 -0.59256,0 -0.9164,-0.37896 -0.32039,-0.382406 -0.32039,-1.074871 v -2.173856 h 0.7028 z" />
+          <path
+             id="path3012"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 144.09762,70.535212 q 0,-0.37896 -0.19637,-0.585666 -0.19637,-0.206706 -0.55121,-0.206706 -0.32729,0 -0.50643,0.199816 -0.17915,0.199815 -0.17915,0.564996 l -0.14125,-0.68902 q 0.16881,-0.354845 0.44442,-0.54777 0.27905,-0.196371 0.61323,-0.196371 0.38585,0 0.65801,0.172255 0.27561,0.16881 0.41686,0.496094 0.14469,0.327284 0.14469,0.788927 v 2.170412 h -0.7028 z m -4.27192,-1.409044 h 0.7028 v 3.576011 h -0.7028 z m 2.13596,1.409044 q 0,-0.37896 -0.18603,-0.585666 -0.18604,-0.206706 -0.5271,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18604,0.18259 -0.18604,0.51332 l -0.0723,-0.68902 q 0.16536,-0.323839 0.43063,-0.499539 0.26872,-0.1757 0.59256,-0.1757 0.37551,0 0.64079,0.172255 0.26527,0.16881 0.40307,0.496094 0.14125,0.327284 0.14125,0.788927 v 2.170412 h -0.7028 z" />
+          <path
+             id="path3014"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 145.87529,67.693007 h 0.7028 v 0.7028 h -0.7028 z m 0,1.433161 h 0.7028 v 3.576011 h -0.7028 z" />
+          <path
+             id="path3016"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 147.65296,69.126168 h 0.7028 v 3.576011 h -0.7028 z m 2.17041,1.409044 q 0,-0.37896 -0.19637,-0.585666 -0.19637,-0.206706 -0.55121,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18604,0.18259 -0.18604,0.51332 l -0.0724,-0.68902 q 0.16537,-0.323839 0.43064,-0.499539 0.26872,-0.1757 0.59256,-0.1757 0.58222,0 0.89917,0.382406 0.32039,0.378961 0.32039,1.07487 v 2.170412 h -0.7028 z" />
+          <path
+             id="path3018"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 153.75079,69.126168 h 0.69935 v 3.576011 h -0.69935 z m -1.45384,2.173856 q 0,0.375516 0.18948,0.582222 0.19293,0.20326 0.54088,0.20326 0.34451,0 0.53399,-0.18259 0.18949,-0.18259 0.18949,-0.520209 l 0.0482,0.747586 q -0.11025,0.265272 -0.35829,0.444417 -0.24805,0.179145 -0.60979,0.179145 -0.59255,0 -0.91639,-0.37896 -0.3204,-0.382406 -0.3204,-1.074871 v -2.173856 h 0.7028 z" />
+          <path
+             id="path3020"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 157.30268,71.964928 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path3022"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 158.90121,71.964928 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path3024"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 160.49973,71.964928 h 0.73725 v 0.737251 h -0.73725 z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-3-4-4"
+           aria-label="Me ...">
+          <path
+             id="path3027"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 175.43269,67.615538 h 0.65802 v 5.009172 h -0.68558 v -3.751711 l 0.0344,0.220486 -1.23334,2.835315 h -0.48921 l -1.23334,-2.766413 0.0344,-0.289388 v 3.751711 h -0.68557 v -5.009172 h 0.65801 l 1.47106,3.307294 z" />
+          <path
+             id="path3029"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 178.72621,72.676387 q -0.4961,0 -0.8475,-0.186036 -0.3514,-0.186035 -0.53743,-0.544325 -0.18259,-0.361735 -0.18259,-0.87161 V 70.67134 q 0,-0.530545 0.1757,-0.906061 0.17914,-0.375516 0.51676,-0.571886 0.33762,-0.196371 0.81304,-0.196371 0.44787,0 0.76482,0.223932 0.31695,0.223931 0.48231,0.647678 0.16881,0.423747 0.16881,1.016304 v 0.234266 h -2.41157 v -0.564996 h 1.74322 v 0 q -0.031,-0.437527 -0.22738,-0.678684 -0.19292,-0.244602 -0.52021,-0.244602 -0.39963,0 -0.62011,0.261828 -0.21704,0.261827 -0.21704,0.740696 v 0.454753 q 0,0.444417 0.23426,0.682129 0.23427,0.237712 0.66491,0.237712 0.21359,0 0.42374,-0.08613 0.21015,-0.08613 0.37552,-0.241157 v 0 l 0.46164,0.461643 v 0 q -0.26527,0.254938 -0.596,0.396187 -0.33073,0.137804 -0.6649,0.137804 z" />
+          <path
+             id="path3031"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 182.83276,71.887459 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path3033"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 184.43129,71.887459 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path3035"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 186.02981,71.887459 h 0.73725 v 0.737251 h -0.73725 z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-5-5"
+           aria-label="25M-21">
+          <path
+             id="path3038"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 55.402082,82.675725 1.746664,-2.328886 q 0.151585,-0.199816 0.234267,-0.413412 0.08613,-0.217041 0.08613,-0.403076 v -0.0069 q 0,-0.299724 -0.1757,-0.465089 -0.1757,-0.165364 -0.499539,-0.165364 -0.306614,0 -0.496094,0.18259 -0.18948,0.179145 -0.230821,0.509874 v 0.0034 H 55.34007 v -0.0034 q 0.06201,-0.430637 0.251492,-0.733806 0.192926,-0.306613 0.496094,-0.465088 0.303169,-0.161919 0.699355,-0.161919 0.447863,0 0.764812,0.155029 0.316949,0.151584 0.482313,0.444418 0.165365,0.292833 0.165365,0.706245 v 0.0034 q 0,0.265272 -0.110243,0.554661 -0.110243,0.289388 -0.306614,0.558105 l -1.450386,1.970596 h 1.894804 v 0.668349 h -2.82498 z" />
+          <path
+             id="path3040"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 60.528387,83.337184 q -0.378961,0 -0.675239,-0.14814 -0.292833,-0.148139 -0.478869,-0.430637 -0.18259,-0.282498 -0.244602,-0.678684 v -0.0034 h 0.7028 v 0.0034 q 0.0379,0.275608 0.220486,0.430637 0.182591,0.151585 0.475424,0.151585 0.33762,0 0.52021,-0.223932 0.186035,-0.227376 0.186035,-0.637343 v -0.420302 q 0,-0.406521 -0.186035,-0.630453 -0.18259,-0.227376 -0.52021,-0.227376 -0.18259,0 -0.3514,0.103353 -0.16881,0.103353 -0.296278,0.289388 H 59.23992 v -2.638945 h 2.552818 v 0.668349 H 59.94272 v 1.126547 q 0.130914,-0.106798 0.292834,-0.165365 0.161919,-0.05857 0.330729,-0.05857 0.434082,0 0.740696,0.179145 0.310059,0.179145 0.468533,0.523655 0.16192,0.344509 0.16192,0.830268 v 0.420302 q 0,0.485759 -0.165365,0.830269 -0.165364,0.344509 -0.482313,0.5271 -0.316949,0.179145 -0.761367,0.179145 z" />
+          <path
+             id="path3042"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="M 66.677886,78.276335 H 67.3359 v 5.009172 h -0.685574 v -3.751711 l 0.03445,0.220486 -1.233344,2.835315 h -0.489204 l -1.233345,-2.766413 0.03445,-0.289388 v 3.751711 h -0.685575 v -5.009172 h 0.658014 l 1.471057,3.307294 z" />
+          <path
+             id="path3044"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 70.822339,81.156437 v 0.668349 h -2.315106 v -0.668349 z" />
+          <path
+             id="path3046"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 71.786966,82.675725 1.746664,-2.328886 q 0.151584,-0.199816 0.234267,-0.413412 0.08613,-0.217041 0.08613,-0.403076 v -0.0069 q 0,-0.299724 -0.1757,-0.465089 -0.1757,-0.165364 -0.499539,-0.165364 -0.306614,0 -0.496094,0.18259 -0.18948,0.179145 -0.230822,0.509874 v 0.0034 h -0.726915 v -0.0034 q 0.06201,-0.430637 0.251492,-0.733806 0.192925,-0.306613 0.496094,-0.465088 0.303169,-0.161919 0.699355,-0.161919 0.447863,0 0.764812,0.155029 0.316949,0.151584 0.482313,0.444418 0.165365,0.292833 0.165365,0.706245 v 0.0034 q 0,0.265272 -0.110243,0.554661 -0.110243,0.289388 -0.306614,0.558105 l -1.450386,1.970596 h 1.894804 v 0.668349 h -2.82498 z" />
+          <path
+             id="path3048"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 76.723791,83.285507 h -0.7028 v -4.24436 l -0.713135,0.437527 v -0.726915 l 0.713135,-0.475424 h 0.7028 z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-7-7-7"
+           aria-label="Aluminum mount ...">
+          <path
+             id="path3051"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 101.14414,78.276335 h 0.59945 l 1.84657,5.009172 h -0.75792 l -1.38837,-4.041099 -1.38838,4.041099 h -0.757919 z m -0.99563,3.241837 h 2.6355 v 0.668349 h -2.6355 z" />
+          <path
+             id="path3053"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 104.98887,82.362221 q 0,0.130914 0.0551,0.203261 0.0586,0.0689 0.16192,0.0689 h 0.33073 v 0.668349 h -0.41341 q -0.39963,0 -0.62012,-0.248047 -0.21704,-0.248047 -0.21704,-0.699355 v -4.078996 h 0.7028 z" />
+          <path
+             id="path3055"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 108.45464,79.709496 h 0.69936 v 3.576011 h -0.69936 z m -1.45383,2.173856 q 0,0.375516 0.18948,0.582222 0.19293,0.203261 0.54088,0.203261 0.34451,0 0.53399,-0.18259 0.18948,-0.182591 0.18948,-0.52021 l 0.0482,0.747586 q -0.11024,0.265273 -0.35829,0.444418 -0.24804,0.179145 -0.60978,0.179145 -0.59256,0 -0.9164,-0.378961 -0.32039,-0.382406 -0.32039,-1.074871 v -2.173856 h 0.7028 z" />
+          <path
+             id="path3057"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 114.49734,81.118541 q 0,-0.378961 -0.19637,-0.585667 -0.19637,-0.206706 -0.55121,-0.206706 -0.32729,0 -0.50643,0.199816 -0.17915,0.199816 -0.17915,0.564996 l -0.14125,-0.68902 q 0.16881,-0.354845 0.44442,-0.54777 0.27905,-0.196371 0.61323,-0.196371 0.38585,0 0.65801,0.172255 0.27561,0.16881 0.41686,0.496094 0.14469,0.327285 0.14469,0.788928 v 2.170411 h -0.7028 z m -4.27192,-1.409045 h 0.7028 v 3.576011 h -0.7028 z m 2.13596,1.409045 q 0,-0.378961 -0.18603,-0.585667 -0.18604,-0.206706 -0.5271,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18604,0.182591 -0.18604,0.51332 l -0.0724,-0.68902 q 0.16537,-0.323839 0.43064,-0.499539 0.26872,-0.1757 0.59256,-0.1757 0.37551,0 0.64079,0.172255 0.26527,0.16881 0.40307,0.496094 0.14125,0.327285 0.14125,0.788928 v 2.170411 h -0.7028 z" />
+          <path
+             id="path3059"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 116.27501,78.276335 h 0.7028 v 0.7028 h -0.7028 z m 0,1.433161 h 0.7028 v 3.576011 h -0.7028 z" />
+          <path
+             id="path3061"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 118.05268,79.709496 h 0.7028 v 3.576011 h -0.7028 z m 2.17041,1.409045 q 0,-0.378961 -0.19637,-0.585667 -0.19637,-0.206706 -0.55121,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18604,0.182591 -0.18604,0.51332 l -0.0723,-0.68902 q 0.16536,-0.323839 0.43063,-0.499539 0.26872,-0.1757 0.59256,-0.1757 0.58222,0 0.89917,0.382406 0.32039,0.378961 0.32039,1.074871 v 2.170411 h -0.7028 z" />
+          <path
+             id="path3063"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 124.15051,79.709496 h 0.69935 v 3.576011 h -0.69935 z m -1.45384,2.173856 q 0,0.375516 0.18949,0.582222 0.19292,0.203261 0.54088,0.203261 0.34451,0 0.53399,-0.18259 0.18948,-0.182591 0.18948,-0.52021 l 0.0482,0.747586 q -0.11025,0.265273 -0.35829,0.444418 -0.24805,0.179145 -0.60978,0.179145 -0.59256,0 -0.9164,-0.378961 -0.32039,-0.382406 -0.32039,-1.074871 v -2.173856 h 0.70279 z" />
+          <path
+             id="path3065"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 130.19321,81.118541 q 0,-0.378961 -0.19637,-0.585667 -0.19637,-0.206706 -0.55122,-0.206706 -0.32728,0 -0.50643,0.199816 -0.17914,0.199816 -0.17914,0.564996 l -0.14125,-0.68902 q 0.16881,-0.354845 0.44442,-0.54777 0.27905,-0.196371 0.61322,-0.196371 0.38585,0 0.65802,0.172255 0.27561,0.16881 0.41685,0.496094 0.1447,0.327285 0.1447,0.788928 v 2.170411 h -0.7028 z m -4.27192,-1.409045 h 0.7028 v 3.576011 h -0.7028 z m 2.13596,1.409045 q 0,-0.378961 -0.18604,-0.585667 -0.18603,-0.206706 -0.5271,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18603,0.182591 -0.18603,0.51332 l -0.0724,-0.68902 q 0.16536,-0.323839 0.43064,-0.499539 0.26871,-0.1757 0.59255,-0.1757 0.37552,0 0.64079,0.172255 0.26527,0.16881 0.40308,0.496094 0.14125,0.327285 0.14125,0.788928 v 2.170411 h -0.7028 z" />
+          <path
+             id="path3067"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 138.14449,81.118541 q 0,-0.378961 -0.19637,-0.585667 -0.19637,-0.206706 -0.55121,-0.206706 -0.32729,0 -0.50643,0.199816 -0.17915,0.199816 -0.17915,0.564996 l -0.14125,-0.68902 q 0.16881,-0.354845 0.44442,-0.54777 0.27906,-0.196371 0.61323,-0.196371 0.38585,0 0.65801,0.172255 0.27561,0.16881 0.41686,0.496094 0.14469,0.327285 0.14469,0.788928 v 2.170411 h -0.7028 z m -4.27192,-1.409045 h 0.7028 v 3.576011 h -0.7028 z m 2.13596,1.409045 q 0,-0.378961 -0.18603,-0.585667 -0.18604,-0.206706 -0.5271,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18604,0.182591 -0.18604,0.51332 l -0.0723,-0.68902 q 0.16536,-0.323839 0.43063,-0.499539 0.26872,-0.1757 0.59256,-0.1757 0.37552,0 0.64079,0.172255 0.26527,0.16881 0.40307,0.496094 0.14125,0.327285 0.14125,0.788928 v 2.170411 h -0.7028 z" />
+          <path
+             id="path3069"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 141.29331,83.337184 q -0.46508,0 -0.79581,-0.182591 -0.33073,-0.18259 -0.50643,-0.530545 -0.17226,-0.3514 -0.17226,-0.844048 v -0.582222 q 0,-0.485759 0.17226,-0.830269 0.1757,-0.347954 0.50643,-0.5271 0.33073,-0.18259 0.79581,-0.18259 0.46509,0 0.79582,0.18259 0.33073,0.179146 0.50299,0.5271 0.1757,0.34451 0.1757,0.830269 v 0.592557 q 0,0.489204 -0.1757,0.837159 -0.17226,0.344509 -0.50299,0.527099 -0.33073,0.182591 -0.79582,0.182591 z m 0,-0.668349 q 0.36863,0 0.56844,-0.230822 0.20327,-0.230821 0.20327,-0.647678 v -0.592557 q 0,-0.416857 -0.20327,-0.644233 -0.19981,-0.227377 -0.56844,-0.227377 -0.36862,0 -0.57188,0.227377 -0.19982,0.227376 -0.19982,0.644233 v 0.592557 q 0,0.416857 0.19982,0.647678 0.20326,0.230822 0.57188,0.230822 z" />
+          <path
+             id="path3071"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 145.84084,79.709496 h 0.69936 v 3.576011 h -0.69936 z m -1.45383,2.173856 q 0,0.375516 0.18948,0.582222 0.19293,0.203261 0.54088,0.203261 0.34451,0 0.53399,-0.18259 0.18948,-0.182591 0.18948,-0.52021 l 0.0482,0.747586 q -0.11024,0.265273 -0.35829,0.444418 -0.24804,0.179145 -0.60978,0.179145 -0.59256,0 -0.91639,-0.378961 -0.3204,-0.382406 -0.3204,-1.074871 v -2.173856 h 0.7028 z" />
+          <path
+             id="path3073"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 147.61162,79.709496 h 0.7028 v 3.576011 h -0.7028 z m 2.17041,1.409045 q 0,-0.378961 -0.19637,-0.585667 -0.19637,-0.206706 -0.55121,-0.206706 -0.34451,0 -0.53399,0.18259 -0.18604,0.182591 -0.18604,0.51332 l -0.0724,-0.68902 q 0.16537,-0.323839 0.43064,-0.499539 0.26872,-0.1757 0.59256,-0.1757 0.58222,0 0.89917,0.382406 0.32039,0.378961 0.32039,1.074871 v 2.170411 h -0.7028 z" />
+          <path
+             id="path3075"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 152.48299,83.302733 q -0.43408,0 -0.63734,-0.237712 -0.19982,-0.241157 -0.19982,-0.70969 v -3.686255 h 0.7028 v 3.693145 q 0,0.130914 0.0517,0.203261 0.0517,0.0689 0.15158,0.0689 h 0.33762 v 0.668349 z m -1.20578,-3.593237 h 1.6123 v 0.633898 h -1.6123 z" />
+          <path
+             id="path3077"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 155.63525,82.548256 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path3079"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 157.23378,82.548256 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path3081"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 158.83231,82.548256 h 0.73725 v 0.737251 h -0.73725 z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-3-4-3"
+           aria-label="Me ...">
+          <path
+             id="path3084"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 175.43269,78.198866 h 0.65802 v 5.009172 h -0.68558 v -3.751711 l 0.0344,0.220486 -1.23334,2.835316 h -0.48921 l -1.23334,-2.766414 0.0344,-0.289388 v 3.751711 h -0.68557 v -5.009172 h 0.65801 l 1.47106,3.307294 z" />
+          <path
+             id="path3086"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 178.72621,83.259715 q -0.4961,0 -0.8475,-0.186035 -0.3514,-0.186036 -0.53743,-0.544326 -0.18259,-0.361735 -0.18259,-0.87161 v -0.403076 q 0,-0.530545 0.1757,-0.906061 0.17914,-0.375515 0.51676,-0.571886 0.33762,-0.196371 0.81304,-0.196371 0.44787,0 0.76482,0.223932 0.31695,0.223931 0.48231,0.647678 0.16881,0.423747 0.16881,1.016304 v 0.234267 h -2.41157 v -0.564996 h 1.74322 v 0 q -0.031,-0.437528 -0.22738,-0.678685 -0.19292,-0.244602 -0.52021,-0.244602 -0.39963,0 -0.62011,0.261828 -0.21704,0.261827 -0.21704,0.740696 v 0.454753 q 0,0.444417 0.23426,0.682129 0.23427,0.237712 0.66491,0.237712 0.21359,0 0.42374,-0.08613 0.21015,-0.08613 0.37552,-0.241156 v 0 l 0.46164,0.461643 v 0 q -0.26527,0.254937 -0.596,0.396186 -0.33073,0.137804 -0.6649,0.137804 z" />
+          <path
+             id="path3088"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 182.83276,82.470787 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path3090"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 184.43129,82.470787 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path3092"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 186.02981,82.470787 h 0.73725 v 0.737251 h -0.73725 z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-5-52"
+           aria-label="25M-24">
+          <path
+             id="path3095"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 55.402082,93.259053 1.746664,-2.328886 q 0.151585,-0.199816 0.234267,-0.413412 0.08613,-0.217041 0.08613,-0.403076 v -0.0069 q 0,-0.299724 -0.1757,-0.465088 -0.1757,-0.165365 -0.499539,-0.165365 -0.306614,0 -0.496094,0.18259 -0.18948,0.179145 -0.230821,0.509875 v 0.0034 H 55.34007 v -0.0034 q 0.06201,-0.430638 0.251492,-0.733806 0.192926,-0.306614 0.496094,-0.465088 0.303169,-0.16192 0.699355,-0.16192 0.447863,0 0.764812,0.155029 0.316949,0.151585 0.482313,0.444418 0.165365,0.292833 0.165365,0.706245 v 0.0034 q 0,0.265273 -0.110243,0.554661 -0.110243,0.289388 -0.306614,0.558106 l -1.450386,1.970595 h 1.894804 v 0.668349 h -2.82498 z" />
+          <path
+             id="path3097"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 60.528387,93.920512 q -0.378961,0 -0.675239,-0.148139 -0.292833,-0.148139 -0.478869,-0.430638 -0.18259,-0.282498 -0.244602,-0.678684 v -0.0034 h 0.7028 v 0.0034 q 0.0379,0.275608 0.220486,0.430637 0.182591,0.151585 0.475424,0.151585 0.33762,0 0.52021,-0.223932 0.186035,-0.227376 0.186035,-0.637343 v -0.420302 q 0,-0.406521 -0.186035,-0.630452 -0.18259,-0.227377 -0.52021,-0.227377 -0.18259,0 -0.3514,0.103353 -0.16881,0.103353 -0.296278,0.289388 H 59.23992 v -2.638945 h 2.552818 v 0.668349 H 59.94272 v 1.126547 q 0.130914,-0.106798 0.292834,-0.165364 0.161919,-0.05857 0.330729,-0.05857 0.434082,0 0.740696,0.179145 0.310059,0.179145 0.468533,0.523655 0.16192,0.34451 0.16192,0.830268 v 0.420302 q 0,0.485759 -0.165365,0.830269 -0.165364,0.34451 -0.482313,0.5271 -0.316949,0.179145 -0.761367,0.179145 z" />
+          <path
+             id="path3099"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="M 66.677886,88.859663 H 67.3359 v 5.009172 h -0.685574 v -3.751711 l 0.03445,0.220486 -1.233344,2.835316 h -0.489204 l -1.233345,-2.766414 0.03445,-0.289388 v 3.751711 h -0.685575 v -5.009172 h 0.658014 l 1.471057,3.307294 z" />
+          <path
+             id="path3101"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 70.822339,91.739765 v 0.668349 h -2.315106 v -0.668349 z" />
+          <path
+             id="path3103"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 71.786966,93.259053 1.746664,-2.328886 q 0.151584,-0.199816 0.234267,-0.413412 0.08613,-0.217041 0.08613,-0.403076 v -0.0069 q 0,-0.299724 -0.1757,-0.465088 -0.1757,-0.165365 -0.499539,-0.165365 -0.306614,0 -0.496094,0.18259 -0.18948,0.179145 -0.230822,0.509875 v 0.0034 h -0.726915 v -0.0034 q 0.06201,-0.430638 0.251492,-0.733806 0.192925,-0.306614 0.496094,-0.465088 0.303169,-0.16192 0.699355,-0.16192 0.447863,0 0.764812,0.155029 0.316949,0.151585 0.482313,0.444418 0.165365,0.292833 0.165365,0.706245 v 0.0034 q 0,0.265273 -0.110243,0.554661 -0.110243,0.289388 -0.306614,0.558106 l -1.450386,1.970595 h 1.894804 v 0.668349 h -2.82498 z" />
+          <path
+             id="path3105"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 75.238955,92.490796 1.681207,-3.627688 h 0.723471 l -1.639867,3.586347 h 2.456355 v 0.651124 h -3.221166 z m 2.160076,-1.567519 h 0.685574 v 2.949004 h -0.685574 z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-7-7-6"
+           aria-label="Adapter for alumi ...">
+          <path
+             id="path3108"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 101.14414,88.859663 h 0.59945 l 1.84657,5.009172 h -0.75792 l -1.38837,-4.041099 -1.38838,4.041099 h -0.757919 z m -0.99563,3.241837 h 2.6355 v 0.668349 h -2.6355 z" />
+          <path
+             id="path3110"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 106.31868,88.859663 h 0.7028 v 5.009172 h -0.7028 z m -0.89917,5.071184 q -0.39274,0 -0.67179,-0.16881 -0.27561,-0.172254 -0.42031,-0.499539 -0.14469,-0.327284 -0.14469,-0.785482 v -0.788927 q 0,-0.461643 0.14125,-0.788928 0.14125,-0.327284 0.40997,-0.496094 0.27216,-0.172255 0.65112,-0.172255 0.31695,0 0.57878,0.165365 0.26527,0.165365 0.42719,0.465088 l -0.0724,0.730361 q 0,-0.227377 -0.0827,-0.389296 -0.0827,-0.16192 -0.24116,-0.244602 -0.15503,-0.08613 -0.37896,-0.08613 -0.34795,0 -0.54088,0.217042 -0.18948,0.217041 -0.18948,0.609782 v 0.778592 q 0,0.389296 0.18948,0.602892 0.19293,0.210151 0.54088,0.210151 0.22393,0 0.37896,-0.08613 0.15848,-0.08957 0.24116,-0.254938 0.0827,-0.165364 0.0827,-0.396186 l 0.0482,0.754477 q -0.1068,0.265272 -0.3514,0.444417 -0.24116,0.179145 -0.596,0.179145 z" />
+          <path
+             id="path3112"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 110.10829,91.601961 q 0,-0.3514 -0.18948,-0.544325 -0.18604,-0.196371 -0.53055,-0.196371 -0.21359,0 -0.4203,0.06546 -0.20326,0.06546 -0.36173,0.18259 l -0.51332,-0.3514 q 0.20326,-0.244602 0.53399,-0.378961 0.33417,-0.137803 0.74069,-0.137803 0.44442,0 0.76137,0.158474 0.31695,0.155029 0.48231,0.454753 0.16537,0.296278 0.16537,0.71658 v 2.29788 h -0.66835 z m -0.87506,2.318551 q -0.66146,0 -0.98874,-0.272163 -0.32728,-0.275608 -0.32728,-0.833713 0,-0.530545 0.29972,-0.795818 0.29972,-0.265273 0.90606,-0.265273 h 1.0163 l 0.0482,0.564996 h -1.06109 q -0.27561,0 -0.41342,0.124024 -0.13436,0.120578 -0.13436,0.372071 0,0.272162 0.17915,0.403076 0.18259,0.130914 0.55122,0.130914 0.40307,0 0.59944,-0.08613 0.19982,-0.08613 0.19982,-0.268717 l 0.0724,0.502984 q -0.093,0.144694 -0.23083,0.237712 -0.13436,0.09302 -0.3135,0.137804 -0.17915,0.04823 -0.40308,0.04823 z" />
+          <path
+             id="path3114"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 111.85151,90.292824 h 0.7028 v 5.029843 h -0.7028 z m 1.60197,3.627688 q -0.33418,0 -0.58222,-0.158475 -0.24805,-0.161919 -0.36518,-0.454752 l 0.0482,-0.747587 q 0,0.230822 0.0827,0.392741 0.0827,0.16192 0.23771,0.248047 0.15848,0.08613 0.38241,0.08613 0.34795,0 0.53743,-0.210151 0.19293,-0.213596 0.19293,-0.599447 v -0.775147 q 0,-0.392741 -0.19293,-0.609782 -0.18948,-0.217041 -0.53743,-0.217041 -0.22393,0 -0.38241,0.08268 -0.15503,0.08268 -0.23771,0.244602 -0.0827,0.158474 -0.0827,0.382406 l -0.0724,-0.68902 q 0.16192,-0.313504 0.42375,-0.482314 0.26182,-0.172254 0.58222,-0.172254 0.37896,0 0.64768,0.172254 0.27216,0.16881 0.41341,0.496095 0.14125,0.327284 0.14125,0.788927 v 0.778592 q 0,0.454753 -0.1447,0.778592 -0.14469,0.323839 -0.42374,0.496094 -0.27906,0.16881 -0.66835,0.16881 z" />
+          <path
+             id="path3116"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 116.62641,93.886061 q -0.43408,0 -0.63734,-0.237712 -0.19982,-0.241157 -0.19982,-0.70969 v -3.686254 h 0.7028 v 3.693144 q 0,0.130914 0.0517,0.203261 0.0517,0.0689 0.15158,0.0689 h 0.33762 v 0.668349 z m -1.20578,-3.593237 h 1.6123 v 0.633898 h -1.6123 z" />
+          <path
+             id="path3118"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 119.46173,93.920512 q -0.4961,0 -0.8475,-0.186035 -0.3514,-0.186036 -0.53743,-0.544326 -0.18259,-0.361735 -0.18259,-0.87161 v -0.403076 q 0,-0.530545 0.1757,-0.906061 0.17914,-0.375515 0.51676,-0.571886 0.33762,-0.19637 0.81305,-0.19637 0.44786,0 0.76481,0.223931 0.31695,0.223931 0.48231,0.647678 0.16881,0.423747 0.16881,1.016304 v 0.234267 h -2.41157 v -0.564996 h 1.74322 v 0 q -0.031,-0.437528 -0.22737,-0.678685 -0.19293,-0.244601 -0.52021,-0.244601 -0.39963,0 -0.62012,0.261827 -0.21704,0.261827 -0.21704,0.740696 v 0.454753 q 0,0.444417 0.23426,0.682129 0.23427,0.237712 0.66491,0.237712 0.21359,0 0.42375,-0.08613 0.21015,-0.08613 0.37551,-0.241157 v 0 l 0.46164,0.461643 v 0 q -0.26527,0.254937 -0.596,0.396186 -0.33073,0.137804 -0.6649,0.137804 z" />
+          <path
+             id="path3120"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 121.78717,90.292824 h 0.7028 v 3.576011 h -0.7028 z m 1.96715,0.847494 q -0.093,-0.113688 -0.23427,-0.172255 -0.14124,-0.05857 -0.32728,-0.05857 -0.33417,0 -0.52021,0.186035 -0.18259,0.18259 -0.18259,0.509874 l -0.0724,-0.689019 q 0.16537,-0.320394 0.42719,-0.496094 0.26183,-0.179145 0.57878,-0.179145 0.2446,0 0.44097,0.07235 0.19982,0.0689 0.34796,0.206705 z" />
+          <path
+             id="path3122"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 126.81012,89.807065 q 0,-0.475423 0.21704,-0.70969 0.22049,-0.237712 0.67524,-0.237712 h 0.51677 v 0.668349 h -0.50299 q -0.0999,0 -0.15158,0.07579 -0.0517,0.07579 -0.0517,0.196371 v 4.06866 h -0.7028 z m -0.37896,0.485759 h 1.78801 v 0.599447 h -1.78801 z" />
+          <path
+             id="path3124"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 130.21388,93.920512 q -0.46509,0 -0.79582,-0.18259 -0.33073,-0.18259 -0.50643,-0.530545 -0.17225,-0.3514 -0.17225,-0.844049 v -0.582222 q 0,-0.485759 0.17225,-0.830268 0.1757,-0.347955 0.50643,-0.5271 0.33073,-0.18259 0.79582,-0.18259 0.46509,0 0.79582,0.18259 0.33072,0.179145 0.50298,0.5271 0.1757,0.344509 0.1757,0.830268 v 0.592557 q 0,0.489204 -0.1757,0.837159 -0.17226,0.34451 -0.50298,0.5271 -0.33073,0.18259 -0.79582,0.18259 z m 0,-0.668349 q 0.36862,0 0.56844,-0.230822 0.20326,-0.230821 0.20326,-0.647678 v -0.592557 q 0,-0.416857 -0.20326,-0.644233 -0.19982,-0.227376 -0.56844,-0.227376 -0.36863,0 -0.57189,0.227376 -0.19981,0.227376 -0.19981,0.644233 v 0.592557 q 0,0.416857 0.19981,0.647678 0.20326,0.230822 0.57189,0.230822 z" />
+          <path
+             id="path3126"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 132.68746,90.292824 h 0.7028 v 3.576011 h -0.7028 z m 1.96715,0.847494 q -0.093,-0.113688 -0.23427,-0.172255 -0.14125,-0.05857 -0.32728,-0.05857 -0.33418,0 -0.52021,0.186035 -0.18259,0.18259 -0.18259,0.509874 l -0.0724,-0.689019 q 0.16537,-0.320394 0.42719,-0.496094 0.26183,-0.179145 0.57878,-0.179145 0.2446,0 0.44097,0.07235 0.19982,0.0689 0.34796,0.206705 z" />
+          <path
+             id="path3128"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 139.62589,91.601961 q 0,-0.3514 -0.18948,-0.544325 -0.18604,-0.196371 -0.53055,-0.196371 -0.2136,0 -0.4203,0.06546 -0.20326,0.06546 -0.36174,0.18259 l -0.51332,-0.3514 q 0.20326,-0.244602 0.53399,-0.378961 0.33418,-0.137803 0.7407,-0.137803 0.44442,0 0.76137,0.158474 0.31695,0.155029 0.48231,0.454753 0.16537,0.296278 0.16537,0.71658 v 2.29788 h -0.66835 z m -0.87506,2.318551 q -0.66146,0 -0.98874,-0.272163 -0.32729,-0.275608 -0.32729,-0.833713 0,-0.530545 0.29973,-0.795818 0.29972,-0.265273 0.90606,-0.265273 h 1.0163 l 0.0482,0.564996 h -1.06109 q -0.2756,0 -0.41341,0.124024 -0.13436,0.120578 -0.13436,0.372071 0,0.272162 0.17915,0.403076 0.18259,0.130914 0.55121,0.130914 0.40308,0 0.59945,-0.08613 0.19982,-0.08613 0.19982,-0.268717 l 0.0723,0.502984 q -0.093,0.144694 -0.23082,0.237712 -0.13436,0.09302 -0.3135,0.137804 -0.17915,0.04823 -0.40308,0.04823 z" />
+          <path
+             id="path3130"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 142.07191,92.945549 q 0,0.130914 0.0551,0.203261 0.0586,0.0689 0.16192,0.0689 h 0.33073 v 0.668349 h -0.41342 q -0.39963,0 -0.62011,-0.248047 -0.21704,-0.248047 -0.21704,-0.699355 v -4.078996 h 0.7028 z" />
+          <path
+             id="path3132"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 145.53767,90.292824 h 0.69936 v 3.576011 h -0.69936 z m -1.45383,2.173857 q 0,0.375515 0.18948,0.582221 0.19293,0.203261 0.54088,0.203261 0.34451,0 0.53399,-0.18259 0.18948,-0.18259 0.18948,-0.52021 l 0.0482,0.747586 q -0.11024,0.265273 -0.35829,0.444418 -0.24804,0.179145 -0.60978,0.179145 -0.59255,0 -0.91639,-0.378961 -0.3204,-0.382406 -0.3204,-1.07487 v -2.173857 h 0.7028 z" />
+          <path
+             id="path3134"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 151.58037,91.701869 q 0,-0.378961 -0.19637,-0.585667 -0.19637,-0.206705 -0.55121,-0.206705 -0.32729,0 -0.50643,0.199815 -0.17915,0.199816 -0.17915,0.564996 l -0.14125,-0.689019 q 0.16881,-0.354845 0.44442,-0.547771 0.27905,-0.19637 0.61323,-0.19637 0.38585,0 0.65801,0.172254 0.27561,0.16881 0.41686,0.496095 0.14469,0.327284 0.14469,0.788927 v 2.170411 h -0.7028 z m -4.27192,-1.409045 h 0.7028 v 3.576011 h -0.7028 z m 2.13596,1.409045 q 0,-0.378961 -0.18603,-0.585667 -0.18604,-0.206705 -0.5271,-0.206705 -0.34451,0 -0.53399,0.18259 -0.18604,0.18259 -0.18604,0.513319 l -0.0724,-0.689019 q 0.16537,-0.323839 0.43064,-0.499539 0.26872,-0.1757 0.59256,-0.1757 0.37551,0 0.64079,0.172254 0.26527,0.16881 0.40307,0.496095 0.14125,0.327284 0.14125,0.788927 v 2.170411 h -0.7028 z" />
+          <path
+             id="path3136"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 153.35804,88.859663 h 0.7028 v 0.7028 h -0.7028 z m 0,1.433161 h 0.7028 v 3.576011 h -0.7028 z" />
+          <path
+             id="path3138"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 156.91683,93.131585 h 0.73725 v 0.73725 h -0.73725 z" />
+          <path
+             id="path3140"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 158.51536,93.131585 h 0.73725 v 0.73725 h -0.73725 z" />
+          <path
+             id="path3142"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 160.11388,93.131585 h 0.73725 v 0.73725 h -0.73725 z" />
+        </g>
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.103086"
+           id="text849-1-9-7-3-4-1"
+           aria-label="Me ...">
+          <path
+             id="path3145"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 175.43269,88.782195 h 0.65802 v 5.009172 h -0.68558 v -3.751712 l 0.0344,0.220486 -1.23334,2.835316 h -0.48921 l -1.23334,-2.766414 0.0344,-0.289388 v 3.751712 h -0.68557 v -5.009172 h 0.65801 l 1.47106,3.307293 z" />
+          <path
+             id="path3147"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 178.72621,93.843043 q -0.4961,0 -0.8475,-0.186035 -0.3514,-0.186036 -0.53743,-0.544326 -0.18259,-0.361735 -0.18259,-0.871609 v -0.403077 q 0,-0.530545 0.1757,-0.906061 0.17914,-0.375515 0.51676,-0.571886 0.33762,-0.19637 0.81304,-0.19637 0.44787,0 0.76482,0.223931 0.31695,0.223931 0.48231,0.647678 0.16881,0.423747 0.16881,1.016304 v 0.234267 h -2.41157 v -0.564996 h 1.74322 v 0 q -0.031,-0.437528 -0.22738,-0.678684 -0.19292,-0.244602 -0.52021,-0.244602 -0.39963,0 -0.62011,0.261827 -0.21704,0.261828 -0.21704,0.740696 v 0.454753 q 0,0.444418 0.23426,0.682129 0.23427,0.237712 0.66491,0.237712 0.21359,0 0.42374,-0.08613 0.21015,-0.08613 0.37552,-0.241157 v 0 l 0.46164,0.461643 v 0 q -0.26527,0.254937 -0.596,0.396186 -0.33073,0.137804 -0.6649,0.137804 z" />
+          <path
+             id="path3149"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 182.83276,93.054116 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path3151"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 184.43129,93.054116 h 0.73725 v 0.737251 h -0.73725 z" />
+          <path
+             id="path3153"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:Bahnschrift;-inkscape-font-specification:'Bahnschrift, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke:none;stroke-width:0.103086"
+             d="m 186.02981,93.054116 h 0.73725 v 0.737251 h -0.73725 z" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

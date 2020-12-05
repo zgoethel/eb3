@@ -1,0 +1,109 @@
+body, html
+{
+	padding: 0;
+	margin: 0;
+	
+	color: #3e0028;
+}
+
+*
+{
+	box-sizing: border-box;
+}
+
+div.logo
+{
+	background: url('/image/eb-logo-paths.svg') center no-repeat;
+	background-size: contain;
+	
+	margin-top: 60px;
+	margin-bottom: 10px;
+    
+    height: 60px;
+}
+
+div.banner
+{
+	background: #76305a;
+	color: white;
+	
+   	filter: drop-shadow(0 10px 0.5rem #4e6060);
+}
+
+div.banner div.button
+{   
+    float: right;
+    
+    margin-top: -5.3em;
+    margin-right: 2em;
+}
+
+div.button
+{
+    padding: 1em;
+    
+    transition: 0.3s background;
+    border: 1px solid white;
+    
+    cursor: pointer;
+}
+
+div.button:hover
+{
+    background: #5b215b;
+}
+
+div.banner > p
+{
+	margin-left: 20px;
+}
+
+div.banner > p.head
+{
+	padding-top: 20px;
+}
+
+div.banner > p.sub-head
+{
+	padding-bottom: 20px;
+}
+
+div.container
+{
+	padding: 1em;
+}
+
+sup
+{
+	display: contents;
+}
+
+@media only screen and (min-width: 860px)
+{
+	body
+	{
+		width: 0;
+		
+		position: absolute;
+		left: 50%;
+	}
+	
+	body > div
+	{
+	    width: 850px;
+    	margin-left: -425px;
+    }
+}
+
+@media only screen and (max-width: 450px)
+{
+	div.banner div.button
+	{
+	    width: fit-content;
+	    
+	    float: none;
+	    
+	    margin: 1em;
+	    margin-top: 0;
+	}
+}
