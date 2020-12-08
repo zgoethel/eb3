@@ -19,7 +19,7 @@ public class TestSorts
 	private int numElements = 254095;
 	private int numIterations = 16;
 	
-	private void fillTestValues(List<Integer> elements)
+	private void fillTestValues(List<Integer> elements, int numElements)
 	{
 		if (elements instanceof LinkedList || elements.size() == 0)
 		{
@@ -35,7 +35,7 @@ public class TestSorts
 		}
 	}
 	
-	private void sortAndAssert(List<Integer> elements, Sort<Integer> sort)
+	private void sortAndAssert(List<Integer> elements, Sort<Integer> sort, int numElements)
 	{
 		sort.sort(elements);
 		
@@ -73,18 +73,41 @@ public class TestSorts
 		
 		templateTestSort(list, sort);
 	}
-	
-	public void templateTestSort(List<Integer> list, Sort<Integer> sort)
+
+	public void templateTestSort(List<Integer> list, Sort<Integer> sort, int numElements)
 	{
 		for (int i = 0; i < numIterations; i++)
 		{
-			fillTestValues(list);
-			sortAndAssert(list, sort);
+			fillTestValues(list, numElements);
+			sortAndAssert(list, sort, numElements);
 		}
 	}
 	
+	public void templateTestSort(List<Integer> list, Sort<Integer> sort)
+	{
+		templateTestSort(list, sort, numElements);
+	}
+	
 	@Test
-	public void canMergeSortArray()
+	public void canMergeSortSmallArray()
+	{
+		List<Integer> list = new ArrayList<>(numElements);
+		Sort<Integer> sort = new MergeSort<>(comparator);
+		
+		templateTestSort(list, sort, 2048);
+	}
+	
+	@Test
+	public void canMergeSortSmallLinked()
+	{
+		List<Integer> list = new LinkedList<>();
+		Sort<Integer> sort = new MergeSort<>(comparator);
+		
+		templateTestSort(list, sort, 2048);
+	}
+	
+	@Test
+	public void canThreadedMergeSortArray()
 	{
 		List<Integer> list = new ArrayList<>(numElements);
 		Sort<Integer> sort = new MergeSort<>(comparator);
@@ -93,7 +116,7 @@ public class TestSorts
 	}
 	
 	@Test
-	public void canMergeSortLinked()
+	public void canThreadedMergeSortLinked()
 	{
 		List<Integer> list = new LinkedList<>();
 		Sort<Integer> sort = new MergeSort<>(comparator);
