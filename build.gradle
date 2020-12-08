@@ -46,7 +46,7 @@ dependencies {
 }
 
 ext {
-   javaMainClass = "net.jibini.eb.EasyButton"
+   javaMainClass = 'net.jibini.eb.EasyButton'
 }
 
 application {

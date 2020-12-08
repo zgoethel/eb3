@@ -1,96 +1,79 @@
 package net.jibini.eb.algorithm
 
-import net.jibini.eb.algorithm.MergeSort.Frame
+import java.util.LinkedList
 
-import java.util.concurrent.LinkedBlockingDeque
-
-//TODO Address performance issues (array copies?)
+//TODO Additional optimizations
 //TODO Document
 class MergeSort<E>(
 	comparator: Comparator<E>
-) : PseudoRecursiveSort<E, Frame<E>>(comparator)
+) : Sort<E>(comparator)
 {
 	override val stable = true
 	
-	override fun generateFirstFrame(elements: List<E>): Frame<E>
+	override fun sort(elements: List<E>)
 	{
 		if (elements !is MutableList)
 			throw IllegalStateException("Cannot use merge sort on an immutable list")
 		
-		return Frame(elements)
-	}
-	
-	override fun step(frame: Frame<E>, stack: LinkedBlockingDeque<Frame<E>>)
-	{
-		if (frame is MergeFrame)
-			merge(frame)
-		else
-			slice(frame, stack)
-	}
-	
-	private fun slice(frame: Frame<E>, stack: LinkedBlockingDeque<Frame<E>>)
-	{
-		val left = ArrayList<E>(frame.elements.size / 2)
-		val right = ArrayList<E>(frame.elements.size - left.size)
+		val auxCopy = arrayOfNulls<Any>(elements.size)
+		var mainCopy: MutableList<E> = elements
 		
-		for ((i, element) in frame.elements.withIndex())
+		if (elements is LinkedList)
 		{
-			if (i < frame.elements.size / 2)
-				left += element
-			else
-				right += element
+			mainCopy = ArrayList<E>(elements.size)
+			mainCopy.addAll(elements)
 		}
 		
-		// Push merge frame for after both slice frames are popped
-		stack.push(MergeFrame(frame.elements, left, right))
+		var blockSize = 1
 		
-		if (frame.elements.size >= 2)
+		while (true)
 		{
-			stack.push(Frame(left))
-			stack.push(Frame(right))
+			val numBlocks = (elements.size + (blockSize - 1)) / blockSize
+			
+			for (block in 0 until numBlocks step 2)
+				merge(mainCopy, auxCopy, block * blockSize, blockSize)
+			
+			if (blockSize >= (elements.size + 1) / 2)
+				break
+			blockSize *= 2
+		}
+		
+		if (elements is LinkedList)
+		{
+			elements.clear()
+			elements.addAll(mainCopy)
 		}
 	}
 	
-	private fun merge(frame: MergeFrame<E>)
+	private fun merge(elements: MutableList<E>, aux: Array<Any?>, start: Int, blockSize: Int)
 	{
-		var l = 0
-		var r = 0
+		var l = start
+		var r = start + blockSize
 		
-		var size = frame.elements.size
+		val end = minOf(elements.size, start + blockSize * 2)
 		
-		frame.elements.clear()
-		
-		for (i in 0 until size)
+		for (i in start until end)
 		{
 			when
 			{
-				l == frame.left.size -> frame.elements += frame.right[r++]
+				l >= start + blockSize -> aux[i] = elements[r++] as Any
 				
-				r == frame.right.size -> frame.elements += frame.left[l++]
+				r >= end -> aux[i] = elements[l++] as Any
 				
 				else ->
 				{
-					val comparison = comparator.compare(frame.left[l], frame.right[r])
+					val comparison = comparator.compare(elements[l], elements[r])
 					
-					when
-					{
-						comparison > 0 -> frame.elements += frame.right[r++]
-						
-						else -> frame.elements += frame.left[l++]
-					}
+					if (comparison <= 0)
+						aux[i] = elements[l++] as Any
+					else
+						aux[i] = elements[r++] as Any
 				}
 			}
 		}
-	}
-	
-	open class Frame<E>( 
-		val elements: MutableList<E>
-	)
-	
-	class MergeFrame<E>(
-		elements: MutableList<E>,
 		
-		val left: List<E>,
-		val right: List<E>
-	) : Frame<E>(elements)
+		for (i in start until end)
+			@Suppress("UNCHECKED_CAST")
+			elements[i] = aux[i]!! as E
+	}
 }

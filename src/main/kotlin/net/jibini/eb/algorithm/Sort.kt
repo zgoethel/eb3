@@ -11,7 +11,7 @@ package net.jibini.eb.algorithm
  * @author Zach Goethel
  */
 abstract class Sort<E>(
-	val comparator: Comparator<E>
+	var comparator: Comparator<E>
 )
 {
 	/**

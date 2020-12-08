@@ -5,8 +5,6 @@ import net.jibini.eb.algorithm.QuickSort.Frame
 import java.util.LinkedList
 import java.util.concurrent.LinkedBlockingDeque
 
-import org.slf4j.LoggerFactory
-
 /**
  * An unstable iterative quick-sort implementation; sorts on array-lists are
  * in-place, but linked-lists are copied to an array for constant-time random
@@ -39,8 +37,6 @@ class QuickSort<E>(
 	comparator: Comparator<E>
 ) : PseudoRecursiveSort<E, Frame<E>>(comparator)
 {
-	private val log = LoggerFactory.getLogger(this::class.java)
-	
 	// This implementation of quick-sort is not stable; using additional space
 	// and/or time complexity, this algorithm could be made to be stable
 	override val stable = false
@@ -52,8 +48,6 @@ class QuickSort<E>(
 		
 		return if (elements is LinkedList)
 		{
-			log.warn("Attempting to sort linked elements using quick-sort; creating an array copy")
-			
 			// Array copy adds O(n) space complexity, but massively improves
 			// runtime of quick-sort on linked lists
 			val copied = ArrayList<E>()
@@ -170,5 +164,5 @@ class QuickSort<E>(
 		elements: MutableList<E>,
 		
 		linked: LinkedList<E>
-	) : Frame<E>(elements, linked);
+	) : Frame<E>(elements, linked)
 }

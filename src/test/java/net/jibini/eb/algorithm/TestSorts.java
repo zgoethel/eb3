@@ -19,7 +19,7 @@ public class TestSorts
 	private int numElements = 254095;
 	private int numIterations = 16;
 	
-	private void fillTestValues(List<Double> elements)
+	private void fillTestValues(List<Integer> elements)
 	{
 		if (elements instanceof LinkedList || elements.size() == 0)
 		{
@@ -27,15 +27,15 @@ public class TestSorts
 				elements.clear();
 			
 			for (int i = 0; i < numElements; i++)
-				elements.add((double)random.nextInt(2048) / 1024);
+				elements.add(random.nextInt(2048));
 		} else
 		{
 			for (int i = 0; i < numElements; i++)
-				elements.set(i, (double)random.nextInt(2048) / 1024);
+				elements.set(i, random.nextInt(2048));
 		}
 	}
 	
-	private void sortAndAssert(List<Double> elements, Sort<Double> sort)
+	private void sortAndAssert(List<Integer> elements, Sort<Integer> sort)
 	{
 		sort.sort(elements);
 		
@@ -51,53 +51,30 @@ public class TestSorts
 		}
 	}
 	
-	private Comparator<Double> doubleComparator = (e0, e1) ->
+	private Comparator<Integer> comparator = (a, b) ->
 	{
-		if (e0 < e1)
-			return -1;
-		else if (e0 > e1)
-			return 1;
-		else
-			return 0;
+		return a - b;
 	};
-	
-	private void systemSortTemplate(List<Double> list)
-	{
-		for (int i = 0; i < numIterations; i++)
-		{
-			fillTestValues(list);
-			list.sort(doubleComparator);
-			
-			double last = -1.0;
-			
-			Assert.assertEquals("Mismatch in list size; elements added or lost", numElements, list.size());
-			
-			for (double e : list)
-			{
-				Assert.assertTrue("Sort failed; elements are out of order", e >= last);
-				
-				last = e;
-			}
-		}
-	}
 	
 	@Test
 	public void benchSystemSortArray()
 	{
-		List<Double> list = new ArrayList<>(numElements);
+		List<Integer> list = new ArrayList<>(numElements);
+		Sort<Integer> sort = new SystemSort<>(comparator);
 		
-		systemSortTemplate(list);
+		templateTestSort(list, sort);
 	}
 	
 	@Test
 	public void benchSystemSortLinked()
 	{
-		List<Double> list = new LinkedList<>();
+		List<Integer> list = new LinkedList<>();
+		Sort<Integer> sort = new SystemSort<>(comparator);
 		
-		systemSortTemplate(list);
+		templateTestSort(list, sort);
 	}
 	
-	public void templateTestSort(List<Double> list, Sort<Double> sort)
+	public void templateTestSort(List<Integer> list, Sort<Integer> sort)
 	{
 		for (int i = 0; i < numIterations; i++)
 		{
@@ -107,28 +84,10 @@ public class TestSorts
 	}
 	
 	@Test
-	public void canQuickSortArray()
-	{
-		List<Double> list = new ArrayList<Double>(numElements);
-		Sort<Double> sort = new QuickSort<Double>(doubleComparator);
-		
-		templateTestSort(list, sort);
-	}
-	
-	@Test
-	public void canQuickSortLinked()
-	{
-		List<Double> list = new LinkedList<Double>();
-		Sort<Double> sort = new QuickSort<Double>(doubleComparator);
-		
-		templateTestSort(list, sort);
-	}
-	
-	@Test
 	public void canMergeSortArray()
 	{
-		List<Double> list = new ArrayList<Double>(numElements);
-		Sort<Double> sort = new MergeSort<Double>(doubleComparator);
+		List<Integer> list = new ArrayList<>(numElements);
+		Sort<Integer> sort = new MergeSort<>(comparator);
 		
 		templateTestSort(list, sort);
 	}
@@ -136,8 +95,26 @@ public class TestSorts
 	@Test
 	public void canMergeSortLinked()
 	{
-		List<Double> list = new LinkedList<Double>();
-		Sort<Double> sort = new MergeSort<Double>(doubleComparator);
+		List<Integer> list = new LinkedList<>();
+		Sort<Integer> sort = new MergeSort<>(comparator);
+		
+		templateTestSort(list, sort);
+	}
+	
+	@Test
+	public void canQuickSortArray()
+	{
+		List<Integer> list = new ArrayList<>(numElements);
+		Sort<Integer> sort = new QuickSort<>(comparator);
+		
+		templateTestSort(list, sort);
+	}
+	
+	@Test
+	public void canQuickSortLinked()
+	{
+		List<Integer> list = new LinkedList<>();
+		Sort<Integer> sort = new QuickSort<>(comparator);
 		
 		templateTestSort(list, sort);
 	}
