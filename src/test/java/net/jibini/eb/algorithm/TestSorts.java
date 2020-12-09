@@ -7,11 +7,8 @@ import java.util.List;
 import java.util.Random; 
 
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestSorts
 {
 	private Random random = new Random();
@@ -27,11 +24,11 @@ public class TestSorts
 				elements.clear();
 			
 			for (int i = 0; i < numElements; i++)
-				elements.add(random.nextInt(2048));
+				elements.add(random.nextInt(Integer.MAX_VALUE));
 		} else
 		{
 			for (int i = 0; i < numElements; i++)
-				elements.set(i, random.nextInt(2048));
+				elements.set(i, random.nextInt(Integer.MAX_VALUE));
 		}
 	}
 	
@@ -51,10 +48,7 @@ public class TestSorts
 		}
 	}
 	
-	private Comparator<Integer> comparator = (a, b) ->
-	{
-		return a - b;
-	};
+	private Comparator<Integer> comparator = (a, b) -> a - b;
 	
 	@Test
 	public void benchSystemSortArray()
@@ -128,7 +122,7 @@ public class TestSorts
 	public void canQuickSortArray()
 	{
 		List<Integer> list = new ArrayList<>(numElements);
-		Sort<Integer> sort = new QuickSort<>(comparator);
+		Sort<Integer> sort = new QuickSort<>(comparator, 64, new MergeSort<>(comparator));
 		
 		templateTestSort(list, sort);
 	}
@@ -137,7 +131,43 @@ public class TestSorts
 	public void canQuickSortLinked()
 	{
 		List<Integer> list = new LinkedList<>();
-		Sort<Integer> sort = new QuickSort<>(comparator);
+		Sort<Integer> sort = new QuickSort<>(comparator, 64, new MergeSort<>(comparator));
+		
+		templateTestSort(list, sort);
+	}
+	
+	@Test
+	public void canHybridQuickSortArray()
+	{
+		List<Integer> list = new ArrayList<>(numElements);
+		Sort<Integer> sort = new QuickSort<>(comparator, 16, new MergeSort<>(comparator));
+		
+		templateTestSort(list, sort);
+	}
+	
+	@Test
+	public void canHybridQuickSortLinked()
+	{
+		List<Integer> list = new LinkedList<>();
+		Sort<Integer> sort = new QuickSort<>(comparator, 16, new MergeSort<>(comparator));
+		
+		templateTestSort(list, sort);
+	}
+	
+	@Test
+	public void canStableQuickSortArray()
+	{
+		List<Integer> list = new ArrayList<>(numElements);
+		Sort<Integer> sort = new StableQuickSort<>(comparator);
+		
+		templateTestSort(list, sort);
+	}
+	
+	@Test
+	public void canStableQuickSortLinked()
+	{
+		List<Integer> list = new LinkedList<>();
+		Sort<Integer> sort = new StableQuickSort<>(comparator);
 		
 		templateTestSort(list, sort);
 	}

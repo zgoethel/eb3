@@ -8,7 +8,7 @@ import java.util.concurrent.LinkedBlockingDeque
 /**
  * An unstable iterative quick-sort implementation; sorts on array-lists are
  * in-place, but linked-lists are copied to an array for constant-time random
- * access (copied back upon sort's completion, adding O(n) space complexity).
+ * access (adds O(n) space complexity and is copied back upon completion).
  *
  * By nature, this algorithm is best suited for lists with constant-time access
  * due to heavy usage of random index accesses (e.g. array-lists), but has been
@@ -21,20 +21,38 @@ import java.util.concurrent.LinkedBlockingDeque
  * equal to the pivot, thus no sub-partition will contain an element with a
  * comparison of zero against the pivot.
  *
- * For a stable sort which is also optimized for linked-lists, try merge sort.
+ * For a stable sort, try merge sort, stable quick-sort, or the system's sort.
+ *
+ * This implementation has also been modified to fall back to another sort
+ * implementation in a worst-case scenario (perfectly sorted or sorted in
+ * reverse); the fallback sort algorithm will be used if a given stack-depth
+ * is reached (the recommended fallback depth is 64).
  *
  * @see PseudoRecursive
  * @see PseudoRecursiveSort
  *
+ * @see StableQuickSort
  * @see MergeSort
+ * @see SystemSort
  *
  * @author Zach Goethel
  */
+//TODO Optimize for all-unique inputs
 class QuickSort<E>(
 	/**
-	 * Element comparator by which to mutually compare elements
+	 * Element comparator by which to mutually compare elements.
 	 */
-	comparator: Comparator<E>
+	comparator: Comparator<E>,
+	
+	/**
+ 	 * The stack depth at which the quick-sort will fall back to another sort
+	 * (for improved worst-case performance, see hybrid sorts/introsort).
+	 */
+	val fallbackDepth: Int = 64,
+	/**
+ 	 * An instance of the fallback hybrid sort method.
+	 */
+	val fallbackSort: Sort<E> = MergeSort<E>(comparator)
 ) : PseudoRecursiveSort<E, Frame<E>>(comparator)
 {
 	// This implementation of quick-sort is not stable; using additional space
@@ -62,6 +80,13 @@ class QuickSort<E>(
 	{
 		if (frame is PivotFrame)
 		{
+			if (frame.depthCount == 0)
+			{
+				fallbackSort.sort(frame.elements.subList(frame.left, frame.right + 1))
+				
+				return
+			}
+			
 			// Track left- and right-most indices which are in the partition
 			// (e.g. have a comparison to the pivot of zero)
 			var partRight = frame.left
@@ -98,9 +123,9 @@ class QuickSort<E>(
 			if (frame.right > frame.left + 1)
 			{
 				if (partLeft > frame.left + 1)
-					stack.push(PivotFrame(frame.elements, frame.left, partLeft - 1))
+					stack.push(PivotFrame(frame.elements, frame.depthCount - 1, frame.left, partLeft - 1))
 				if (partRight < frame.right - 1)
-					stack.push(PivotFrame(frame.elements, partRight + 1, frame.right))
+					stack.push(PivotFrame(frame.elements, frame.depthCount - 1, partRight + 1, frame.right))
 			}
 		} else if (frame is CopyBackFrame)
 		{
@@ -113,7 +138,7 @@ class QuickSort<E>(
 			if (frame.linked != null)
 				stack.push(CopyBackFrame(frame.elements, frame.linked))
 			// Push first pivot frame on the array-list or copied array
-			stack.push(PivotFrame(frame.elements))
+			stack.push(PivotFrame(frame.elements, fallbackDepth))
 		}
 	}
 	
@@ -146,6 +171,8 @@ class QuickSort<E>(
 	class PivotFrame<E>(
 		elements: MutableList<E>,
 		
+		val depthCount: Int,
+		
 		val left: Int = 0,
 		val right: Int = elements.lastIndex,
 		
@@ -165,4 +192,69 @@ class QuickSort<E>(
 		
 		linked: LinkedList<E>
 	) : Frame<E>(elements, linked)
+}
+
+/**
+ * Wraps the quick-sort algorithm in such a manner which considers the initial
+ * index of elements as a sorting rule.
+ *
+ * In its current implementation, multiple auxilary arrays may be built.
+ *
+ * Due to the extra used space and time taken to copy arrays, this implementation
+ * is not recommended (it is included as an obligatory utility).
+ * 
+ * @see QuickSort
+ * @see MergeSort
+ * @see SystemSort
+ *
+ * @author Zach Goethel
+ */
+//TODO Additional optimizations
+//TODO Document
+class StableQuickSort<E>(
+	comparator: Comparator<E>
+) : Sort<E>(comparator)
+{
+	override val stable = true
+	
+	override fun sort(elements: List<E>)
+	{
+		if (elements !is MutableList)
+			throw IllegalStateException("Cannot use stable quick-sort on an immutable list")
+		
+		val indexedCopy = ArrayList<IndexedElement<E>>(elements.size)
+		for ((i, element) in elements.withIndex())
+			indexedCopy += IndexedElement(i, element)
+		
+		val quickSort = QuickSort<IndexedElement<E>>(
+		{
+			a, b ->
+			
+			val comparison = comparator.compare(a.element, b.element)
+			
+			when (comparison)
+			{
+				0 -> a.index - b.index
+				else -> comparison
+			}
+		})
+		
+		quickSort.sort(indexedCopy)
+		
+		if (elements is LinkedList)
+		{
+			elements.clear()
+			for (indexed in indexedCopy)
+				elements += indexed.element
+		} else
+		{
+			for ((i, indexed) in indexedCopy.withIndex())
+				elements[i] = indexed.element
+		}
+	}
+	
+	class IndexedElement<E>(
+		val index: Int,
+		val element: E
+	)
 }

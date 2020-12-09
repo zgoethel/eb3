@@ -46,7 +46,7 @@ class MergeSort<E>(
 			}
 		} else
 		{
-			val numThreads = 4
+			val numThreads = 8
 			val jobs = ArrayList<Job>(numThreads)
 			
 			val perThread = (elements.size + (numThreads - 1)) / numThreads
