@@ -94,8 +94,14 @@ class MergeSort<E>(
 		
 		if (elements is LinkedList)
 		{
-			elements.clear()
-			elements.addAll(main)
+			val listIterator = elements.listIterator()
+			var i = 0
+			
+			while (listIterator.hasNext())
+			{
+				listIterator.next()
+				listIterator.set(main[i++])
+			}
 		}
 	}
 	

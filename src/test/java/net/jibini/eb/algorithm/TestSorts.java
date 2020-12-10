@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Random; 
 
 import org.junit.Assert;
@@ -18,17 +19,19 @@ public class TestSorts
 	
 	private void fillTestValues(List<Integer> elements, int numElements)
 	{
-		if (elements instanceof LinkedList || elements.size() == 0)
+		if (elements.isEmpty())
 		{
-			if (elements instanceof LinkedList)
-				elements.clear();
-			
 			for (int i = 0; i < numElements; i++)
 				elements.add(random.nextInt(Integer.MAX_VALUE));
 		} else
 		{
-			for (int i = 0; i < numElements; i++)
-				elements.set(i, random.nextInt(Integer.MAX_VALUE));
+			ListIterator<Integer> listIterator = elements.listIterator();
+			
+			while (listIterator.hasNext())
+			{
+				listIterator.next();
+				listIterator.set(random.nextInt(Integer.MAX_VALUE));
+			}
 		}
 	}
 	

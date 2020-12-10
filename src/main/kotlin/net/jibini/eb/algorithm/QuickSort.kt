@@ -150,8 +150,14 @@ class QuickSort<E>(
 		} else if (frame is CopyBackFrame)
 		{
 			// Reached final frame, copy back array to linked-list
-			frame.linked!!.clear()
-			frame.linked.addAll(frame.elements)
+			val listIterator = frame.linked!!.listIterator()
+			var i = 0
+			
+			while (listIterator.hasNext())
+			{
+				listIterator.next()
+				listIterator.set(frame.elements[i++])
+			}
 		} else
 		{
 			// This is a linked-list; create an array copy
@@ -261,15 +267,13 @@ class StableQuickSort<E>(
 		
 		quickSort.sort(indexedCopy)
 		
-		if (elements is LinkedList)
+		val listIterator = elements.listIterator()
+		var i = 0
+		
+		while (listIterator.hasNext())
 		{
-			elements.clear()
-			for (indexed in indexedCopy)
-				elements += indexed.element
-		} else
-		{
-			for ((i, indexed) in indexedCopy.withIndex())
-				elements[i] = indexed.element
+			listIterator.next()
+			listIterator.set(indexedCopy[i++].element)
 		}
 	}
 	
