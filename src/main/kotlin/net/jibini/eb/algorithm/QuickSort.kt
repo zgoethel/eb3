@@ -4,6 +4,7 @@ import net.jibini.eb.algorithm.QuickSort.Frame
 
 import java.util.LinkedList
 import java.util.concurrent.LinkedBlockingDeque
+import java.util.Collections
 
 /**
  * An unstable iterative quick-sort implementation; sorts on array-lists are
@@ -26,7 +27,7 @@ import java.util.concurrent.LinkedBlockingDeque
  * This implementation has also been modified to fall back to another sort
  * implementation in a worst-case scenario (perfectly sorted or sorted in
  * reverse); the fallback sort algorithm will be used if a given stack-depth
- * is reached (the recommended fallback depth is 64).
+ * is reached (the recommended fallback depth is 32).
  *
  * @see PseudoRecursive
  * @see PseudoRecursiveSort
@@ -37,7 +38,6 @@ import java.util.concurrent.LinkedBlockingDeque
  *
  * @author Zach Goethel
  */
-//TODO Optimize for all-unique inputs
 class QuickSort<E>(
 	/**
 	 * Element comparator by which to mutually compare elements.
@@ -48,7 +48,7 @@ class QuickSort<E>(
  	 * The stack depth at which the quick-sort will fall back to another sort
 	 * (for improved worst-case performance, see hybrid sorts/introsort).
 	 */
-	val fallbackDepth: Int = 64,
+	val fallbackDepth: Int = 32,
 	/**
  	 * An instance of the fallback hybrid sort method.
 	 */
@@ -80,6 +80,7 @@ class QuickSort<E>(
 	{
 		if (frame is PivotFrame)
 		{
+			// If depth-limit is exceeded, fall back to other sort
 			if (frame.depthCount == 0)
 			{
 				fallbackSort.sort(frame.elements.subList(frame.left, frame.right + 1))
@@ -87,46 +88,65 @@ class QuickSort<E>(
 				return
 			}
 			
-			// Track left- and right-most indices which are in the partition
-			// (e.g. have a comparison to the pivot of zero)
-			var partRight = frame.left
-			var partLeft = frame.left
+			// Move the initial pivot (center) to the rightmost index
+			Collections.swap(frame.elements, (frame.left + frame.right) / 2, frame.right)
+				
+			// Track the first and last partition index
+			var partRight = frame.right
+			var partLeft = frame.right
+			// Track index with which to swap lesser values
+			var less = frame.left
 			
+			// Pivot value against which to compare
 			val pivot = frame.elements[partRight]
+			// Track index at which the sort is currently comparing
+			var i = frame.left
 			
-			for (i in frame.left + 1 .. frame.right)
+			while (i < partLeft)
 			{
 				// Grab element and compare to pivot
 				val element = frame.elements[i]
 				val comparison = comparator.compare(element, pivot)
 				
-				// Partition starts on the left; only move the partition if
-				// this element belongs before or inside of it
-				if (comparison <= 0)
+				when
 				{
-					// Maintain element directly after partition
-					frame.elements[i] = frame.elements[++partRight]
-					// Leap-frog the partition and put element
-					frame.elements[partRight] = frame.elements[partLeft]
-					frame.elements[partLeft] = element
+					comparison == 0 ->
+					{
+						// Move into pivot range (right-most indices); do not\
+						// increment the counter
+						frame.elements[i] = frame.elements[--partLeft]
+						frame.elements[partLeft] = element
+					}
 					
-					// The left edge of the partition only moves if the element
-					// added is not part of the partition
-					if (comparison < 0)
-						partLeft++
+					comparison < 0 ->
+					{
+						// Swap with next less-than index
+						frame.elements[i++] = frame.elements[less]
+						frame.elements[less++] = element
+					}
+					
+					else ->
+						// Leave elements greater than pivot alone
+						i++
 				}
 			}
 			
-			// Only spawn more frames if the current partition is at least two
-			// elements wide; only spawn each sub-partition if each individual
-			// partition will have more than one element
-			if (frame.right > frame.left + 1)
+			val partWidth = (partRight - partLeft) + 1
+			
+			// Return partition (pivot) elements to the center of array
+			for (j in less until less + partWidth)
 			{
-				if (partLeft > frame.left + 1)
-					stack.push(PivotFrame(frame.elements, frame.depthCount - 1, frame.left, partLeft - 1))
-				if (partRight < frame.right - 1)
-					stack.push(PivotFrame(frame.elements, frame.depthCount - 1, partRight + 1, frame.right))
+				val element = frame.elements[partRight]
+				
+				frame.elements[partRight--] = frame.elements[j]
+				frame.elements[j] = element
 			}
+			
+			// Spawn next frames if less-than and greater-elements have at least two
+			if (less > frame.left + 1)
+				stack.push(PivotFrame(frame.elements, frame.depthCount - 1, frame.left, less - 1))
+			if (less + partWidth < frame.right)
+				stack.push(PivotFrame(frame.elements, frame.depthCount - 1, less + partWidth, frame.right))
 		} else if (frame is CopyBackFrame)
 		{
 			// Reached final frame, copy back array to linked-list
