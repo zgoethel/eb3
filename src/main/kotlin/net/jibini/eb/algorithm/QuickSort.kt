@@ -4,7 +4,6 @@ import net.jibini.eb.algorithm.QuickSort.Frame
 
 import java.util.LinkedList
 import java.util.concurrent.LinkedBlockingDeque
-import java.util.Collections
 
 /**
  * An unstable iterative quick-sort implementation; sorts on array-lists are
@@ -27,7 +26,7 @@ import java.util.Collections
  * This implementation has also been modified to fall back to another sort
  * implementation in a worst-case scenario (perfectly sorted or sorted in
  * reverse); the fallback sort algorithm will be used if a given stack-depth
- * is reached (the recommended fallback depth is 32).
+ * is reached (the recommended fallback depth is 64).
  *
  * @see PseudoRecursive
  * @see PseudoRecursiveSort
@@ -48,7 +47,7 @@ class QuickSort<E>(
  	 * The stack depth at which the quick-sort will fall back to another sort
 	 * (for improved worst-case performance, see hybrid sorts/introsort).
 	 */
-	val fallbackDepth: Int = 32,
+	val fallbackDepth: Int = 64,
 	/**
  	 * An instance of the fallback hybrid sort method.
 	 */
@@ -89,7 +88,11 @@ class QuickSort<E>(
 			}
 			
 			// Move the initial pivot (center) to the rightmost index
-			Collections.swap(frame.elements, (frame.left + frame.right) / 2, frame.right)
+			val centerIndex = (frame.left + frame.right) / 2
+			// Pivot value against which to compare (single pivot value)
+			val pivot = frame.elements[centerIndex]
+			frame.elements[centerIndex] = frame.elements[frame.right]
+			frame.elements[frame.right] = pivot
 				
 			// Track the first and last partition index
 			var partRight = frame.right
@@ -97,8 +100,6 @@ class QuickSort<E>(
 			// Track index with which to swap lesser values
 			var less = frame.left
 			
-			// Pivot value against which to compare
-			val pivot = frame.elements[partRight]
 			// Track index at which the sort is currently comparing
 			var i = frame.left
 			
@@ -112,7 +113,7 @@ class QuickSort<E>(
 				{
 					comparison == 0 ->
 					{
-						// Move into pivot range (right-most indices); do not\
+						// Move into pivot range (right-most indices); do not
 						// increment the counter
 						frame.elements[i] = frame.elements[--partLeft]
 						frame.elements[partLeft] = element

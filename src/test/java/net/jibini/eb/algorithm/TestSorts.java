@@ -125,7 +125,7 @@ public class TestSorts
 	public void canQuickSortArray()
 	{
 		List<Integer> list = new ArrayList<>(numElements);
-		Sort<Integer> sort = new QuickSort<>(comparator, 32, new MergeSort<>(comparator));
+		Sort<Integer> sort = new QuickSort<>(comparator, 64, new MergeSort<>(comparator));
 		
 		templateTestSort(list, sort);
 	}
@@ -134,7 +134,7 @@ public class TestSorts
 	public void canQuickSortLinked()
 	{
 		List<Integer> list = new LinkedList<>();
-		Sort<Integer> sort = new QuickSort<>(comparator, 32, new MergeSort<>(comparator));
+		Sort<Integer> sort = new QuickSort<>(comparator, 64, new MergeSort<>(comparator));
 		
 		templateTestSort(list, sort);
 	}
@@ -171,6 +171,24 @@ public class TestSorts
 	{
 		List<Integer> list = new LinkedList<>();
 		Sort<Integer> sort = new StableQuickSort<>(comparator);
+		
+		templateTestSort(list, sort);
+	}
+	
+	@Test
+	public void canHeapSortArray()
+	{
+		List<Integer> list = new ArrayList<>(numElements);
+		Sort<Integer> sort = new HeapSort<>(comparator);
+		
+		templateTestSort(list, sort);
+	}
+	
+	@Test
+	public void canHeapSortLinked()
+	{
+		List<Integer> list = new LinkedList<>();
+		Sort<Integer> sort = new HeapSort<>(comparator);
 		
 		templateTestSort(list, sort);
 	}
