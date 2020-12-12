@@ -1,6 +1,11 @@
 package net.jibini.eb.algorithm;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -57,15 +62,17 @@ public class TestSorts
 		if (elements.isEmpty())
 		{
 			for (int i = 0; i < numElements; i++)
-				elements.add(random.nextInt(Integer.MAX_VALUE));
+				elements.add(i);
 		} else
 		{
 			ListIterator<Integer> listIterator = elements.listIterator();
 			
+			int i = 0;
+			
 			while (listIterator.hasNext())
 			{
 				listIterator.next();
-				listIterator.set(random.nextInt(Integer.MAX_VALUE));
+				listIterator.set(i++);
 			}
 		}
 	}
@@ -142,10 +149,12 @@ public class TestSorts
 		
 		int comparisonAccum = 0;
 		double timeAccum = 0;
+
+		fillTestValues(list, numElements);
 		
 		for (int i = 0; i < numIterations; i++)
 		{
-			fillTestValues(list, numElements);
+			Collections.shuffle(list);
 			
 			double time = sortAndAssert(list, sort, numElements);
 			
@@ -220,7 +229,7 @@ public class TestSorts
 	public void canQuickSortArray()
 	{
 		List<Integer> list = new ArrayList<>(numElements);
-		Sort<Integer> sort = new QuickSort<>(comparator, 64, new MergeSort<>(comparator));
+		Sort<Integer> sort = new QuickSort<>(comparator, 128, new MergeSort<>(comparator));
 		
 		templateTestSort(list, sort, "");
 	}
@@ -229,7 +238,7 @@ public class TestSorts
 	public void canQuickSortLinked()
 	{
 		List<Integer> list = new LinkedList<>();
-		Sort<Integer> sort = new QuickSort<>(comparator, 64, new MergeSort<>(comparator));
+		Sort<Integer> sort = new QuickSort<>(comparator, 128, new MergeSort<>(comparator));
 		
 		templateTestSort(list, sort, "");
 	}
@@ -344,7 +353,8 @@ public class TestSorts
 		{
 			// Print a divider if this number of elements is an order of magnitude
 			// greater than the previous run
-			if (run.numElements / l >= 10 || (p.equals("ARRAY") && run.type.equals("LINKED")))
+			if (run.numElements / l >= 10 || (p.equals("ARRAY") && run.type.equals("LINKED"))
+					&& !run.name.contains("(Small)"))
 				log.info("---------------------|--------|--------------------------------------|-------------------------------");
 			
 			l = run.numElements;
@@ -358,5 +368,59 @@ public class TestSorts
 			log.info(String.format(message, run.name, run.type, "" + run.numElements,
 					run.time, "" + run.comparisons, coefficient));
 		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) throws IOException
+	{
+		BufferedWriter writer = new BufferedWriter(new FileWriter("sort-analysis.csv"));
+		
+		Comparator<Integer> comparator = Comparator.comparingInt(a -> a);
+		
+		Sort<?>[] sorts = 
+		{
+			new SystemSort<Integer>(comparator),
+			
+			new MergeSort<Integer>(comparator),
+			new QuickSort<Integer>(comparator, 64, new MergeSort<>(comparator)),
+			
+			new HeapSort<Integer>(comparator),
+			new StableQuickSort<Integer>(comparator)
+		};
+		
+		for (Sort<?> sort : sorts)
+			writer.write("," + sort.getClass().getSimpleName());
+		writer.write("\n");
+		
+		for (int i = 1; i <= (1 << 23); i <<= 1)
+		{
+			ArrayList<Integer> numbers = new ArrayList<>(i);
+			for (int j = 0; j < i; j++)
+				numbers.add(j);
+			
+			System.out.print(i + ": ");
+			writer.write("" + i);
+			
+			for (Sort<?> sort : sorts)
+			{
+				Collections.shuffle(numbers);
+
+				long start = System.currentTimeMillis();
+				((Sort<Integer>)sort).sort(numbers);
+				long end = System.currentTimeMillis();
+				
+				double time = (double)(end - start) / 1000;
+				
+				writer.write("," + time);
+				
+				System.out.print("||");
+			}
+			
+			System.out.println();
+			writer.write("\n");
+		}
+		
+		writer.flush();
+		writer.close();
 	}
 }
