@@ -382,38 +382,58 @@ public class TestSorts
 			new SystemSort<Integer>(comparator),
 			
 			new MergeSort<Integer>(comparator),
-			new QuickSort<Integer>(comparator, 64, new MergeSort<>(comparator)),
+			new QuickSort<Integer>(comparator, 4096, new MergeSort<>(comparator)),
 			
-			new HeapSort<Integer>(comparator),
-			new StableQuickSort<Integer>(comparator)
+			new QuickSort<Integer>(comparator, 16, new HeapSort<>(comparator)),
+			
+//			new HeapSort<Integer>(comparator),
+//			new StableQuickSort<Integer>(comparator)
 		};
 		
 		for (Sort<?> sort : sorts)
 			writer.write("," + sort.getClass().getSimpleName());
 		writer.write("\n");
 		
-		for (int i = 1; i <= (1 << 23); i <<= 1)
+		for (int i = 1; i <= 2000001; i += 50000)
 		{
 			ArrayList<Integer> numbers = new ArrayList<>(i);
 			for (int j = 0; j < i; j++)
 				numbers.add(j);
 			
-			System.out.print(i + ": ");
+			System.out.print(String.format("%-9s: ", i + ""));
 			writer.write("" + i);
 			
 			for (Sort<?> sort : sorts)
 			{
-				Collections.shuffle(numbers);
+				double time = 0.0;
+				int numRuns = 8;
+				
+				for (int j = 0; j < numRuns; j++)
+				{
+					Collections.shuffle(numbers);
+					
+					try
+					{
+						Thread.sleep(200);
+					} catch (InterruptedException ex)
+					{ }
+	
+					long start = System.currentTimeMillis();
+					((Sort<Integer>)sort).sort(numbers);
+					long end = System.currentTimeMillis();
+					
+					time += (double)(end - start) / 1000;
 
-				long start = System.currentTimeMillis();
-				((Sort<Integer>)sort).sort(numbers);
-				long end = System.currentTimeMillis();
+					System.out.print("||");
+					
+					try
+					{
+						Thread.sleep(200);
+					} catch (InterruptedException ex)
+					{ }
+				}
 				
-				double time = (double)(end - start) / 1000;
-				
-				writer.write("," + time);
-				
-				System.out.print("||");
+				writer.write("," + time / numRuns);
 			}
 			
 			System.out.println();
