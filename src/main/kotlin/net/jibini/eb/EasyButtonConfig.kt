@@ -8,15 +8,16 @@ import com.google.gson.GsonBuilder
 import org.slf4j.LoggerFactory
 
 /**
- * Core configuration for the indexing and querying engines.
+ * Core configuration for the indexing and querying engines; this file allows
+ * configuration of security, performance, and usability features.
  *
  * @author Zach Goethel
  */
 class EasyButtonConfig
 {
 	/**
-	 * Disables validation of the REST APIs' certificates; necessary as some SSL
-	 * certificates are neglected or self-signed.
+	 * Disables validation of the REST APIs' certificates; this is necessary as
+	 * some SSL certificates are neglected or self-signed.
 	 */
 	val disableCertCheck : Boolean = false
 	
@@ -32,9 +33,9 @@ class EasyButtonConfig
 		/**
 		 * Loads the given configuration data class from its respective JSON
 		 * file (where the filename is the simple class name and the JSON file
-		 * extension);
-		 * 
-		 * if the configuration doesn't exist, the provided default
+		 * extension).
+		 *
+		 * If the configuration doesn't exist, the provided default
 		 * value will be written to file and returned.
 		 */
 		@JvmStatic

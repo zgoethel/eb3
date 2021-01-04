@@ -11,6 +11,7 @@ import javax.net.ssl.X509TrustManager;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -23,13 +24,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EasyButton
 {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
-			
+
 	private EasyButtonConfig config;
 	
 	/**
-	 * Application initialization; 
+	 * Application initialization.
 	 * 
-	 * depending on configuration, this may disable certificate validation at a
+	 * Depending on configuration, this may disable certificate validation at a
 	 * global level due to APIs' neglected or self-signed SSL certificates.
 	 */
 	@PostConstruct
@@ -48,7 +49,7 @@ public class EasyButton
 				sc.init(null, TRUST_ALL_CERTS, new SecureRandom());
 	
 				HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-			} catch (Throwable thrown)
+			} catch (Throwable ignored)
 			{ }
 		}
 	}
