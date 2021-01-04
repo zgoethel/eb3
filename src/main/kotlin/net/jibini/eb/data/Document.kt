@@ -26,10 +26,16 @@ class Document(
      */
     val internal: MutableMap<String, Any?> = HashMap()
 
+    init
+    {
+        for (field in descriptor.fields)
+            internal[field.key] = null
+    }
+
     // Formats the value using the field's format
     override fun get(key: String) = descriptor.fields[key]
         ?.format
-        ?.format(internal[key])
+        ?.invoke(internal[key])
 
     // Reprocesses the internal map to use the overridden getter
     override val entries: Set<Map.Entry<String, Any?>>

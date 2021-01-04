@@ -1,0 +1,12 @@
+{
+  "name": "Erp.BO.PartSvc/Parts",
+  "source": "EpicorSource",
+
+  "fields":
+  [
+    {
+      "name": "PartNum",
+      "format": "StringFormat"
+    }
+  ]
+}
