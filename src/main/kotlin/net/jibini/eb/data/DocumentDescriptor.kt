@@ -7,15 +7,14 @@ import java.io.File
 import java.lang.IllegalStateException
 
 /**
- * Contains a collection of fields which make up a certain type
- * of document, such as the document's name and its data values.
+ * Contains a collection of fields which make up a certain type of document, such as the document's name and its data
+ * values.  All documents stored in a single relational database table should share this common schema.
  *
  * @author Zach Goethel
  */
 class DocumentDescriptor(
     /**
-     * This document schema's name; all documents of a given
-     * type should have the same name.
+     * This document schema's unique name; all documents of a given type should share the same name.
      */
     val name: String
 )
@@ -64,8 +63,7 @@ class DocumentDescriptor(
         }
 
         /**
-         * Loads all JSON document descriptors in the provided directory.  Does
-         * not recurse.
+         * Loads all JSON document descriptors in the provided directory.  Does not recurse.
          *
          * @param directory Directory containing document descriptors.
          *

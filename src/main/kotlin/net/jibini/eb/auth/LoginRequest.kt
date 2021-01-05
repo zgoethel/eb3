@@ -1,8 +1,7 @@
 package net.jibini.eb.auth
 
 /**
- * Represents a form submission by the user in attempt to
- * authenticate
+ * Represents a form submission by the user in attempt to authenticate.
  *
  * @author Zach Goethel
  */
@@ -15,5 +14,10 @@ class LoginRequest(
     /**
      * The user's entered password.
      */
-    val password: String
+    val password: String,
+
+    /**
+     * Redirect page to send if authentication succeeds.
+     */
+    val successRedirect: String
 )

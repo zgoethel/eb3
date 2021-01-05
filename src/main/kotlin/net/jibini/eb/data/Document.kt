@@ -1,8 +1,9 @@
 package net.jibini.eb.data
 
 /**
- * A collection of fields and field values which represent a discrete
- * object which can be viewed as a document or database entry.
+ * A collection of fields and field values which represent a discrete object which can be viewed as a document or
+ * database entry.  For example, a part in a part database will contain fields and field values for the part name,
+ * model number, vendors, and so on.
  *
  * @author Zach Goethel
  */

@@ -1,8 +1,8 @@
 package net.jibini.eb.data
 
 /**
- * Any database or collection which can be queried for the entirety
- * of its values, or any values added or modified after a given point.
+ * Any database or collection which can be queried for the entirety of its values, or any values added or modified after
+ * a given point in time.
  *
  * @author Zach Goethel
  */

@@ -25,13 +25,13 @@ public class EasyButton
 {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-	private EasyButtonConfig config;
+	public EasyButtonConfig config;
 	
 	/**
 	 * Application initialization.
 	 * 
-	 * Depending on configuration, this may disable certificate validation at a
-	 * global level due to APIs' neglected or self-signed SSL certificates.
+	 * Depending on configuration, this may disable certificate validation at a global level due to APIs' neglected or
+	 * self-signed SSL certificates.
 	 */
 	@PostConstruct
 	public void init()
