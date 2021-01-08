@@ -16,7 +16,7 @@
             <input type="text" name="username" />
             <input type="password" name="password" />
 
-            <input type="text" name="successRedirect" value="/s" />
+            <input type="text" name="successRedirect" value="${redirect}" />
 
             <input type="submit" />
         </form>

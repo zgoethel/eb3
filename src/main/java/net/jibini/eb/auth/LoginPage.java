@@ -11,8 +11,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -52,10 +55,47 @@ public class LoginPage
         return ((Function1<AuthDetails, Boolean>)auth).invoke(details);
     }
 
+    /**
+     * Determines whether the current session is valid.  If invalid, this call will redirect the user to the login page
+     * in order to log in and be redirected back to their desired page.
+     *
+     * @param session Session to be validated.
+     * @param response Vector by which to redirect the user.
+     *
+     * @return Whether the provided session is valid (true on successful validation).
+     */
+    public AuthDetails validate(HttpSession session, HttpServletRequest request, HttpServletResponse response)
+    {
+        AuthDetails details = (AuthDetails)session.getAttribute("auth-details");
+
+        if (details == null || !validate(details))
+        {
+            try
+            {
+                String redirect = request.getRequestURI();
+                if (request.getQueryString() != null)
+                    redirect += "&" + request.getQueryString();
+
+                redirect = URLEncoder.encode(redirect, Charset.defaultCharset());
+
+                response.sendRedirect("/login?redirect=" + redirect);
+            } catch(IOException ex)
+            {
+                log.error("Failed to redirect the user to the login page", ex);
+            }
+
+            return null;
+        }
+
+        return details;
+    }
+
     @GetMapping("/login")
     public String loginPage(
             HttpServletResponse response,
             HttpSession session,
+
+            Model model,
 
             @RequestParam(defaultValue = "/s") String redirect
     )
@@ -70,6 +110,8 @@ public class LoginPage
             {
                 log.error("Failed to redirect successful pre-login", ex);
             }
+
+        model.addAttribute("redirect", redirect);
 
         return "login";
     }
@@ -89,9 +131,10 @@ public class LoginPage
             try
             {
                 String error = URLEncoder.encode("Failed to login; please try again.", Charset.defaultCharset());
+                String redirect = URLEncoder.encode(loginRequest.getSuccessRedirect(), Charset.defaultCharset());
 
                 response.setStatus(HttpStatus.UNAUTHORIZED.value());
-                response.sendRedirect("/login?error=" + error);
+                response.sendRedirect("/login?error=" + error + "&redirect=" + redirect);
 
                 return;
             } catch (IOException ex)
