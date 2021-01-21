@@ -1,7 +1,10 @@
 package net.jibini.eb.auth
 
+import java.util.*
+
 /**
- * Represents a set of authentication credentials (username and password).
+ * Represents a set of authentication credentials (username and
+ * password).
  *
  * @author Zach Goethel
  */
@@ -16,3 +19,7 @@ class AuthDetails(
      */
     val password: String
 )
+{
+    val basicAuth: String
+        get() = "Basic ${Base64.getEncoder().encodeToString("$username:$password".toByteArray())}"
+}

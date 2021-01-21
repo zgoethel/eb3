@@ -26,12 +26,12 @@ public class EasyButton
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 	public EasyButtonConfig config;
-	
+
 	/**
 	 * Application initialization.
 	 * 
-	 * Depending on configuration, this may disable certificate validation at a global level due to APIs' neglected or
-	 * self-signed SSL certificates.
+	 * Depending on configuration, this may disable certificate validation at a
+	 * global level due to APIs' neglected or self-signed SSL certificates.
 	 */
 	@PostConstruct
 	public void init()
@@ -80,7 +80,7 @@ public class EasyButton
 	/**
 	 * Entry-point; boots the Spring application.
 	 * 
-	 * @param args Command-line arguments
+	 * @param args Command-line arguments.
 	 */
 	public static void main(String[] args)
 	{

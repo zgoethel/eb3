@@ -6,12 +6,17 @@ import net.jibini.eb.auth.Authenticator
 import org.slf4j.LoggerFactory
 
 /**
- * An authentication implementation which blindly accepts all authentication attempts.
+ * An authentication implementation which blindly accepts all
+ * authentication attempts.
+ *
+ * This is the default authenticator in the configuration, since the
+ * default configuration does not expect any extensions to be installed.
+ * Do not use this authenticator.
  *
  * @author Zach Goethel
  */
 @Authenticator
-class DumbAuthenticator : (AuthDetails) -> Boolean
+class DumbAuthenticatorImpl : (AuthDetails) -> Boolean
 {
     private val log = LoggerFactory.getLogger(this::class.java)
 

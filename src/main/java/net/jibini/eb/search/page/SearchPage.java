@@ -1,7 +1,7 @@
-package net.jibini.eb.search;
+package net.jibini.eb.search.page;
 
 import net.jibini.eb.auth.AuthDetails;
-import net.jibini.eb.auth.LoginPage;
+import net.jibini.eb.auth.page.LoginPage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,8 +1,11 @@
-package net.jibini.eb.auth;
+package net.jibini.eb.auth.page;
 
 import kotlin.jvm.functions.Function1;
 
 import net.jibini.eb.EasyButton;
+import net.jibini.eb.auth.AuthDetails;
+import net.jibini.eb.auth.Authenticator;
+import net.jibini.eb.auth.LoginRequest;
 import net.jibini.eb.impl.ClasspathAnnotationImpl;
 
 import org.slf4j.Logger;
@@ -13,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,30 +41,35 @@ public class LoginPage
     private Object auth = null;
 
     /**
-     * Resorts to the configuration's primary authenticator instance to validate the provided credentials.  If no
-     * authenticator has yet been created, the classpath will be searched for the configured authenticator.
+     * Resorts to the configuration's primary authenticator instance to validate
+     * the provided credentials.  If no authenticator has yet been created, the
+     * classpath will be searched for the configured authenticator.
      *
      * @param details User authentication details to validate.
      *
-     * @return Whether the provided details are valid (true on successful validation).
+     * @return Whether the provided details are valid (true if valid).
      */
     @SuppressWarnings("unchecked")
     public boolean validate(AuthDetails details)
     {
         if (auth == null)
-            auth = ClasspathAnnotationImpl.findAndCreate(Authenticator.class, easyButton.config.getPrimaryAuthenticator());
+            auth = ClasspathAnnotationImpl.findAndCreate(
+                    Authenticator.class,
+                    easyButton.config.getPrimaryAuthenticator()
+            );
 
         return ((Function1<AuthDetails, Boolean>)auth).invoke(details);
     }
 
     /**
-     * Determines whether the current session is valid.  If invalid, this call will redirect the user to the login page
-     * in order to log in and be redirected back to their desired page.
+     * Determines whether the current session is valid.  If invalid, this call
+     * will redirect the user to the login page in order to log in and be
+     * redirected back to their desired page.
      *
      * @param session Session to be validated.
      * @param response Vector by which to redirect the user.
      *
-     * @return Whether the provided session is valid (true on successful validation).
+     * @return Whether the provided session is valid (true if valid).
      */
     public AuthDetails validate(HttpSession session, HttpServletRequest request, HttpServletResponse response)
     {
@@ -74,7 +81,7 @@ public class LoginPage
             {
                 String redirect = request.getRequestURI();
                 if (request.getQueryString() != null)
-                    redirect += "&" + request.getQueryString();
+                    redirect += "?" + request.getQueryString();
 
                 redirect = URLEncoder.encode(redirect, Charset.defaultCharset());
 

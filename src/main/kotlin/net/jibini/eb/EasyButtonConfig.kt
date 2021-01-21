@@ -8,38 +8,46 @@ import com.google.gson.GsonBuilder
 import org.slf4j.LoggerFactory
 
 /**
- * Core configuration for the indexing and querying engines; this file allows configuration of security, performance,
- * and usability features.
+ * Core configuration for the indexing and querying engines; this
+ * file allows configuration of security, performance, and usability
+ * features.
  *
  * @author Zach Goethel
  */
 class EasyButtonConfig
 {
 	/**
-	 * Disables validation of the REST APIs' certificates; this is necessary as some SSL certificates are neglected or
-	 * self-signed.
+	 * Disables validation of the REST APIs' certificates; this is
+	 * necessary as some SSL certificates are neglected or self-signed.
 	 */
-	val disableCertCheck: Boolean = false
+	val disableCertCheck = false
 	
 	/**
-	 * Disables the marketing front page and loads the login page immediately.
+	 * Disables the marketing front page and loads the login page
+	 * immediately.
 	 */
-	val defaultToLoginPage: Boolean = false
+	val defaultToLoginPage = false
 
 	/**
 	 * The simple class name of the system's authenticator class.
 	 */
-	val primaryAuthenticator: String = "DumbAuthenticator"
+	val primaryAuthenticator = "DumbAuthenticatorImpl"
 	
 	companion object
 	{
 		private val log = LoggerFactory.getLogger(this::class.java)
 		
 		/**
-		 * Loads the given configuration data class from its respective JSON file (where the filename is the simple
-		 * class name and the JSON file extension).
+		 * Loads the given configuration data class from its respective
+		 * JSON file (where the filename is the simple class name and
+		 * the JSON file extension).
 		 *
-		 * If the configuration doesn't exist, the provided default value will be written to file and returned.
+		 * If the configuration doesn't exist, the provided default
+		 * value will be written to file and returned.
+		 *
+		 * @return The existing configuration object, or the defaults
+		 *     provided if no file already exists.
+		 * @param T Configuration object and return type.
 		 */
 		@JvmStatic
 		fun <T : Any> loadOrDefault(default: T) : T

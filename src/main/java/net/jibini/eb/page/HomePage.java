@@ -1,4 +1,6 @@
-package net.jibini.eb;
+package net.jibini.eb.page;
+
+import net.jibini.eb.EasyButton;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * The landing page of the EasyButton server, which can either send the user to marketing material or directly to the
- * login (depending on configuration).
+ * The landing page of the EasyButton server, which can either send the user to
+ * marketing material or directly to the login (depending on configuration).
  *
  * @author Zach Goethel
  */

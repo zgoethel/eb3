@@ -1,11 +1,14 @@
 package net.jibini.eb.data
 
 /**
- * Defines a field in a document's schema.  This descriptions states the field's name (key) and the type of value held
- * in that field.  The formatter object will be loaded from the classpath as configured in the schema files.
+ * Defines a field in a document's schema. This descriptions states the
+ * field's name (key) and the type of value held in that field. The
+ * formatter object will be loaded from the classpath as configured in
+ * the schema files.
  *
- * This field description also facilitates indices to search by a certain field.  Indices are also configured in the
- * schema definition files.
+ * This field description also facilitates indices to search by a
+ * certain field. Indices are also configured in the schema definition
+ * files.
  *
  * @author Zach Goethel
  */
@@ -16,13 +19,15 @@ class Field(
     val name: String,
 
     /**
-     * A formatter which can create the proper output (format and type) of any value this field may hold.
+     * A formatter which can create the proper output (format and type)
+     * of any value this field may hold.
      */
     val format: FieldFormat
 )
 {
     /**
-     * Provides a hash such that a set of fields can be stored and retrieved against their names.
+     * Provides a hash such that a set of fields can be stored and
+     * retrieved against their names.
      */
     override fun hashCode(): Int
     {
@@ -31,7 +36,8 @@ class Field(
     }
 
     /**
-     * Allows a set of fields to be stored and retrieved against their names.
+     * Allows a set of fields to be stored and retrieved against their
+     * names.
      *
      * @return If the field provided has the same name as this one.
      */
@@ -39,6 +45,7 @@ class Field(
     {
         if (other == null || other !is Field)
             return false
+
         return other.name == name
     }
 }
