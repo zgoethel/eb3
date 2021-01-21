@@ -20,6 +20,9 @@ class AuthDetails(
     val password: String
 )
 {
+    /**
+     * HTTP request header formatted for basic authentication.
+     */
     val basicAuth: String
         get() = "Basic ${Base64.getEncoder().encodeToString("$username:$password".toByteArray())}"
 }

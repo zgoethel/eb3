@@ -46,8 +46,7 @@ public class LoginPage
      * classpath will be searched for the configured authenticator.
      *
      * @param details User authentication details to validate.
-     *
-     * @return Whether the provided details are valid (true if valid).
+     * @return Whether the provided authentication details are valid.
      */
     @SuppressWarnings("unchecked")
     public boolean validate(AuthDetails details)
@@ -68,8 +67,7 @@ public class LoginPage
      *
      * @param session Session to be validated.
      * @param response Vector by which to redirect the user.
-     *
-     * @return Whether the provided session is valid (true if valid).
+     * @return Whether the provided session is valid.
      */
     public AuthDetails validate(HttpSession session, HttpServletRequest request, HttpServletResponse response)
     {

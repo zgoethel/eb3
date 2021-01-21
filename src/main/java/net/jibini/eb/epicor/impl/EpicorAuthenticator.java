@@ -1,9 +1,11 @@
-package net.jibini.eb.epicor;
+package net.jibini.eb.epicor.impl;
 
 import kotlin.jvm.functions.Function1;
 
 import net.jibini.eb.auth.AuthDetails;
 import net.jibini.eb.auth.Authenticator;
+import net.jibini.eb.epicor.EpicorCall;
+import net.jibini.eb.epicor.EpicorException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

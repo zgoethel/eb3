@@ -25,7 +25,8 @@
                 display: inline-block;
 
                 white-space: nowrap;
-                overflow-x: auto;
+                overflow-x: hidden;
+                overflow-y: auto;
 
                 width: 775px;
             }
@@ -38,7 +39,7 @@
             div.error-log *, div.contact-note *
             {
                 font-family: monospace;
-                text-size: 11px;
+                font-size: 10px;
             }
 
             h2 img.icon
@@ -47,7 +48,7 @@
                 margin-bottom: -0.23em;
             }
 
-            @media only screen and (max-width: 1000px)
+            @media only screen and (max-width: 900px)
             {
                 div.error-log, div.contact-note
                 {
