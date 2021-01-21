@@ -31,7 +31,7 @@ class EasyButtonConfig
 	/**
 	 * The simple class name of the system's authenticator class.
 	 */
-	val primaryAuthenticator = "DumbAuthenticatorImpl"
+	val primaryAuthenticator = "DumbAuthenticator"
 	
 	companion object
 	{

@@ -9,13 +9,7 @@ import org.json.JSONObject;
 
 import org.springframework.http.HttpStatus;
 
-import org.w3c.dom.Document;
-
-import org.xml.sax.SAXException;
-
 import javax.net.ssl.HttpsURLConnection;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -127,14 +121,6 @@ public class EpicorCall
 
             reader.close();
 
-            // Check that the response was not an error
-            int response;
-            if ((response = connection.getResponseCode()) != HttpStatus.OK.value())
-                throw new EpicorException(
-                        String.format("Epicor responded with non-200 status %d", response),
-                        constructException(content)
-                );
-
             try
             {
                 return new JSONObject(content);
@@ -144,58 +130,74 @@ public class EpicorCall
             }
         } catch (IOException ex)
         {
-            throw new EpicorException("An error occurred while communicating", ex);
+            try
+            {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
+                String content = reader
+                        .lines()
+                        .collect(Collectors.joining("\n"));
+
+                // Check that the response was not an error
+                int response;
+                if ((response = connection.getResponseCode()) != HttpStatus.OK.value())
+                    throw new EpicorException(
+                            String.format("Epicor responded with non-200 status (%d)", response),
+                            constructException(content)
+                    );
+                else
+                    throw new EpicorException("An error occurred while communicating", ex);
+            } catch (IOException unRecovered)
+            {
+                throw new EpicorException("An error occurred while communicating", unRecovered);
+            }
         }
     }
 
     /**
-     * @param content Error message or XML-encoded error information.
+     * @param content Error message or JSON-encoded error information. Some error
+     *      responses will be formatted in plain HTML.
      * @return An exception detailing what went wrong according the the provided
      *      server response.
      */
     private EpicorException constructException(String content)
     {
-        if (content.charAt(0) == '<')
-            try
-            {
-                // Parse the content as XML
-                Document document = DocumentBuilderFactory
-                        .newInstance()
-                        .newDocumentBuilder()
-                        .parse(content);
+        switch (content.charAt(0))
+        {
+            case '{':
+                try
+                {
+                    // Parse the content as JSON
+                    JSONObject document = new JSONObject(content);
 
-                // Retrieve field data
-                String exception = document
-                        .getElementsByTagName("ErrorType")
-                        .item(0)
-                        .getTextContent();
-                String httpStatus = document
-                        .getElementsByTagName("HttpStatus")
-                        .item(0)
-                        .getTextContent();
-                String reason = document
-                        .getElementsByTagName("ReasonPhrase")
-                        .item(0)
-                        .getTextContent();
-                String errorMessage = document
-                        .getElementsByTagName("ErrorMessage")
-                        .item(0)
-                        .getTextContent();
+                    // Retrieve field data
+                    int httpStatus = document.getInt("HttpStatus");
 
-                // Format into a useful error message
-                return new EpicorException(String.format(
-                        "%s (%s, %s) - %s",
-                        exception,
-                        reason,
-                        httpStatus,
-                        errorMessage
-                ));
-            } catch (ParserConfigurationException | SAXException | IOException ex)
-            {
-                return new EpicorException("Could not construct response exception", ex);
-            }
+                    String exception = document.getString("ErrorType");
+                    String reason = document.getString("ReasonPhrase");
+                    String errorMessage = document.getString("ErrorMessage");
 
-        // The error message is likely plain text
-        return new EpicorException(content);
+                    // Format into a useful error message
+                    return new EpicorException(String.format(
+                            "%s (%s, %d) - %s",
+                            exception,
+                            reason,
+                            httpStatus,
+                            errorMessage
+                    ));
+                } catch (JSONException ex)
+                {
+                    return new EpicorException("Could not construct response exception", ex);
+                }
+
+            case '<':
+                // Parses the HTML page's title. Originally, this used XML document
+                // parsing; due to a native implementation bug, that would hang on a
+                // native method 'socketRead0'. This is a simple/naive workaround.
+                return new EpicorException(content.split("<[/]*title>", 3)[1]);
+
+            default:
+                // The error message is likely plain text
+                return new EpicorException(content);
+        }
     }
 }

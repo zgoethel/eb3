@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory
  * @author Zach Goethel
  */
 @Authenticator
-class DumbAuthenticatorImpl : (AuthDetails) -> Boolean
+class DumbAuthenticator : (AuthDetails) -> Boolean
 {
     private val log = LoggerFactory.getLogger(this::class.java)
 
