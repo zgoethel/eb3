@@ -25,7 +25,7 @@ tasks.withType(KotlinCompile::class).all {
 }
 
 application {
-	mainClassName = "net.jibini.eb.EasyButton"
+	mainClass.set("net.jibini.eb.EasyButton")
 }
 
 repositories {

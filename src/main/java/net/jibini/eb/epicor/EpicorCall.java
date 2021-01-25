@@ -13,6 +13,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -132,7 +133,11 @@ public class EpicorCall
         {
             try
             {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
+                InputStream input = connection.getErrorStream();
+                if (input == null)
+                    throw new EpicorException("Connection to Epicor backend failed; check address");
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(input));
                 String content = reader
                         .lines()
                         .collect(Collectors.joining("\n"));

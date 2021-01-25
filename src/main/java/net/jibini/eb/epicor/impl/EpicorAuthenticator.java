@@ -27,6 +27,9 @@ public class EpicorAuthenticator implements Function1<AuthDetails, Boolean>
     @Override
     public Boolean invoke(AuthDetails authDetails)
     {
+        if (authDetails == null)
+            return false;
+
         try
         {
             // Attempt to invoke base API path
@@ -36,7 +39,10 @@ public class EpicorAuthenticator implements Function1<AuthDetails, Boolean>
         {
             log.error("Failed to authenticate with Epicor backend", ex);
 
-            return false;
+            if (ex.getMessage().contains("401"))
+                return false;
+            else
+                throw ex;
         }
 
         // Call succeeded, thus authentication was valid

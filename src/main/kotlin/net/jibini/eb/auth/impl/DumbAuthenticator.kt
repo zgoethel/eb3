@@ -16,11 +16,11 @@ import org.slf4j.LoggerFactory
  * @author Zach Goethel
  */
 @Authenticator
-class DumbAuthenticator : (AuthDetails) -> Boolean
+class DumbAuthenticator : (AuthDetails?) -> Boolean
 {
     private val log = LoggerFactory.getLogger(this::class.java)
 
-    override fun invoke(p1: AuthDetails): Boolean
+    override fun invoke(p1: AuthDetails?): Boolean
     {
         log.warn("The dumb authenticator is enabled!  All authentication will succeed!")
 

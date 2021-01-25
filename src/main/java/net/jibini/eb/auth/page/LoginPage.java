@@ -73,7 +73,7 @@ public class LoginPage
     {
         AuthDetails details = (AuthDetails)session.getAttribute("auth-details");
 
-        if (details == null || !validate(details))
+        if (!validate(details))
         {
             try
             {
@@ -102,7 +102,8 @@ public class LoginPage
 
             Model model,
 
-            @RequestParam(defaultValue = "/s") String redirect
+            @RequestParam(defaultValue = "/s") String redirect,
+            @RequestParam(defaultValue = "") String error
     )
     {
         AuthDetails details = (AuthDetails)session.getAttribute("auth-details");
@@ -117,6 +118,7 @@ public class LoginPage
             }
 
         model.addAttribute("redirect", redirect);
+        model.addAttribute("error", error);
 
         return "login";
     }

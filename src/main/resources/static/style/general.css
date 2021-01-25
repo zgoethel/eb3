@@ -78,9 +78,23 @@ sup
 	display: contents;
 }
 
+input
+{
+    padding: 0.9em 0.25em;
+}
+
+input[type='button'], input[type='submit']
+{
+    background: #62006a;
+    color: #ffffff;
+
+    border-radius: 0.5em;
+    border: none;
+}
+
 @media only screen and (min-width: 860px)
 {
-	body
+	body.centered-ribbon
 	{
 		width: 0;
 		
@@ -88,7 +102,7 @@ sup
 		left: 50%;
 	}
 	
-	body > div
+	body > div.centered-ribbon
 	{
 	    width: 850px;
     	margin-left: -425px;
