@@ -2,7 +2,8 @@ package net.jibini.eb.epicor
 
 /**
  * Epicor extension configuration for integration with the Epicor API v1
- * backend.
+ * backend. Allows configuration of the connection to the Epicor backend
+ * and how data is loaded for search indices and aggregation.
  *
  * @author Zach Goethel
  */

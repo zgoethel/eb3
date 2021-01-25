@@ -19,6 +19,13 @@ public class Epicor
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
+    /**
+     * The Epicor configuration file, which is loaded upon startup. If no
+     * configuration existed prior to startup, a default configuration will be
+     * created and returned.
+     *
+     * @see EasyButtonConfig
+     */
     public EpicorConfig config;
 
     /**

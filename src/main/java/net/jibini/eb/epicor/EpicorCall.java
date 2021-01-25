@@ -33,6 +33,9 @@ import java.util.stream.Collectors;
  * will be parsed and rethrown as an {@link EpicorException} detailing what
  * went wrong. In most cases, the error will be a malformed request or filter.
  *
+ * Calls may fail depending on a user's permissions, or lack thereof. Validate
+ * a user's access level to the Epicor backend prior to calls.
+ *
  * @author Zach Goethel
  */
 @Authenticator
@@ -72,6 +75,13 @@ public class EpicorCall
      * details. Results are parsed and returned as a {@link JSONObject}. For
      * properly formatted successful results, listed entries will be in an array
      * called 'value' in the root of the returned JSON.
+     *
+     * API calls will be consumed as JSON; any malformed results or error results
+     * will be parsed and rethrown as an {@link EpicorException} detailing what
+     * went wrong. In most cases, the error will be a malformed request or filter.
+     *
+     * Calls may fail depending on a user's permissions, or lack thereof. Validate
+     * a user's access level to the Epicor backend prior to calls.
      *
      * @param auth Authentication details with which to connect to Epicor.
      * @param args Request parameters for the API call.
@@ -159,6 +169,11 @@ public class EpicorCall
     }
 
     /**
+     * Constructs an exception to be thrown for the given error response from
+     * the Epicor server. The error message may be in several formats, so this
+     * method decides the best way to parse the error message and provide an
+     * exception object.
+     *
      * @param content Error message or JSON-encoded error information. Some error
      *      responses will be formatted in plain HTML.
      * @return An exception detailing what went wrong according the the provided

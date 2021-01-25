@@ -27,6 +27,14 @@ import java.nio.charset.Charset;
 
 /**
  * Page for handling user authentication and API authentication requests.
+ * Requires a primary {@link Authenticator} to be configured.
+ *
+ * Secured pages can redirect to this page, providing the return URL to which
+ * the user will be sent upon successful authentication. The user will be
+ * returned to the login page with an error message upon unsuccessful login.
+ *
+ * All pages should share this common login and authentication system in
+ * order to maintain consistent and central account control.
  *
  * @author Zach Goethel
  */
@@ -35,15 +43,25 @@ public class LoginPage
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
+    // Required to access the related configuration
     @Autowired
     private EasyButton easyButton;
 
+    /**
+     * Cached primary authentication object, loaded and created from the
+     * classpath as configured in the primary configuration.
+     */
     private Object auth = null;
 
     /**
      * Resorts to the configuration's primary authenticator instance to validate
-     * the provided credentials.  If no authenticator has yet been created, the
+     * the provided credentials. If no authenticator has yet been created, the
      * classpath will be searched for the configured authenticator.
+     *
+     * A successful validation using this method indicates that the provided
+     * account is valid; it does not imply that the given account should be
+     * allowed to access anything and everything. Also validate that this account
+     * is permitted to access the secured or restricted data.
      *
      * @param details User authentication details to validate.
      * @return Whether the provided authentication details are valid.
@@ -61,9 +79,14 @@ public class LoginPage
     }
 
     /**
-     * Determines whether the current session is valid.  If invalid, this call
+     * Determines whether the current session is valid. If invalid, this call
      * will redirect the user to the login page in order to log in and be
      * redirected back to their desired page.
+     *
+     * A successful validation using this method indicates that the provided
+     * account is valid; it does not imply that the given account should be
+     * allowed to access anything and everything. Also validate that this account
+     * is permitted to access the secured or restricted data.
      *
      * @param session Session to be validated.
      * @param response Vector by which to redirect the user.

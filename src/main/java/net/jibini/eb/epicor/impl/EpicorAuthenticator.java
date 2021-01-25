@@ -17,6 +17,16 @@ import java.util.HashMap;
  * base URL. A failure to authenticate with the API indicates invalid
  * credentials. Authentication succeeds upon successful connection to the API.
  *
+ * Any user with a valid Epicor account and the matching credentials will be
+ * able to successfully validate their account. Each account's access to the
+ * Epicor backend is still limited by the Epicor account access control.
+ * EasyButton web panel operations will only have access to what the user
+ * account has access to; there is no privileged link to Epicor, so actions
+ * may have to be validated to ensure the user has required permissions.
+ *
+ * Placing this barrier for Epicor account validation on a per-session basis
+ * reduces the potential for an account escalation attack against the backend.
+ *
  * @author Zach Goethel
  */
 @Authenticator
