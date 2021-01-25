@@ -17,7 +17,7 @@ java {
 
 tasks.withType(KotlinCompile::class).all {
 	kotlinOptions {
-		jvmTarget = "1.11"
+		jvmTarget = "11"
 
 		@Suppress("SuspiciousCollectionReassignment")
 		freeCompilerArgs += "-include-runtime"
