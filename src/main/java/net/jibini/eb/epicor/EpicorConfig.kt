@@ -16,4 +16,14 @@ class EpicorConfig
      * Non-conformance will result in errors.
      */
     val baseServerPath = "https://[epicor_path]/epicorerp/api/v1"
+
+    /**
+     * Credential username for sync with Epicor.
+     */
+    val username = "manager"
+
+    /**
+     * Credential password for sync with Epicor.
+     */
+    val password = "manager"
 }

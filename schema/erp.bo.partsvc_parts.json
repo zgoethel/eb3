@@ -3,8 +3,72 @@
   "source": "EpicorSource",
   "fields": [
     {
+      "name": "Company",
+      "format": "StringFormat"
+    },
+    {
       "name": "PartNum",
       "format": "StringFormat"
+    },
+    {
+      "name": "PartDescription",
+      "format": "StringFormat"
+    },
+    {
+      "name": "ClassID",
+      "format": "StringFormat"
+    },
+    {
+      "name": "IUM",
+      "format": "StringFormat"
+    },
+    {
+      "name": "PUM",
+      "format": "StringFormat"
+    },
+    {
+      "name": "TypeCode",
+      "format": "StringFormat"
+    },
+    {
+      "name": "TaxCatIDDescription",
+      "format": "StringFormat"
+    },
+    {
+      "name": "NetWeight",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "NetWeightUOM",
+      "format": "StringFormat"
+    },
+    {
+      "name": "GrossWeight",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "GrossWeightUOM",
+      "format": "StringFormat"
+    },
+    {
+      "name": "RunOut",
+      "format": "BooleanFormat"
+    },
+    {
+      "name": "InActive",
+      "format": "BooleanFormat"
+    },
+    {
+      "name": "UnitPrice",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "CreatedBy",
+      "format": "StringFormat"
+    },
+    {
+      "name": "CreatedOn",
+      "format": "EpicorDateFormat"
     }
   ]
 }
