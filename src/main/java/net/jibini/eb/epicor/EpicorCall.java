@@ -2,7 +2,6 @@ package net.jibini.eb.epicor;
 
 import net.jibini.eb.impl.EasyButtonContextImpl;
 import net.jibini.eb.auth.AuthDetails;
-import net.jibini.eb.auth.Authenticator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,7 +37,6 @@ import java.util.stream.Collectors;
  *
  * @author Zach Goethel
  */
-@Authenticator
 public class EpicorCall
 {
     private final String path;

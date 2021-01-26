@@ -1,7 +1,5 @@
 package net.jibini.eb.auth.page;
 
-import kotlin.jvm.functions.Function1;
-
 import net.jibini.eb.EasyButton;
 import net.jibini.eb.auth.AuthDetails;
 import net.jibini.eb.auth.Authenticator;
@@ -51,7 +49,7 @@ public class LoginPage
      * Cached primary authentication object, loaded and created from the
      * classpath as configured in the primary configuration.
      */
-    private Object auth = null;
+    private Authenticator auth = null;
 
     /**
      * Resorts to the configuration's primary authenticator instance to validate
@@ -66,16 +64,12 @@ public class LoginPage
      * @param details User authentication details to validate.
      * @return Whether the provided authentication details are valid.
      */
-    @SuppressWarnings("unchecked")
     public boolean validate(AuthDetails details)
     {
         if (auth == null)
-            auth = ClasspathAnnotationImpl.findAndCreate(
-                    Authenticator.class,
-                    easyButton.config.getPrimaryAuthenticator()
-            );
+            auth = ClasspathAnnotationImpl.findAndCreate(easyButton.config.getPrimaryAuthenticator());
 
-        return ((Function1<AuthDetails, Boolean>)auth).invoke(details);
+        return auth.invoke(details);
     }
 
     /**

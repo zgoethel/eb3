@@ -2,6 +2,7 @@ package net.jibini.eb.auth.impl
 
 import net.jibini.eb.auth.AuthDetails
 import net.jibini.eb.auth.Authenticator
+import net.jibini.eb.impl.Classpath
 
 import org.slf4j.LoggerFactory
 
@@ -15,8 +16,8 @@ import org.slf4j.LoggerFactory
  *
  * @author Zach Goethel
  */
-@Authenticator
-class DumbAuthenticator : (AuthDetails?) -> Boolean
+@Classpath
+class DumbAuthenticator : Authenticator
 {
     private val log = LoggerFactory.getLogger(this::class.java)
 

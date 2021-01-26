@@ -3,6 +3,8 @@ package net.jibini.eb.impl;
 import io.github.classgraph.ClassGraph;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 /**
  * Implementation utilities for annotation and classpath scanning.
@@ -41,5 +43,16 @@ public class ClasspathAnnotationImpl
         {
             throw new RuntimeException("Failed create an instance of the specified annotated item", ex);
         }
+    }
+
+    /**
+     * Cache classpath entities as space permits.
+     */
+    private static final Map<String, Object> cache = new WeakHashMap<>();
+
+    @SuppressWarnings("unchecked")
+    public static <T> T findAndCreate(String classSimpleName)
+    {
+        return (T)cache.computeIfAbsent(classSimpleName, (key) -> findAndCreate(Classpath.class, key));
     }
 }

@@ -1,6 +1,6 @@
 package net.jibini.eb.data
 
-import net.jibini.eb.data.impl.StringFormat
+import net.jibini.eb.impl.ClasspathAnnotationImpl
 
 import org.json.JSONObject
 
@@ -57,10 +57,10 @@ class DocumentDescriptor(
                     if (it !is JSONObject)
                         throw IllegalStateException("Malformed fields list in document descriptor")
 
-                    //TODO CLASSPATH SCAN FOR FORMATS
-                    val format = StringFormat()
-
-                    descriptor.add(Field(it.getString("name"), format))
+                    descriptor.add(Field(
+                        it.getString("name"),
+                        ClasspathAnnotationImpl.findAndCreate(it.getString("format"))
+                    ))
                 }
 
             return descriptor
@@ -79,9 +79,9 @@ class DocumentDescriptor(
             if (!directory.isDirectory)
                 throw IllegalStateException("Provided file is not a directory")
 
-            val children = directory.listFiles { _, name -> name.toLowerCase().endsWith(".json") }!!
-
-            return children.map { load(it) }
+            return directory
+                .listFiles { _, name -> name.toLowerCase().endsWith(".json") }!!
+                .map { load(it) }
         }
     }
 }

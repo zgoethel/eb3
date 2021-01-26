@@ -1,11 +1,10 @@
 package net.jibini.eb.epicor.impl;
 
-import kotlin.jvm.functions.Function1;
-
 import net.jibini.eb.auth.AuthDetails;
 import net.jibini.eb.auth.Authenticator;
 import net.jibini.eb.epicor.EpicorCall;
 import net.jibini.eb.epicor.EpicorException;
+import net.jibini.eb.impl.Classpath;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,8 +28,8 @@ import java.util.HashMap;
  *
  * @author Zach Goethel
  */
-@Authenticator
-public class EpicorAuthenticator implements Function1<AuthDetails, Boolean>
+@Classpath
+public class EpicorAuthenticator implements Authenticator
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 

@@ -1,12 +1,11 @@
 package net.jibini.eb.auth
 
+import net.jibini.eb.impl.Classpath
+
 /**
- * Marks the annotated class as an authentication object. Classes must
- * implement a Kotlin function type `(AuthDetails?) -> Boolean` (or
- * `Function1<AuthDetails, Boolean>` in Java).
+ * Any type which can take in credentials and validate them.
+ * Implementing classes must be annotated with [Classpath].
  *
  * @author Zach Goethel
  */
-@Target(AnnotationTarget.CLASS)
-@Retention
-annotation class Authenticator
+interface Authenticator : (AuthDetails?) -> Boolean
