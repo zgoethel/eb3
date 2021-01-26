@@ -12,3 +12,15 @@ one succinct view.
 
 This is the open source branch for EasyButton, published under the MIT permissive open-source license.  The source is
 open for usage, modification, and analysis.  Please contact for usage and support in a production environment.
+
+## Data aggregation
+
+## Easy access
+
+## Custom reports
+
+## Task management
+
+## Speedy searches
+
+## Data on the go
