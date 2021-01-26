@@ -151,7 +151,7 @@ public class LoginPage
             HttpServletResponse response,
             HttpSession session,
 
-            @ModelAttribute("login-request") LoginRequest loginRequest
+            @ModelAttribute LoginRequest loginRequest
     )
     {
         AuthDetails details = new AuthDetails(loginRequest.getUsername().toLowerCase(), loginRequest.getPassword());
