@@ -1,4 +1,4 @@
-![EasyButton 3](https://raw.githubusercontent.com/zgoethel/eb3/master/src/main/resources/static/image/eb-logo-paths-readme.svg)
+![EasyButton 3](https://raw.githubusercontent.com/zgoethel/eb3/master/src/main/resources/static/image/readme/eb-logo-paths-readme.svg)
 
 ![Version](https://img.shields.io/badge/version-3.00-green.svg)
 ![Status](https://img.shields.io/badge/status-alpha-orange.svg) 
@@ -14,6 +14,8 @@ This is the open source branch for EasyButton, published under the MIT permissiv
 open for usage, modification, and analysis.  Please contact for usage and support in a production environment.
 
 ## Data aggregation
+
+![Data aggregation](https://raw.githubusercontent.com/zgoethel/eb3/master/src/main/resources/static/image/readme/data-aggregation.svg)
 
 ## Easy access
 
