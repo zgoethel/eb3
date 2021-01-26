@@ -1,9 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+import org.kt3k.gradle.plugin.coveralls.CoverallsTask
+
 plugins {
 	kotlin("jvm") version "1.4.20"
 
-	`java-library`
+	java
 	application
 
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
@@ -67,17 +69,37 @@ dependencies {
 	testImplementation("junit", "junit", "4.12")
 }
 
+// Gather test result data into root report
+tasks.register<JacocoReport>("jacocoRootReport") {
+	executionData.setFrom(files((tasks.getByName("jacocoTestReport") as JacocoReport).executionData))
+
+	reports {
+		html.isEnabled = true
+		xml.isEnabled = true
+		csv.isEnabled = false
+	}
+
+	onlyIf { true }
+}
+
+// Set up the Jacoco initial testing reports
 tasks.withType<JacocoReport> {
+	dependsOn.add(tasks.test)
+
 	classDirectories.setFrom(
 		sourceSets.main.get().output.asFileTree
 	)
 }
 
+// Include all source for Coveralls
 coveralls.sourceDirs.addAll(sourceSets.main.get().allSource.srcDirs.map { it.path })
+// Set the path of the root report
 coveralls.jacocoReportPath = "${buildDir}/reports/jacoco/jacocoRootReport/jacocoRootReport.xml"
 
-tasks.withType<org.kt3k.gradle.plugin.coveralls.CoverallsTask>
+// Set up the Coveralls root report uploading
+tasks.withType<CoverallsTask>
 {
-	dependsOn.add(tasks.getByName("jacocoTestReport"))
-	onlyIf { System.getenv()["CI"] != null }
+	dependsOn.add(tasks.getByName("jacocoRootReport"))
+
+	onlyIf { true }
 }
