@@ -1,9 +1,12 @@
 package net.jibini.eb.auth.page;
 
 import net.jibini.eb.EasyButton;
+import net.jibini.eb.EasyButtonConfig;
 import net.jibini.eb.auth.AuthDetails;
 import net.jibini.eb.auth.Authenticator;
+import net.jibini.eb.epicor.impl.EpicorAuthenticator;
 import net.jibini.eb.auth.LoginRequest;
+import net.jibini.eb.auth.impl.DumbAuthenticator;
 import net.jibini.eb.impl.ClasspathAnnotationImpl;
 
 import org.slf4j.Logger;
@@ -32,7 +35,23 @@ import java.nio.charset.Charset;
  * returned to the login page with an error message upon unsuccessful login.
  *
  * All pages should share this common login and authentication system in
- * order to maintain consistent and central account control.
+ * order to maintain consistent and central account control. This ensures
+ * that pages which require a valid login to view will be secure behind an
+ * account. This login page only ensure there is an active session, but does
+ * not necessarily guarantee the authenticated account has access to every
+ * section of the site. Permissions should be validated for restricted pages
+ * and operations.
+ *
+ * The {@link Authenticator} instance is loaded from the classpath according
+ * to the configured primary authenticator in {@link EasyButtonConfig}. The
+ * instance is lazily created upon the first authentication attempt. By
+ * default, the configuration points to {@link DumbAuthenticator} which will
+ * authenticate all users without login. Configure the EasyButton server to
+ * use a valid authentication implementation.
+ *
+ * For Epicor, use the {@link EpicorAuthenticator}. It will authenticate
+ * login requests again valid Epicor accounts. Check the documentation for
+ * that authenticator for details about Epicor account validation.
  *
  * @author Zach Goethel
  */
@@ -76,6 +95,10 @@ public class LoginPage
      * Determines whether the current session is valid. If invalid, this call
      * will redirect the user to the login page in order to log in and be
      * redirected back to their desired page.
+     *
+     * Resorts to the configuration's primary authenticator instance to validate
+     * the provided session. If no authenticator has yet been created, the
+     * classpath will be searched for the configured authenticator.
      *
      * A successful validation using this method indicates that the provided
      * account is valid; it does not imply that the given account should be

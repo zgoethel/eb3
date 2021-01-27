@@ -26,6 +26,11 @@ import java.util.HashMap;
  * Placing this barrier for Epicor account validation on a per-session basis
  * reduces the potential for an account escalation attack against the backend.
  *
+ * A successful validation using this method indicates that the provided
+ * account is valid; it does not imply that the given account should be
+ * allowed to access anything and everything. Also validate that this account
+ * is permitted to access the secured or restricted data.
+ *
  * @author Zach Goethel
  */
 @Classpath

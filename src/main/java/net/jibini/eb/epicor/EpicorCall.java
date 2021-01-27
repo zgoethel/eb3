@@ -28,12 +28,16 @@ import java.util.stream.Collectors;
  * validation of their results. The base server address is determined by the
  * configuration file for the Epicor implementation extension.
  *
- * API calls will be consumed as JSON; any malformed results or error results
+ * API results will be consumed as JSON; any malformed results or error results
  * will be parsed and rethrown as an {@link EpicorException} detailing what
  * went wrong. In most cases, the error will be a malformed request or filter.
  *
  * Calls may fail depending on a user's permissions, or lack thereof. Validate
  * a user's access level to the Epicor backend prior to calls.
+ *
+ * Epicor services are OData-compliant. For more information on OData selection
+ * ($select) and filter ($filter) arguments, see this article about OData:
+ * <a href="https://docs.microsoft.com/en-us/odata/concepts/queryoptions-overview">Microsoft docs</a>.
  *
  * @author Zach Goethel
  */
@@ -97,10 +101,10 @@ public class EpicorCall
         StringBuilder url = new StringBuilder(String.format("%s?", path));
 
         args.forEach((key, value) -> url
-                .append(key)
-                .append('=')
-                .append(URLEncoder.encode(value, Charset.defaultCharset()))
-                .append('&'));
+            .append(key)
+            .append('=')
+            .append(URLEncoder.encode(value, Charset.defaultCharset()))
+            .append('&'));
 
         HttpsURLConnection connection;
 
@@ -125,8 +129,8 @@ public class EpicorCall
             // Read the server's response
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String content = reader
-                    .lines()
-                    .collect(Collectors.joining("\n"));
+                .lines()
+                .collect(Collectors.joining("\n"));
 
             reader.close();
 
@@ -147,8 +151,8 @@ public class EpicorCall
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(input));
                 String content = reader
-                        .lines()
-                        .collect(Collectors.joining("\n"));
+                    .lines()
+                    .collect(Collectors.joining("\n"));
 
                 // Check that the response was not an error
                 int response;
