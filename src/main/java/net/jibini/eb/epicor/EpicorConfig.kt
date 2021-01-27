@@ -26,4 +26,9 @@ class EpicorConfig
      * Credential password for sync with Epicor.
      */
     val password = "manager"
+
+    /**
+     * Incremental cache sync interval (in seconds).
+     */
+    val refreshInterval = 60;
 }

@@ -11,8 +11,6 @@ import net.jibini.eb.impl.Classpath;
 
 import org.jetbrains.annotations.NotNull;
 
-import org.json.JSONObject;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collection;
@@ -50,6 +48,7 @@ public class EpicorSource implements DataSource
         return this.retrieveIncrementalFor(descriptor);
     }
 
+    @SuppressWarnings("unchecked")
     @NotNull
     @Override
     public Collection<Document> retrieveIncrementalFor(@NotNull DocumentDescriptor descriptor)
@@ -71,12 +70,14 @@ public class EpicorSource implements DataSource
         // Call the service and create documents
         return call.call(new AuthDetails(epicor.config.getUsername(), epicor.config.getPassword()), args)
                 .getJSONArray("value")
+                // Conversion to List converts child elements to Map or List
+                // as well; no `JSONObject.toMap()` required later on
                 .toList()
                 .stream()
                 .map((entry) ->
                 {
                     Document document = new Document(descriptor);
-                    document.getInternal().putAll(((JSONObject) entry).toMap());
+                    document.getInternal().putAll((Map<String, ?>)entry);
 
                     return document;
                 })
