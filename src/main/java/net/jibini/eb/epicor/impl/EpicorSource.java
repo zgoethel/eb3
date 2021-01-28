@@ -8,10 +8,9 @@ import net.jibini.eb.data.Field;
 import net.jibini.eb.epicor.Epicor;
 import net.jibini.eb.epicor.EpicorCall;
 import net.jibini.eb.impl.Classpath;
+import net.jibini.eb.impl.EasyButtonContextImpl;
 
 import org.jetbrains.annotations.NotNull;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -51,17 +50,13 @@ import java.util.stream.Collectors;
  * records will be written to the document descriptor's repository as well as
  * returned when the sync is requested.
  *
- * This implementation is operationally complex and is subject to optimization.
- * Currently, several array copies may be created during a sync.
- *
  * @author Zach Goethel
  */
 @Classpath
 public class EpicorSource implements DataSource
 {
     // Required to access Epicor configuration
-    @Autowired
-    private Epicor epicor;
+    private final Epicor epicor = EasyButtonContextImpl.getBean(Epicor.class);
 
     /**
      * Recorded "last imported" indices for each document descriptor type. Zero

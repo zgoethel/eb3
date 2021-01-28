@@ -30,10 +30,11 @@ public class EasyButtonContextImpl implements ApplicationContextAware
      * @param <T> Type parameter of the requested bean.
      * @return The bean instance, or null if it is not yet created.
      */
+    @NotNull
     public static <T> T getBean(Class<T> componentType)
     {
         if (context == null)
-            return null;
+            throw new IllegalStateException("Context is null; context aware object is not ready");
 
         return context.getBean(componentType);
     }
