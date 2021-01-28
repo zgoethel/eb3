@@ -37,16 +37,14 @@ import java.util.stream.Collectors;
  * than the previously imported index. Existing cached documents will be updated
  * with modified data, and newly created entries will be added to the cache.
  * For more information, see this article about SQL transaction IDs on
- * <a href="https://docs.microsoft.com/en-us/sql/t-sql/data-types/rowversion-transact-sql">Microsoft docs</a>
- * and this
- * <a href="https://www.epiusers.help/t/basic-dumb-question-what-is-the-sysrowid-sysrevid/57282/2">forum thread</a>
- * on the EpiUsers forum.
+ * <a href="https://rb.gy/1qjvaq">Microsoft docs</a> and this
+ * <a href="https://rb.gy/wyiquz">forum thread</a> on the EpiUsers forum.
  *
  * Only the fields required by the document descriptor will be selected. This
  * should reduce the bandwidth consumed by reading from Epicor's API. For more
  * information on OData selection ($select) and filter ($filter) arguments, see
- * this article about OData queries on
- * <a href="https://docs.microsoft.com/en-us/odata/concepts/queryoptions-overview">Microsoft docs</a>.
+ * this article about OData queries on <a href="https://rb.gy/tkopre">Microsoft
+ * docs</a>.
  *
  * All cached Epicor services share this common data source. Services are
  * differentiated by the name of the document descriptor. Updates and new

@@ -25,6 +25,6 @@ class DumbAuthenticator : Authenticator
     {
         log.warn("The dumb authenticator is enabled!  All authentication will succeed!")
 
-        return true;
+        return true
     }
 }

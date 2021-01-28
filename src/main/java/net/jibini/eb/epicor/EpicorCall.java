@@ -36,8 +36,8 @@ import java.util.stream.Collectors;
  * a user's access level to the Epicor backend prior to calls.
  *
  * Epicor services are OData-compliant. For more information on OData selection
- * ($select) and filter ($filter) arguments, see this article about OData:
- * <a href="https://docs.microsoft.com/en-us/odata/concepts/queryoptions-overview">Microsoft docs</a>.
+ * ($select) and filter ($filter) arguments, see this article about OData queries
+ * on <a href="https://rb.gy/tkopre">Microsoft docs</a>.
  *
  * @author Zach Goethel
  */
