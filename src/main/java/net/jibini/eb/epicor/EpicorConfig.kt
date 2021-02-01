@@ -28,7 +28,18 @@ class EpicorConfig
     val password = "manager"
 
     /**
-     * Incremental cache sync interval (in seconds).
+     * Incremental cache sync interval (in seconds). Repositories will
+     * be updated incrementally from Epicor with this interval between
+     * syncs.
      */
-    val refreshInterval = 60;
+    val refreshInterval = 60
+
+    /**
+     * Working directory schema folder which contains Epicor document
+     * schema definitions.
+     *
+     * Repositories will be created and synchronized for documents
+     * defined here.
+     */
+    val schemaDirectory = "epicor_schema"
 }

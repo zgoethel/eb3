@@ -1,73 +1,77 @@
 {
-  "name": "Erp.BO.PartSvc/Parts",
+  "name": "EB3_PART_MASTER",
   "source": "EpicorSource",
+
+  "primaryKey": "Part_PartNum",
+  "trackIndex": "Part_SysRevID",
+
   "fields": [
     {
-      "name": "Company",
+      "name": "Part_Company",
       "format": "StringFormat"
     },
     {
-      "name": "PartNum",
+      "name": "Part_PartNum",
       "format": "StringFormat"
     },
     {
-      "name": "PartDescription",
+      "name": "Part_PartDescription",
       "format": "StringFormat"
     },
     {
-      "name": "ClassID",
+      "name": "Part_ClassID",
       "format": "StringFormat"
     },
     {
-      "name": "IUM",
+      "name": "Part_IUM",
       "format": "StringFormat"
     },
     {
-      "name": "PUM",
+      "name": "Part_PUM",
       "format": "StringFormat"
     },
     {
-      "name": "TypeCode",
+      "name": "Part_TypeCode",
       "format": "StringFormat"
     },
     {
-      "name": "TaxCatIDDescription",
+      "name": "Part_TaxCatIDDescription",
       "format": "StringFormat"
     },
     {
-      "name": "NetWeight",
+      "name": "Part_NetWeight",
       "format": "FloatFormat"
     },
     {
-      "name": "NetWeightUOM",
+      "name": "Part_NetWeightUOM",
       "format": "StringFormat"
     },
     {
-      "name": "GrossWeight",
+      "name": "Part_GrossWeight",
       "format": "FloatFormat"
     },
     {
-      "name": "GrossWeightUOM",
+      "name": "Part_GrossWeightUOM",
       "format": "StringFormat"
     },
     {
-      "name": "RunOut",
+      "name": "Part_RunOut",
       "format": "BooleanFormat"
     },
     {
-      "name": "InActive",
+      "name": "Part_InActive",
       "format": "BooleanFormat"
     },
     {
-      "name": "UnitPrice",
+      "name": "Part_UnitPrice",
       "format": "FloatFormat"
     },
     {
-      "name": "CreatedBy",
+      "name": "Part_CreatedBy",
       "format": "StringFormat"
     },
     {
-      "name": "CreatedOn",
+      "name": "Part_CreatedOn",
       "format": "EpicorDateFormat"
     }
   ]

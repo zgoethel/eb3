@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.DependsOn;
 
 /**
  * Application entry point and basic configuration.
@@ -21,6 +22,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Zach Goethel
  */
 @SpringBootApplication
+@DependsOn("context")
 public class EasyButton
 {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());

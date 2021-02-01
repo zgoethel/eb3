@@ -38,7 +38,24 @@ class DocumentDescriptor(
      *
      * Document caches will be kept against this name.
      */
-    val name: String
+    val name: String,
+
+    /**
+     * This document's primary key. Each instance of a document with
+     * this schema will be hashed against the string value of the value
+     * associated with this key.
+     *
+     * For example, set to "PartNum" for parts. Part documents are then
+     * indexed against their part numbers.
+     */
+    val primaryKey: String,
+
+    /**
+     * The system revision ID, which is Epicor's representation of the
+     * SQL sequential exchange counter. For a table called "Part," this
+     * should be "Part_SysRevID."
+     */
+    val trackIndex: String
 )
 {
     /**
@@ -77,6 +94,23 @@ class DocumentDescriptor(
     companion object
     {
         /**
+         * Map containing all document descriptors which have been
+         * loaded, hashed against their names.
+         */
+        private val loaded = mutableMapOf<String, DocumentDescriptor>()
+
+        /**
+         * Retrieves the descriptor with the given name, assuming one
+         * has been loaded.
+         *
+         * @throws NullPointerException If no descriptor with the given
+         *     name has been loaded.
+         * @return The loaded document descriptor with the given name.
+         */
+        @JvmStatic
+        fun forName(name: String) = loaded[name]!!
+
+        /**
          * Loads the given JSON document descriptor. The provided file
          * should be a JSON file containing the schema name, source, and
          * fields defined for the schema. Each field should define a
@@ -97,7 +131,11 @@ class DocumentDescriptor(
                 throw IllegalStateException("Provided file is not a valid file")
 
             val json = JSONObject(file.readText())
-            val descriptor = DocumentDescriptor(json.getString("name"))
+            val descriptor = DocumentDescriptor(
+                json.getString("name"),
+                json.getString("primaryKey"),
+                json.getString("trackIndex")
+            )
 
             json.getJSONArray("fields")
                 .forEach {
@@ -109,6 +147,8 @@ class DocumentDescriptor(
                         ClasspathAnnotationImpl.findAndCreate(it.getString("format"))
                     ))
                 }
+
+            loaded[descriptor.name] = descriptor
 
             return descriptor
         }

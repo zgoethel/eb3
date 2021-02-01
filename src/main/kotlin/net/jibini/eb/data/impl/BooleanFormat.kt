@@ -13,7 +13,7 @@ class BooleanFormat : FieldFormat
 {
     override fun invoke(any: Any?) = when (any)
     {
-        true, "true" -> true
+        true, "T", "true" -> true
         null -> null
 
         else -> false

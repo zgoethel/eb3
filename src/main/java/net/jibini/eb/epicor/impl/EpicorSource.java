@@ -1,16 +1,18 @@
 package net.jibini.eb.epicor.impl;
 
 import net.jibini.eb.auth.AuthDetails;
-import net.jibini.eb.data.DataSource;
 import net.jibini.eb.data.Document;
 import net.jibini.eb.data.DocumentDescriptor;
-import net.jibini.eb.data.Field;
+import net.jibini.eb.data.impl.AbstractCachedDataSourceImpl;
 import net.jibini.eb.epicor.Epicor;
 import net.jibini.eb.epicor.EpicorCall;
 import net.jibini.eb.impl.Classpath;
 import net.jibini.eb.impl.EasyButtonContextImpl;
 
 import org.jetbrains.annotations.NotNull;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -53,8 +55,10 @@ import java.util.stream.Collectors;
  * @author Zach Goethel
  */
 @Classpath
-public class EpicorSource implements DataSource
+public class EpicorSource extends AbstractCachedDataSourceImpl
 {
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+
     // Required to access Epicor configuration
     private final Epicor epicor = EasyButtonContextImpl.getBean(Epicor.class);
 
@@ -65,56 +69,47 @@ public class EpicorSource implements DataSource
      */
     private final Map<String, Integer> lastLoaded = new HashMap<>();
 
-    @NotNull
-    @Override
-    public Collection<Document> retrieveFor(@NotNull DocumentDescriptor descriptor)
-    {
-        // Reset the last loaded number to load all documents
-        lastLoaded.put(descriptor.getName(), 0);
-
-        return this.retrieveIncrementalFor(descriptor);
-    }
-
     @SuppressWarnings("unchecked")
     @NotNull
     @Override
-    public Collection<Document> retrieveIncrementalFor(@NotNull DocumentDescriptor descriptor)
+    public Collection<Document> performIncrementalFor(@NotNull DocumentDescriptor descriptor)
     {
-        // Create the Epicor service for the document
-        EpicorCall call = new EpicorCall(descriptor.getName());
-        Map<String, String> args = new HashMap<>();
+        log.info(String.format("Performing incremental update for '%s' . . .", descriptor.getName()));
 
-        // Select only the fields that matter
-        args.put("$select", descriptor
-                .getFields()
-                .values()
-                .stream()
-                .map(Field::getName)
-                .collect(Collectors.joining(",")) + ",SysRevID");
-        // Filter down to only newly changed entries
-        args.put("$filter", String.format("SysRevID gt %d", lastLoaded.getOrDefault(descriptor.getName(), 0)));
+        // Create the Epicor service for the document
+        EpicorCall call = new EpicorCall("BaqSvc/" + descriptor.getName());
+        Map<String, String> args = new HashMap<>();
+        // Filter down to only new entries
+        args.put("$filter", String.format("%s gt %d",
+                descriptor.getTrackIndex(),
+                lastLoaded.getOrDefault(descriptor.getName(), 0)));
 
         // Call the service and create documents
         //TODO RELY ON CURRENT SESSION FOR CREDENTIALS; DON'T HAVE IN CONFIG
         return call.call(new AuthDetails(epicor.config.getUsername(), epicor.config.getPassword()), args)
                 .getJSONArray("value")
+
                 // Conversion to List converts child elements to Map or List
                 // as well; no `JSONObject.toMap()` required later on
                 .toList()
                 .stream()
+
                 .map((entry) ->
                 {
                     Map<String, ?> map = (Map<String, ?>)entry;
 
-                    if ((Integer)map.get("SysRevID") > lastLoaded.getOrDefault(descriptor.getName(), 0))
-                        lastLoaded.put(descriptor.getName(), (Integer)map.get("SysRevID"));
+                    int newlyLoaded = Integer.parseInt(map.get(descriptor.getTrackIndex()).toString());
+                    int previouslyLoaded = lastLoaded.getOrDefault(descriptor.getName(), 0);
 
-                    //TODO UPDATE REPOSITORY RATHER THAN CREATE NEW INSTANCE
+                    if (newlyLoaded > previouslyLoaded)
+                        lastLoaded.put(descriptor.getName(), newlyLoaded);
+
                     Document document = new Document(descriptor);
                     document.getInternal().putAll(map);
 
                     return document;
                 })
+
                 .collect(Collectors.toList());
     }
 }

@@ -17,7 +17,7 @@ public class TestLoadedDocumentSchema
     @Test
     public void canLoadSchemaFromFile()
     {
-        File schemaFile = new File("schema/erp.bo.partsvc_parts.json");
+        File schemaFile = new File("epicor_schema/erp.bo.partsvc_parts.json");
         DocumentDescriptor descriptor = DocumentDescriptor.load(schemaFile);
 
         // Assert the fields were loaded
@@ -71,7 +71,7 @@ public class TestLoadedDocumentSchema
     @Test
     public void canLoadSchemasFromFolder()
     {
-        File schemaFolder = new File("schema");
+        File schemaFolder = new File("epicor_schema");
         Collection<DocumentDescriptor> descriptors = DocumentDescriptor.loadAll(schemaFolder);
 
         boolean has = false;

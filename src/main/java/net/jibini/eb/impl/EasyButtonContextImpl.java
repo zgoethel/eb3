@@ -2,10 +2,11 @@ package net.jibini.eb.impl;
 
 import org.jetbrains.annotations.NotNull;
 
-import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * Provides access to Spring beans to classes which are not subject to resource
@@ -14,15 +15,18 @@ import org.springframework.stereotype.Component;
  *
  * @author Zach Goethel
  */
-@Component
-public class EasyButtonContextImpl implements ApplicationContextAware
+@Component("context")
+public class EasyButtonContextImpl
 {
-    private static ApplicationContext context = null;
+    private static ApplicationContext context;
 
-    @Override
-    public void setApplicationContext(@NotNull ApplicationContext applicationContext) throws BeansException
+    @Autowired
+    private ApplicationContext contextAutowired;
+
+    @PostConstruct
+    public void init()
     {
-        context = applicationContext;
+        context = contextAutowired;
     }
 
     /**
