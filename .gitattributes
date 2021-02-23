@@ -3,3 +3,5 @@
 #
 # These are explicitly windows files and should use crlf
 *.bat           text eol=crlf
+*.java          text eol=lf
+*.kt            text eol=lf

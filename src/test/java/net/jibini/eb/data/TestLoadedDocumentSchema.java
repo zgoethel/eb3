@@ -17,33 +17,33 @@ public class TestLoadedDocumentSchema
     @Test
     public void canLoadSchemaFromFile()
     {
-        File schemaFile = new File("epicor_schema/erp.bo.partsvc_parts.json");
+        File schemaFile = new File("epicor_schema/eb3_part_master.json");
         DocumentDescriptor descriptor = DocumentDescriptor.load(schemaFile);
 
         // Assert the fields were loaded
-        Assert.assertTrue("Schema is missing \"PartNun\"", descriptor
+        Assert.assertTrue("Schema is missing \"Part_PartNum\"", descriptor
                 .getFields()
-                .containsKey("PartNum"));
+                .containsKey("Part_PartNum"));
 
         // Assert certain fields are formatted correctly
         Assert.assertEquals("Hello, world!", descriptor
                 .getFields()
-                .get("PartNum")
+                .get("Part_PartNum")
                 .getFormat()
                 .invoke("Hello, world!"));
         Assert.assertEquals(32.0f, descriptor
                 .getFields()
-                .get("NetWeight")
+                .get("Part_NetWeight")
                 .getFormat()
                 .invoke("32"));
         Assert.assertNull(descriptor
                 .getFields()
-                .get("PartNum")
+                .get("Part_PartNum")
                 .getFormat()
                 .invoke(null));
         Assert.assertNull(descriptor
                 .getFields()
-                .get("NetWeight")
+                .get("Part_NetWeight")
                 .getFormat()
                 .invoke(null));
 
@@ -58,12 +58,12 @@ public class TestLoadedDocumentSchema
         // Assert dates are formatted correctly
         Assert.assertEquals(date, descriptor
                 .getFields()
-                .get("CreatedOn")
+                .get("Part_CreatedOn")
                 .getFormat()
                 .invoke(formatted));
         Assert.assertNull(descriptor
                 .getFields()
-                .get("CreatedOn")
+                .get("Part_CreatedOn")
                 .getFormat()
                 .invoke(null));
     }
@@ -78,7 +78,7 @@ public class TestLoadedDocumentSchema
 
         for (DocumentDescriptor descriptor : descriptors)
         {
-            if (descriptor.getName().equals("Erp.BO.PartSvc/Parts"))
+            if (descriptor.getName().equals("EB3_PART_MASTER"))
                 has = true;
         }
 
