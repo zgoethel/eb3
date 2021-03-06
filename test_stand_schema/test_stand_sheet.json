@@ -1,0 +1,122 @@
+{
+  "name": "TEST_STAND_SHEET",
+  "source": "TestStandSource",
+
+  "primaryKey": "file_name",
+  "trackIndex": "",
+
+  "fields": [
+    {
+      "name": "file_name",
+      "format": "StringFormat"
+    },
+    {
+      "name": "hash_sha",
+      "format": "StringFormat"
+    },
+    {
+      "name": "model",
+      "format": "StringFormat"
+    },
+    {
+      "name": "evap_hx",
+      "format": "StringFormat"
+    },
+    {
+      "name": "cond_hx",
+      "format": "StringFormat"
+    },
+    {
+      "name": "comp_a",
+      "format": "StringFormat"
+    },
+    {
+      "name": "comp_b",
+      "format": "StringFormat"
+    },
+    {
+      "name": "job_num",
+      "format": "StringFormat"
+    },
+    {
+      "name": "job_name",
+      "format": "StringFormat"
+    },
+    {
+      "name": "serial",
+      "format": "StringFormat"
+    },
+    {
+      "name": "ref_ch_a",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "ref_ch_b",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "suc_sat_a",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "suc_sat_b",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "dis_sat_a",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "dis_sat_b",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "super_a",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "super_b",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "cond_wf",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "corr_water_c",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "cond_temp_e",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "cond_temp_l",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "evap_wf",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "corr_water_e",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "evap_temp_e",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "evap_temp_l",
+      "format": "FloatFormat"
+    },
+    {
+      "name": "ckt_a_eev",
+      "format": "StringFormat"
+    },
+    {
+      "name": "ckt_b_eev",
+      "format": "StringFormat"
+    }
+  ]
+}
