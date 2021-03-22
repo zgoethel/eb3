@@ -66,6 +66,9 @@ public class EpicorSource extends AbstractCachedDataSourceImpl
      * Recorded "last imported" indices for each document descriptor type. Zero
      * indicates the next incremental update will load the entirety of the
      * service values. Values are updated here each time an update is performed.
+     *
+     * These indices are the greatest value of "SysRevID" loaded for a specific
+     * Epicor service name.
      */
     private final Map<String, Integer> lastLoaded = new HashMap<>();
 

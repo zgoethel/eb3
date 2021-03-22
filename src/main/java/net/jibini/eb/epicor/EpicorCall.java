@@ -147,7 +147,7 @@ public class EpicorCall
             {
                 InputStream input = connection.getErrorStream();
                 if (input == null)
-                    throw new EpicorException("Connection to Epicor backend failed; check address");
+                    throw new EpicorException("Connection to Epicor backend failed", ex);
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(input));
                 String content = reader
@@ -158,8 +158,8 @@ public class EpicorCall
                 int response;
                 if ((response = connection.getResponseCode()) != HttpStatus.OK.value())
                     throw new EpicorException(
-                            String.format("Epicor responded with non-200 status (%d)", response),
-                            constructException(content)
+                        String.format("Epicor responded with non-200 status (%d)", response),
+                        constructException(content)
                     );
                 else
                     throw new EpicorException("An error occurred while communicating", ex);
@@ -200,11 +200,11 @@ public class EpicorCall
 
                     // Format into a useful error message
                     return new EpicorException(String.format(
-                            "%s (%s, %d) - %s",
-                            exception,
-                            reason,
-                            httpStatus,
-                            errorMessage
+                        "%s (%s, %d) - %s",
+                        exception,
+                        reason,
+                        httpStatus,
+                        errorMessage
                     ));
                 } catch (JSONException ex)
                 {
