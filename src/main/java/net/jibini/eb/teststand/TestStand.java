@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
-import java.util.Collection;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -45,12 +44,6 @@ public class TestStand
     public DataSource source;
 
     /**
-     * This plugin's loaded document descriptors. Documents described here will
-     * be incrementally loaded on a scheduled update interval.
-     */
-    public Collection<DocumentDescriptor> descriptors;
-
-    /**
      * Test-stand extension initialization. Loads the test-stand configuration.
      *
      * Initializes the test-stand document schemas and prepares to accept new
@@ -63,7 +56,7 @@ public class TestStand
         config = EasyButtonConfig.loadOrDefault(new TestStandConfig());
 
         // Load the vendor plugin schemas from the assets
-        descriptors = DocumentDescriptor.loadAll(new File(config.getSchemaDirectory()));
+        DocumentDescriptor.loadAll(new File(config.getSchemaDirectory()));
 
         if (config.isClient())
         {

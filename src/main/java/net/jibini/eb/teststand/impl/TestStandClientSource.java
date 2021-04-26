@@ -32,9 +32,21 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
     // Required to access test-stand configuration
     private final TestStand testStand = EasyButtonContextImpl.getBean(TestStand.class);
 
+    /**
+     * Whether this source has loaded at least once. When false, existing pre-
+     * loaded documents will be read from the store file.
+     */
     private boolean initialLoad = false;
 
+    /**
+     * A hash-set of all document file names which are loaded.
+     */
     private final Set<String> loaded = new HashSet<>();
+
+    /**
+     * Load in the workbook definitions for parsing workbooks.
+     */
+    private final TestStandDefinitionImpl def = new TestStandDefinitionImpl(testStand.config.getDefinitionDirectory());
 
     @NotNull
     @Override
@@ -42,6 +54,7 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
     {
         List<Document> books = new ArrayList<>();
 
+        // Load from store file if not yet loaded
         if (!initialLoad)
         {
             initialLoad(books, descriptor);
@@ -84,6 +97,17 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
         return books;
     }
 
+    /**
+     * Loads a specified workbook as a document object. The parser will attempt
+     * to find an appropriate test-stand format definition for the workbook.
+     *
+     * @param file File pointing to the workbook.
+     * @param descriptor Descriptor with which to create a document.
+     * @return Created document with parsed workbook values; if no parsing
+     *      definition can be found for the workbook, the document may be empty
+     *      except for the filename.
+     * @throws IOException If a read error occurs while parsing.
+     */
     @NotNull
     private Document loadDocument(File file, DocumentDescriptor descriptor) throws IOException
     {
@@ -91,6 +115,7 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
         Workbook book = WorkbookFactory.create(file);
 
         document.getInternal().put("file_name", file.getName());
+        def.fill(document, book);
 
         book.close();
 
@@ -98,59 +123,52 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
     }
 
     /**
-     * Loads already-indexed workbooks from file into memory.
+     * Loads already-indexed workbooks from store file into memory.
      */
     private void initialLoad(List<Document> books, DocumentDescriptor descriptor)
     {
-        try
+        File store = new File(testStand.config.getDocumentStore());
+
+        if (store.exists())
         {
-            File store = new File(testStand.config.getDocumentStore());
-
-            if (store.exists())
+            try
             {
-                try
+                BufferedReader reader = new BufferedReader(new FileReader(store));
+                String line;
+
+                while ((line = reader.readLine()) != null)
                 {
-                    BufferedReader reader = new BufferedReader(new FileReader(store));
-                    String line;
+                    if (line.length() == 0) continue;
 
-                    while ((line = reader.readLine()) != null)
-                    {
-                        if (line.length() == 0) continue;
+                    JSONObject entry = new JSONObject(line);
 
-                        JSONObject entry = new JSONObject(line);
+                    Document document = new Document(descriptor);
+                    document.getInternal().putAll(entry.toMap());
+                    books.add(document);
 
-                        Document document = new Document(descriptor);
-                        document.getInternal().putAll(entry.toMap());
-                        System.out.println(entry.toMap());
-                        books.add(document);
-
-                        loaded.add(Objects.requireNonNull(document.get("file_name")).toString());
-                    }
-
-                    reader.close();
-                } catch (IOException ex)
-                {
-                    log.error("Failed to load already-scanned test sheets", ex);
+                    loaded.add(Objects.requireNonNull(document.get("file_name")).toString());
                 }
-            } else
+
+                reader.close();
+            } catch (IOException ex)
             {
-                if (store.getParentFile() != null)
-                {
-                    if (!store.getParentFile().mkdirs())
-                        log.error("Failed to create store parent directories");
-                }
-
-                try
-                {
-                    store.createNewFile();
-                } catch (IOException ex)
-                {
-                    log.error("Failed to create store file", ex);
-                }
+                log.error("Failed to load already-scanned test sheets", ex);
             }
-        } catch (Throwable t)
+        } else
         {
-            t.printStackTrace();
+            if (store.getParentFile() != null)
+            {
+                if (!store.getParentFile().mkdirs())
+                    log.error("Failed to create store parent directories");
+            }
+
+            try
+            {
+                store.createNewFile();
+            } catch (IOException ex)
+            {
+                log.error("Failed to create store file", ex);
+            }
         }
     }
 
