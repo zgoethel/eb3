@@ -3,6 +3,8 @@ package net.jibini.eb.data.impl
 import net.jibini.eb.data.Document
 import net.jibini.eb.data.DocumentDescriptor
 
+import java.lang.NullPointerException
+import java.lang.RuntimeException
 import java.util.concurrent.ConcurrentHashMap
 
 /**
@@ -42,8 +44,18 @@ object DocumentRepositoryCachesImpl
      * @returns The retrieved or created mapped document repository.
      */
     @JvmStatic
-    fun get(name: String): MutableMap<String, Document> = collections
-        .getOrPut(name) { ConcurrentHashMap() }
+    fun get(name: String): MutableMap<String, Document>
+    {
+        try
+        {
+            DocumentDescriptor.forName(name)
+        } catch (ex: NullPointerException)
+        {
+            throw RuntimeException("Failed to fetch requested descriptor", ex)
+        }
+
+        return collections.getOrPut(name) { ConcurrentHashMap() }
+    }
 
     /**
      * Gets or creates the repository map for the given [document

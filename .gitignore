@@ -20,3 +20,6 @@
 # IntelliJ project directories and compile output
 **/.idea/
 **/out/
+
+# Vendor-specific files and test data
+/test_stand

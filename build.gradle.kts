@@ -65,6 +65,10 @@ dependencies {
 	// JSON API-level library
 	api("org.json", "json", "20200518")
 
+	// Vendor-specific dependencies
+	implementation("org.apache.poi", "poi", "5.0.0")
+	implementation("org.apache.poi", "poi-ooxml", "5.0.0")
+
 	// JUnit 4 test implementation library
 	testImplementation("junit", "junit", "4.12")
 }

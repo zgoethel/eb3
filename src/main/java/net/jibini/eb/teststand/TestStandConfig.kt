@@ -35,7 +35,28 @@ class TestStandConfig
      *
      * Do not post this secret publicly. The default secret key is random.
      */
-    val client_secret = UUID.randomUUID()
+    val clientSecret = UUID.randomUUID()
         .toString()
         .replace("-", "")
+
+    /**
+     * Whether this node is a client or server.
+     */
+    val isClient = false
+
+    /**
+     * If this node is a client, it requires an address for the server.
+     */
+    val serverAddress = "localhost"
+
+    /**
+     * This directory will be recursively scanned for test stand datasheets.
+     */
+    val scanDirectory = "test_stand"
+
+    /**
+     * The scan directory will be scanned on startup, then it will be scanned
+     * with delays of this minute value in between.
+     */
+    val intervalMinutes = 120
 }
