@@ -1,6 +1,6 @@
 {
   "name": "TEST_STAND_SHEET",
-  "source": "TestStandSource",
+  "source": "TestStandClientSource",
 
   "primaryKey": "file_name",
   "trackIndex": "",

@@ -59,4 +59,9 @@ class TestStandConfig
      * with delays of this minute value in between.
      */
     val intervalMinutes = 120
+
+    /**
+     * Already-indexed documents will be stored in this file.
+     */
+    val documentStore = "test_stand/store.json"
 }
