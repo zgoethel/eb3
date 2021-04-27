@@ -69,6 +69,9 @@ dependencies {
 	implementation("org.apache.poi", "poi", "5.0.0")
 	implementation("org.apache.poi", "poi-ooxml", "5.0.0")
 
+	implementation("jakarta.xml.bind", "jakarta.xml.bind-api", "2.3.2")
+	implementation("org.glassfish.jaxb", "jaxb-runtime", "2.3.2")
+
 	// JUnit 4 test implementation library
 	testImplementation("junit", "junit", "4.12")
 }

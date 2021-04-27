@@ -16,7 +16,11 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
+
 import java.io.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 /**
@@ -39,9 +43,11 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
     private boolean initialLoad = false;
 
     /**
-     * A hash-set of all document file names which are loaded.
+     * A hash-map of all document file names which are loaded and their SHA
+     * hashes. Files will be compared to this hash to determine if changes must
+     * be loaded.
      */
-    private final Set<String> loaded = new HashSet<>();
+    private final Map<String, String> loaded = new HashMap<>();
 
     /**
      * Load in the workbook definitions for parsing workbooks.
@@ -75,13 +81,17 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
 
             for (File file : files)
             {
-                if (loaded.contains(file.getName())) continue;
-                loaded.add(file.getName());
+                String hash = calculateSHA(file);
+
+                if (loaded.getOrDefault(file.getName(), "none").equals(hash)) continue;
 
                 Document book = loadDocument(file, descriptor);
 
                 if (book != null)
                 {
+                    book.getInternal().put("hash_sha", hash);
+                    loaded.put(file.getName(), hash);
+
                     created++;
 
                     books.add(book);
@@ -118,7 +128,7 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
     private Document loadDocument(File file, DocumentDescriptor descriptor) throws IOException
     {
         Document document = new Document(descriptor);
-        Workbook book = WorkbookFactory.create(file);
+        Workbook book = WorkbookFactory.create(file, "", true);
 
         document.getInternal().put("file_name", file.getName());
         boolean success = def.fill(document, book);
@@ -129,6 +139,36 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
             return document;
         else
             return null;
+    }
+
+    private String calculateSHA(File file)
+    {
+        try
+        {
+            MessageDigest sha = MessageDigest.getInstance("SHA-1");
+
+            try (InputStream input = new FileInputStream(file))
+            {
+                byte[] buffer = new byte[8192];
+                int len = input.read(buffer);
+
+                while (len != -1)
+                {
+                    sha.update(buffer, 0, len);
+                    len = input.read(buffer);
+                }
+
+                byte[] d = sha.digest();
+                sha.reset();
+
+                return new HexBinaryAdapter().marshal(d);
+            }
+        } catch (IOException | NoSuchAlgorithmException ex)
+        {
+            log.error("Failed to calculate file SHA representation", ex);
+
+            return "";
+        }
     }
 
     /**
@@ -155,7 +195,10 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
                     document.getInternal().putAll(entry.toMap());
                     books.add(document);
 
-                    loaded.add(Objects.requireNonNull(document.get("file_name")).toString());
+                    loaded.put(
+                        Objects.requireNonNull(document.get("file_name")).toString(),
+                        Objects.requireNonNull(document.get("hash_sha")).toString()
+                    );
                 }
 
                 reader.close();

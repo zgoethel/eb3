@@ -2,19 +2,19 @@ package net.jibini.eb.teststand.impl;
 
 import net.jibini.eb.data.Document;
 
-import org.apache.poi.ss.usermodel.Header;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellReference;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.*;
 import java.util.*;
 
 public class TestStandDefinitionImpl
 {
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+
     private final List<TestStandDefinition> definitions = new ArrayList<>();
 
     public TestStandDefinitionImpl(String directory)
@@ -39,6 +39,7 @@ public class TestStandDefinitionImpl
         Sheet sheet = workbook.getSheetAt(0);
         Header head = sheet.getHeader();
         String headMatch = head.getLeft() + ", " + head.getCenter() + ", " + head.getRight();
+
         TestStandDefinition applicable = null;
 
         for (TestStandDefinition def : definitions)
@@ -53,7 +54,30 @@ public class TestStandDefinitionImpl
         applicable.fieldToCell.forEach((k, v) ->
         {
             CellReference ref = new CellReference(v);
-            String contents = sheet.getRow(ref.getRow()).getCell(ref.getCol()).getStringCellValue();
+            Cell cell = sheet.getRow(ref.getRow()).getCell(ref.getCol());
+
+            String contents = "";
+
+            switch (cell.getCellType())
+            {
+                case BLANK:
+                    contents = "";
+                    break;
+                case NUMERIC:
+                    contents = cell.getNumericCellValue() + "";
+                    break;
+                case STRING:
+                    contents = cell.getStringCellValue();
+                    break;
+                case BOOLEAN:
+                    contents = cell.getBooleanCellValue() ? "True" : "False";
+                    break;
+                case ERROR:
+                    contents = "ERR" + cell.getErrorCellValue();
+                    break;
+                case FORMULA:
+                    contents = cell.getCellFormula();
+            }
 
             document.getInternal().put(k, contents);
         });
