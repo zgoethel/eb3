@@ -81,24 +81,29 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
 
             for (File file : files)
             {
-                String hash = calculateSHA(file);
-
-                if (loaded.getOrDefault(file.getName(), "none").equals(hash)) continue;
-
-                Document book = loadDocument(file, descriptor);
-
-                if (book != null)
+                try
                 {
-                    book.getInternal().put("hash_sha", hash);
-                    loaded.put(file.getName(), hash);
+                    String hash = calculateSHA(file);
+                    if (loaded.getOrDefault(file.getName(), "none").equals(hash)) continue;
 
-                    created++;
+                    Document book = loadDocument(file, descriptor);
 
-                    books.add(book);
-                    writer.write(new JSONObject(book.getInternal()).toString());
-                    writer.write("\n");
-                } else
-                    unknown++;
+                    if (book != null)
+                    {
+                        book.getInternal().put("hash_sha", hash);
+                        loaded.put(file.getName(), hash);
+
+                        created++;
+
+                        books.add(book);
+                        writer.write(new JSONObject(book.getInternal()).toString());
+                        writer.write("\n");
+                    } else
+                        unknown++;
+                } catch (Exception ex)
+                {
+                    log.error("Failed to load a workbook", ex);
+                }
             }
 
             log.info("Found {} new workbook(s) in the scan directory", created);
@@ -135,12 +140,14 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
 
         book.close();
 
-        if (success)
-            return document;
-        else
-            return null;
+        return success ? document : null;
     }
 
+    /**
+     * @param file File whose contents to use to calculate a SHA-1 checksum.
+     * @return A SHA-1 checksum of the provided file which may be used to
+     *      determine if the file has changed from a point A to a point B.
+     */
     private String calculateSHA(File file)
     {
         try
@@ -149,7 +156,7 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
 
             try (InputStream input = new FileInputStream(file))
             {
-                byte[] buffer = new byte[8192];
+                byte[] buffer = new byte[(int)file.length()];
                 int len = input.read(buffer);
 
                 while (len != -1)
@@ -187,18 +194,24 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
 
                 while ((line = reader.readLine()) != null)
                 {
-                    if (line.length() == 0) continue;
+                    try
+                    {
+                        if (line.length() == 0) continue;
 
-                    JSONObject entry = new JSONObject(line);
+                        JSONObject entry = new JSONObject(line);
 
-                    Document document = new Document(descriptor);
-                    document.getInternal().putAll(entry.toMap());
-                    books.add(document);
+                        Document document = new Document(descriptor);
+                        document.getInternal().putAll(entry.toMap());
+                        books.add(document);
 
-                    loaded.put(
-                        Objects.requireNonNull(document.get("file_name")).toString(),
-                        Objects.requireNonNull(document.get("hash_sha")).toString()
-                    );
+                        loaded.put(
+                            Objects.requireNonNull(document.get("file_name")).toString(),
+                            Objects.requireNonNull(document.get("hash_sha")).toString()
+                        );
+                    } catch (Exception ex)
+                    {
+                        log.error("Failed to load a store file line", ex);
+                    }
                 }
 
                 reader.close();

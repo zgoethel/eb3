@@ -5,16 +5,13 @@ import net.jibini.eb.data.Document;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellReference;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.*;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TestStandDefinitionImpl
 {
-    private final Logger log = LoggerFactory.getLogger(this.getClass());
-
     private final List<TestStandDefinition> definitions = new ArrayList<>();
 
     public TestStandDefinitionImpl(String directory)
@@ -51,6 +48,8 @@ public class TestStandDefinitionImpl
         if (applicable == null)
             return false;
 
+        final TestStandDefinition appFinal = applicable;
+
         applicable.fieldToCell.forEach((k, v) ->
         {
             CellReference ref = new CellReference(v);
@@ -64,7 +63,10 @@ public class TestStandDefinitionImpl
                     contents = "";
                     break;
                 case NUMERIC:
-                    contents = cell.getNumericCellValue() + "";
+                    if (cell.getCellStyle().getDataFormatString().contains("%"))
+                        contents = (cell.getNumericCellValue() * 100) + "%";
+                    else
+                        contents = cell.getNumericCellValue() + "";
                     break;
                 case STRING:
                     contents = cell.getStringCellValue();
@@ -79,6 +81,15 @@ public class TestStandDefinitionImpl
                     contents = cell.getCellFormula();
             }
 
+            if (appFinal.fieldRegex.containsKey(k))
+            {
+                String regex = appFinal.fieldRegex.get(k);
+                Pattern p = Pattern.compile(regex);
+                Matcher m = p.matcher(contents);
+
+                contents = m.find() ? m.group(m.groupCount()) : "";
+            }
+
             document.getInternal().put(k, contents);
         });
 
@@ -91,6 +102,7 @@ public class TestStandDefinitionImpl
         String regexMatch;
 
         final Map<String, String> fieldToCell = new HashMap<>();
+        final Map<String, String> fieldRegex = new HashMap<>();
 
         TestStandDefinition(File file) throws IOException
         {
@@ -109,6 +121,8 @@ public class TestStandDefinitionImpl
                         elements[i] = elements[i].trim();
 
                     fieldToCell.put(elements[0], elements[2]);
+                    if (elements.length > 3)
+                        fieldRegex.put(elements[0], elements[3]);
                 } else
                 {
                     if (line.startsWith("#") || line.length() == 0) continue;

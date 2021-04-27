@@ -36,5 +36,5 @@ evap_wf,      Evaporator Water Flow,             T27
 corr_water_e, Corr Water dP FT H20,              T29
 evap_temp_e,  Evap Temp Entering,                T30
 evap_temp_l,  Evap Temp Leaving,                 T31
-ckt_a_eev,    Ckt A EEV,                         F37
-ckt_b_eev,    Ckt B EEV,                         H37
+ckt_a_eev,    Ckt A EEV,                         A41, ([0-9\.]+%)
+ckt_b_eev,    Ckt B EEV,                         A41, (?<=%)(?:[^0-9\.]+)([0-9\.]+%)

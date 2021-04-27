@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
@@ -63,7 +64,19 @@ public class TestStand
             source = new TestStandClientSource();
             // Schedule the loader update at the specified minute interval
             ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-            executor.scheduleAtFixedRate(this::loaderTask, 0L, config.getIntervalMinutes(), TimeUnit.MINUTES);
+            final ScheduledFuture<?> future = executor.scheduleAtFixedRate(this::loaderTask, 0L, config.getIntervalMinutes(), TimeUnit.MINUTES);
+
+            new Thread(() ->
+            {
+                while (true)
+                    try
+                    {
+                        future.get();
+                    } catch (Throwable t)
+                    {
+                        t.printStackTrace();
+                    }
+            }).start();
         }
     }
 
