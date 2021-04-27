@@ -68,8 +68,8 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
             File scanDirectory = new File(testStand.config.getScanDirectory());
 
             List<File> files = scanDirectory(scanDirectory);
-            log.info("Found {} workbooks in recursive scan", files.size());
-            int created = 0;
+            log.info("Found {} workbook(s) in recursive scan", files.size());
+            int created = 0, unknown = 0;
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(testStand.config.getDocumentStore(), true));
 
@@ -77,15 +77,22 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
             {
                 if (loaded.contains(file.getName())) continue;
                 loaded.add(file.getName());
-                created++;
 
                 Document book = loadDocument(file, descriptor);
-                books.add(book);
-                writer.write(new JSONObject(book.getInternal()).toString());
-                writer.write("\n");
+
+                if (book != null)
+                {
+                    created++;
+
+                    books.add(book);
+                    writer.write(new JSONObject(book.getInternal()).toString());
+                    writer.write("\n");
+                } else
+                    unknown++;
             }
 
-            log.info("Found {} new workbooks in the scan directory", created);
+            log.info("Found {} new workbook(s) in the scan directory", created);
+            log.warn("Found {} workbook(s) with no applicable parsing definitions", unknown);
 
             writer.flush();
             writer.close();
@@ -108,18 +115,20 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
      *      except for the filename.
      * @throws IOException If a read error occurs while parsing.
      */
-    @NotNull
     private Document loadDocument(File file, DocumentDescriptor descriptor) throws IOException
     {
         Document document = new Document(descriptor);
         Workbook book = WorkbookFactory.create(file);
 
         document.getInternal().put("file_name", file.getName());
-        def.fill(document, book);
+        boolean success = def.fill(document, book);
 
         book.close();
 
-        return document;
+        if (success)
+            return document;
+        else
+            return null;
     }
 
     /**
@@ -157,10 +166,7 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
         } else
         {
             if (store.getParentFile() != null)
-            {
-                if (!store.getParentFile().mkdirs())
-                    log.error("Failed to create store parent directories");
-            }
+                store.getParentFile().mkdirs();
 
             try
             {

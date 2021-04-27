@@ -34,7 +34,7 @@ public class TestStandDefinitionImpl
         }
     }
 
-    public void fill(Document document, Workbook workbook)
+    public boolean fill(Document document, Workbook workbook)
     {
         Sheet sheet = workbook.getSheetAt(0);
         Header head = sheet.getHeader();
@@ -48,7 +48,7 @@ public class TestStandDefinitionImpl
                 break;
             }
         if (applicable == null)
-            return;
+            return false;
 
         applicable.fieldToCell.forEach((k, v) ->
         {
@@ -57,6 +57,8 @@ public class TestStandDefinitionImpl
 
             document.getInternal().put(k, contents);
         });
+
+        return true;
     }
 
     private static class TestStandDefinition
