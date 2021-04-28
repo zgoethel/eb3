@@ -45,21 +45,43 @@
                 margin-left: 1em;
             }
 
+            div#table-container
+            {
+                width: 99%;
+                margin-left: 0.5%;
+                border-radius: 0.25em;
+                overflow: hidden;
+                border: 1px solid #734272;
+                background: #ffffff;
+            }
+
             table
             {
                 border-collapse: collapse;
-                width: 99%;
-                margin-left: 0.5%;
+                width: 100%;
+            }
+
+            tbody *
+            {
+                font-family: "Times New Roman", Times, serif;
+                font-size: 0.95em;
+                color: #7b4182;
             }
 
             table *
             {
-                font-family: "Times New Roman", Times, serif;
                 margin: 0;
                 padding: 0;
             }
 
-            th {
+            tr:nth-child(even)
+            {
+                background: #efe9ff;
+            }
+
+            th
+            {
+                font-size: 0.8em;
                 padding-bottom: 0.5em;
                 padding-top: 0.5em;
                 background: #590069;
@@ -68,13 +90,8 @@
 
             td
             {
-                border-left: 1px solid black;
-                padding: 0.25em;
-            }
-
-            td:nth-child(1)
-            {
-                border-left: 0;
+                border-bottom: 1px solid #d4a5dcad;
+                padding: 0.5em;
             }
         </style>
     </head>
@@ -90,22 +107,24 @@
 
         <h2><c:out value="${descriptor.getTitle()}" /></h2>
 
-        <table>
-            <thead>
-                <c:forEach var="f" items="${descriptor.getDefaultDisplayFields()}">
-                    <th><c:out value="${descriptor.getFields().get(f).getTitle()}" /></th>
-                </c:forEach>
-            </thead>
+        <div id="table-container">
+            <table>
+                <thead>
+                    <c:forEach var="f" items="${descriptor.getDefaultDisplayFields()}">
+                        <th><c:out value="${descriptor.getFields().get(f).getTitle()}" /></th>
+                    </c:forEach>
+                </thead>
 
-            <tbody>
-                <c:forEach var="doc" items="${repo}">
-                    <tr>
-                        <c:forEach var="f" items="${descriptor.getDefaultDisplayFields()}">
-                            <td><c:out value="${doc.get(f)}" /></td>
-                        </c:forEach>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+                <tbody>
+                    <c:forEach var="doc" items="${repo}">
+                        <tr>
+                            <c:forEach var="f" items="${descriptor.getDefaultDisplayFields()}">
+                                <td><c:out value="${doc.get(f)}" /></td>
+                            </c:forEach>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
