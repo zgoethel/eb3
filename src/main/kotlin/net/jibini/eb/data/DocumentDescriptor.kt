@@ -77,6 +77,12 @@ class DocumentDescriptor(
     val fields: Map<String, Field> = HashMap()
 
     /**
+     * An ordered list of which fields to display in the search results table
+     * by default.
+     */
+    val defaultDisplayFields: List<String> = ArrayList()
+
+    /**
      * Adds the provided field to the document schema. This will change
      * the document definition of all documents created with this
      * descriptor. Behavior of existing documents at the time this is
@@ -150,8 +156,14 @@ class DocumentDescriptor(
 
                     descriptor.add(Field(
                         it.getString("name"),
+                        it.getString("title"),
                         ClasspathAnnotationImpl.findAndCreate(it.getString("format"))
                     ))
+                }
+
+            json.getJSONArray("defaultDisplayFields")
+                .forEach {
+                    (descriptor.defaultDisplayFields as MutableList) += "$it"
                 }
 
             loaded[descriptor.name] = descriptor

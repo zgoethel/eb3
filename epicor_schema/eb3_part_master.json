@@ -6,73 +6,100 @@
   "primaryKey": "Part_PartNum",
   "trackIndex": "Part_SysRevID",
 
+  "defaultDisplayFields": [
+    "Part_PartNum",
+    "Part_PartDescription",
+    "Part_TypeCode",
+    "Part_RunOut",
+    "Part_InActive",
+    "Part_CreatedBy",
+    "Part_CreatedOn"
+  ],
+
   "fields": [
     {
       "name": "Part_Company",
+      "title": "Company",
       "format": "StringFormat"
     },
     {
       "name": "Part_PartNum",
+      "title": "Part",
       "format": "StringFormat"
     },
     {
       "name": "Part_PartDescription",
+      "title": "Description",
       "format": "StringFormat"
     },
     {
       "name": "Part_ClassID",
+      "title": "Class ID",
       "format": "StringFormat"
     },
     {
       "name": "Part_IUM",
+      "title": "Inv. UOM",
       "format": "StringFormat"
     },
     {
       "name": "Part_PUM",
+      "title": "Pur. UOM",
       "format": "StringFormat"
     },
     {
       "name": "Part_TypeCode",
+      "title": "Type Code",
       "format": "StringFormat"
     },
     {
       "name": "Part_TaxCatIDDescription",
+      "title": "Tax Cat.",
       "format": "StringFormat"
     },
     {
       "name": "Part_NetWeight",
+      "title": "Net Weight",
       "format": "FloatFormat"
     },
     {
       "name": "Part_NetWeightUOM",
+      "title": "Net Weight (UOM)",
       "format": "StringFormat"
     },
     {
       "name": "Part_GrossWeight",
+      "title": "Gross Weight",
       "format": "FloatFormat"
     },
     {
       "name": "Part_GrossWeightUOM",
+      "title": "Gross Weight (UOM)",
       "format": "StringFormat"
     },
     {
       "name": "Part_RunOut",
+      "title": "Run Out",
       "format": "BooleanFormat"
     },
     {
       "name": "Part_InActive",
+      "title": "Inactive",
       "format": "BooleanFormat"
     },
     {
       "name": "Part_UnitPrice",
+      "title": "Unit Price",
       "format": "FloatFormat"
     },
     {
       "name": "Part_CreatedBy",
+      "title": "Created By",
       "format": "StringFormat"
     },
     {
       "name": "Part_CreatedOn",
+      "title": "Created On",
       "format": "EpicorDateFormat"
     }
   ]

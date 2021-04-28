@@ -14,9 +14,14 @@ package net.jibini.eb.data
  */
 class Field(
     /**
-     * The name (key) of the field.
+     * The name (key) of the field for backend and DB use.
      */
     val name: String,
+
+    /**
+     * Plain-English name of this field for UI.
+     */
+    val title: String,
 
     /**
      * A formatter which can create the proper output (format and type)

@@ -44,6 +44,38 @@
             {
                 margin-left: 1em;
             }
+
+            table
+            {
+                border-collapse: collapse;
+                width: 99%;
+                margin-left: 0.5%;
+            }
+
+            table *
+            {
+                font-family: "Times New Roman", Times, serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            th {
+                padding-bottom: 0.5em;
+                padding-top: 0.5em;
+                background: #590069;
+                color: #ffffff;
+            }
+
+            td
+            {
+                border-left: 1px solid black;
+                padding: 0.25em;
+            }
+
+            td:nth-child(1)
+            {
+                border-left: 0;
+            }
         </style>
     </head>
     
@@ -57,5 +89,23 @@
         </div>
 
         <h2><c:out value="${descriptor.getTitle()}" /></h2>
+
+        <table>
+            <thead>
+                <c:forEach var="f" items="${descriptor.getDefaultDisplayFields()}">
+                    <th><c:out value="${descriptor.getFields().get(f).getTitle()}" /></th>
+                </c:forEach>
+            </thead>
+
+            <tbody>
+                <c:forEach var="doc" items="${repo}">
+                    <tr>
+                        <c:forEach var="f" items="${descriptor.getDefaultDisplayFields()}">
+                            <td><c:out value="${doc.get(f)}" /></td>
+                        </c:forEach>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
     </body>
 </html>

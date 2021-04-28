@@ -6,117 +6,153 @@
   "primaryKey": "file_name",
   "trackIndex": "",
 
+  "defaultDisplayFields": [
+    "job_num",
+    "job_name",  
+    "model",
+    "comp_a",
+    "comp_b"
+  ],
+
   "fields": [
     {
       "name": "file_name",
+      "title": "File Name",
       "format": "StringFormat"
     },
     {
       "name": "hash_sha",
+      "title": "Hash",
       "format": "StringFormat"
     },
     {
       "name": "model",
-      "format": "StringFormat"
+      "title": "Model",
+      "format": "ToUpperStringFormat"
     },
     {
       "name": "evap_hx",
-      "format": "StringFormat"
+      "title": "Evap. Heat Ex.",
+      "format": "ToUpperStringFormat"
     },
     {
       "name": "cond_hx",
-      "format": "StringFormat"
+      "title": "Cond. Heat Ex.",
+      "format": "ToUpperStringFormat"
     },
     {
       "name": "comp_a",
-      "format": "StringFormat"
+      "title": "Comp. A",
+      "format": "ToUpperStringFormat"
     },
     {
       "name": "comp_b",
-      "format": "StringFormat"
+      "title": "Comp. B",
+      "format": "ToUpperStringFormat"
     },
     {
       "name": "job_num",
-      "format": "StringFormat"
+      "title": "Job Number",
+      "format": "ToUpperStringFormat"
     },
     {
       "name": "job_name",
+      "title": "Job Name",
       "format": "StringFormat"
     },
     {
       "name": "serial",
-      "format": "StringFormat"
+      "title": "Serial",
+      "format": "ToUpperStringFormat"
     },
     {
       "name": "ref_ch_a",
+      "title": "Ref. Charge A",
       "format": "FloatFormat"
     },
     {
       "name": "ref_ch_b",
+      "title": "Ref. Charge B",
       "format": "FloatFormat"
     },
     {
       "name": "suc_sat_a",
+      "title": "Suction Sat. Temp A",
       "format": "FloatFormat"
     },
     {
       "name": "suc_sat_b",
+      "title": "Suction Sat. Temp B",
       "format": "FloatFormat"
     },
     {
       "name": "dis_sat_a",
+      "title": "Discharge Sat. Temp A",
       "format": "FloatFormat"
     },
     {
       "name": "dis_sat_b",
+      "title": "Discharge Sat. Temp B",
       "format": "FloatFormat"
     },
     {
       "name": "super_a",
+      "title": "Superheat A",
       "format": "FloatFormat"
     },
     {
       "name": "super_b",
+      "title": "Superheat B",
       "format": "FloatFormat"
     },
     {
       "name": "cond_wf",
+      "title": "Cond. Flow Rate",
       "format": "FloatFormat"
     },
     {
       "name": "corr_water_c",
+      "title": "Cond. Water Pressure Drop",
       "format": "FloatFormat"
     },
     {
       "name": "cond_temp_e",
+      "title": "Cond. Temp. Entering",
       "format": "FloatFormat"
     },
     {
       "name": "cond_temp_l",
+      "title": "Cond. Temp. Leaving",
       "format": "FloatFormat"
     },
     {
       "name": "evap_wf",
+      "title": "Evap. Flow Rate",
       "format": "FloatFormat"
     },
     {
       "name": "corr_water_e",
+      "title": "Evap. Water Pressure Drop",
       "format": "FloatFormat"
     },
     {
       "name": "evap_temp_e",
+      "title": "Evap. Temp. Entering",
       "format": "FloatFormat"
     },
     {
       "name": "evap_temp_l",
+      "title": "Evap. Temp. Leaving",
       "format": "FloatFormat"
     },
     {
       "name": "ckt_a_eev",
+      "title": "Ckt. A",
       "format": "StringFormat"
     },
     {
       "name": "ckt_b_eev",
+      "title": "Ckt. B",
       "format": "StringFormat"
     }
   ]
