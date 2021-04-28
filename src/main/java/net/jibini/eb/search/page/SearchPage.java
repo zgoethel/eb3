@@ -1,15 +1,23 @@
 package net.jibini.eb.search.page;
 
+import net.jibini.eb.EasyButton;
 import net.jibini.eb.auth.AuthDetails;
 import net.jibini.eb.auth.page.LoginPage;
+import net.jibini.eb.data.Document;
+import net.jibini.eb.data.DocumentDescriptor;
+import net.jibini.eb.data.impl.CachedDocumentRetrievalImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import java.util.Collection;
 
 /**
  * The primary configurable search page. This is the primary page from which the
@@ -31,18 +39,38 @@ public class SearchPage
     @Autowired
     private LoginPage loginPage;
 
+    // Used to retrieve document repositories
+    @Autowired
+    private CachedDocumentRetrievalImpl retrieval;
+
+    // Required to access configuration settings
+    @Autowired
+    private EasyButton easyButton;
+
     @GetMapping("/s")
     public String searchPage(
         HttpServletRequest request,
         HttpServletResponse response,
 
-        HttpSession session
+        HttpSession session,
+
+        Model model,
+
+        @RequestParam(defaultValue = "") String document
     )
     {
         // Authenticate the current session
         AuthDetails authDetails = loginPage.validate(session, request, response);
         if (authDetails == null)
             return "login";
+
+        if (document.equals(""))
+            document = easyButton.config.getDefaultSearchDocument();
+        model.addAttribute("username", authDetails.getUsername());
+
+        Collection<Document> repo = retrieval.getDocumentRepository(document);
+        model.addAttribute("repo", repo);
+        model.addAttribute("descriptor", DocumentDescriptor.forName(document));
 
         return "search";
     }

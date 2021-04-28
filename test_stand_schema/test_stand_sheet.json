@@ -1,5 +1,6 @@
 {
   "name": "TEST_STAND_SHEET",
+  "title": "Test Stand Sheets",
   "source": "TestStandClientSource",
 
   "primaryKey": "file_name",

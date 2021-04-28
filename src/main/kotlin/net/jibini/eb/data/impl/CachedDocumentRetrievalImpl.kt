@@ -34,6 +34,8 @@ class CachedDocumentRetrievalImpl
     @Autowired
     private lateinit var loginPage: LoginPage
 
+    fun getDocumentRepository(repository: String) = DocumentRepositoryCachesImpl.get(repository).values
+
     @GetMapping("/document/{repository}")
     @ResponseBody
     fun getDocumentRepository(
@@ -48,8 +50,10 @@ class CachedDocumentRetrievalImpl
         // Authenticate the current session
         loginPage.validate(session, request, response) ?: return null
 
-        return DocumentRepositoryCachesImpl.get(repository).values
+        return getDocumentRepository(repository)
     }
+
+    fun getDocumentByPrimaryKey(repository: String, primaryKey: String) = DocumentRepositoryCachesImpl.get(repository, primaryKey)
 
     @GetMapping("/document/{repository}/{primary-key}")
     @ResponseBody
@@ -66,6 +70,6 @@ class CachedDocumentRetrievalImpl
         // Authenticate the current session
         loginPage.validate(session, request, response) ?: return null
 
-        return DocumentRepositoryCachesImpl.get(repository, primaryKey)
+        return getDocumentByPrimaryKey(repository, primaryKey)
     }
 }

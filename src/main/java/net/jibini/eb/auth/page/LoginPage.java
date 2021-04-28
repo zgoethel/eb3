@@ -135,6 +135,13 @@ public class LoginPage
         return details;
     }
 
+    @GetMapping("/logout")
+    public String logoutPage(HttpSession session)
+    {
+        session.invalidate();
+        return "login";
+    }
+
     @GetMapping("/login")
     public String loginPage(
             HttpServletResponse response,

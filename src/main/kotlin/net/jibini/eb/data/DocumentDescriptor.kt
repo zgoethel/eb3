@@ -41,6 +41,11 @@ class DocumentDescriptor(
     val name: String,
 
     /**
+     * A plain-English representation of this document name for UI.
+     */
+    val title: String,
+
+    /**
      * This document's primary key. Each instance of a document with
      * this schema will be hashed against the string value of the value
      * associated with this key.
@@ -133,6 +138,7 @@ class DocumentDescriptor(
             val json = JSONObject(file.readText())
             val descriptor = DocumentDescriptor(
                 json.getString("name"),
+                json.getString("title"),
                 json.getString("primaryKey"),
                 json.getString("trackIndex")
             )

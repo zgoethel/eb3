@@ -32,6 +32,12 @@ class EasyButtonConfig
 	 * The simple class name of the system's authenticator class.
 	 */
 	val primaryAuthenticator = "DumbAuthenticator"
+
+	/**
+	 * Upon loading the search page, it will default to loading this document's
+	 * repository. The document type can be changed per-session in the UI.
+	 */
+	val defaultSearchDocument = "NONE"
 	
 	companion object
 	{

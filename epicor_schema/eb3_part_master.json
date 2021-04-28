@@ -1,5 +1,6 @@
 {
   "name": "EB3_PART_MASTER",
+  "title": "Epicor Part Master",
   "source": "EpicorSource",
 
   "primaryKey": "Part_PartNum",
