@@ -11,5 +11,7 @@ import net.jibini.eb.impl.Classpath
 @Classpath
 class ToUpperStringFormat : FieldFormat
 {
-    override fun invoke(any: Any?) = any?.toString()?.toUpperCase();
+    override fun format(value: Any?) = value?.toString()?.toUpperCase();
+
+    override fun formatString(value: Any?) = format(value) ?: "-"
 }

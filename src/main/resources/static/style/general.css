@@ -30,7 +30,7 @@ div.banner
    	filter: drop-shadow(0 10px 0.5rem #4e6060);
 }
 
-div.banner div.button
+div.banner .button
 {   
     float: right;
     
@@ -38,17 +38,19 @@ div.banner div.button
     margin-right: 2em;
 }
 
-div.button
+.button
 {
     padding: 1em;
     
     transition: 0.3s background;
     border: 1px solid white;
+    color: #ffffff;
+    text-decoration: none;
     
     cursor: pointer;
 }
 
-div.button:hover
+.button:hover
 {
     background: #5b215b;
 }

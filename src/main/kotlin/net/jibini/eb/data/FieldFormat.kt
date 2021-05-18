@@ -11,4 +11,19 @@ import net.jibini.eb.impl.Classpath
  *
  * @author Zach Goethel
  */
-interface FieldFormat : (Any?) -> Any?
+interface FieldFormat
+{
+    /**
+     * @param value Incorrectly formatted or null input value.
+     * @return Properly formatted and typed object with the same data, or null
+     *      if formatting was impossible.
+     */
+    fun format(value: Any?): Any?
+
+    /**
+     * @param value Incorrectly formatted or null input value.
+     * @return Properly formatted string with the same data, or blank if
+     *      formatting was impossible.
+     */
+    fun formatString(value: Any?): String
+}

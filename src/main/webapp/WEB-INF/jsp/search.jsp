@@ -23,6 +23,14 @@
                 width: 2em;
             }
 
+            img#download-icon
+            {
+                width: 1em;
+                margin-bottom: -0.23em;
+                margin-left: 0.5em;
+                cursor: pointer;
+            }
+
             span#logout-button
             {
                 padding: 0.5em;
@@ -51,6 +59,7 @@
                 margin-left: 0.5%;
                 border-radius: 0.25em;
                 overflow: hidden;
+                overflow-x: auto;
                 border: 1px solid #734272;
                 background: #ffffff;
             }
@@ -82,8 +91,7 @@
             th
             {
                 font-size: 0.8em;
-                padding-bottom: 0.5em;
-                padding-top: 0.5em;
+                padding: 0.5em;
                 background: #590069;
                 color: #ffffff;
             }
@@ -92,6 +100,15 @@
             {
                 border-bottom: 1px solid #d4a5dcad;
                 padding: 0.5em;
+            }
+
+            td span
+            {
+                max-width: 400px;
+                display: inline-block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
         </style>
     </head>
@@ -105,7 +122,10 @@
             <a href="/logout"><span id="logout-button">Logout</span></a>
         </div>
 
-        <h2><c:out value="${descriptor.getTitle()}" /></h2>
+        <h2>
+            <c:out value="${descriptor.getTitle()}" />
+            <img id="download-icon" src="/image/eos-icons/download.svg" title="Download as XLSX" />
+        </h2>
 
         <div id="table-container">
             <table>
@@ -119,7 +139,7 @@
                     <c:forEach var="doc" items="${repo}">
                         <tr>
                             <c:forEach var="f" items="${descriptor.getDefaultDisplayFields()}">
-                                <td><c:out value="${doc.get(f)}" /></td>
+                                <td><span><c:out value="${doc.getString(f)}" /></span></td>
                             </c:forEach>
                         </tr>
                     </c:forEach>

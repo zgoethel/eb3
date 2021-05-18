@@ -11,11 +11,13 @@ import net.jibini.eb.impl.Classpath
 @Classpath
 class FloatFormat : FieldFormat
 {
-    override fun invoke(any: Any?) = when (any)
+    override fun format(value: Any?) = when (value)
     {
         null -> null
 
         // Attempt to parse; null if invalid
-        else -> any.toString().toFloatOrNull()
+        else -> value.toString().toFloatOrNull()
     }
+
+    override fun formatString(value: Any?) = format(value)?.toString() ?: "-"
 }

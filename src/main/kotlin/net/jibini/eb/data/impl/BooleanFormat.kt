@@ -11,11 +11,13 @@ import net.jibini.eb.impl.Classpath
 @Classpath
 class BooleanFormat : FieldFormat
 {
-    override fun invoke(any: Any?) = when (any)
+    override fun format(value: Any?) = when (value)
     {
         true, "T", "true" -> true
         null -> null
 
         else -> false
     }
+
+    override fun formatString(value: Any?) = format(value)?.toString()?.capitalize() ?: "-"
 }

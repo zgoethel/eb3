@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 /**
  * The primary configurable search page. This is the primary page from which the
@@ -56,7 +57,9 @@ public class SearchPage
 
         Model model,
 
-        @RequestParam(defaultValue = "") String document
+        @RequestParam(defaultValue = "") String document,
+        @RequestParam(defaultValue = "50") int top,
+        @RequestParam(defaultValue = "0") int skip
     )
     {
         // Authenticate the current session
@@ -68,7 +71,13 @@ public class SearchPage
             document = easyButton.config.getDefaultSearchDocument();
         model.addAttribute("username", authDetails.getUsername());
 
-        Collection<Document> repo = retrieval.getDocumentRepository(document);
+        final int[] i = { 0, 0 };
+
+        Collection<Document> repo = retrieval.getDocumentRepository(document)
+            .stream()
+            .filter((element) -> (++i[0] > skip && i[0] <= top + skip))
+            .collect(Collectors.toList());
+
         model.addAttribute("repo", repo);
         model.addAttribute("descriptor", DocumentDescriptor.forName(document));
 

@@ -82,12 +82,24 @@ class Document(
     {
         descriptor.fields[key]
             ?.format
-            ?.invoke(internal[key])
+            ?.format(internal[key])
     } catch (ex: Exception)
     {
         error("Failed to format field '$key' with exception", ex)
 
         null
+    }
+
+    fun getString(key: String) = try
+    {
+        descriptor.fields[key]
+            ?.format
+            ?.formatString(internal[key])
+    } catch (ex: Exception)
+    {
+        error("Failed to format field '$key' with exception", ex)
+
+        "[Format Error]"
     }
 
     // Reprocesses the internal map to use the overridden getter

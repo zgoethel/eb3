@@ -11,5 +11,7 @@ import net.jibini.eb.impl.Classpath
 @Classpath
 class StringFormat : FieldFormat
 {
-    override fun invoke(any: Any?) = any?.toString();
+    override fun format(value: Any?) = value?.toString()
+
+    override fun formatString(value: Any?) = format(value) ?: "-"
 }
