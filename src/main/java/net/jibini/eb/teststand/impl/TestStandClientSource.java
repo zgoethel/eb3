@@ -3,6 +3,7 @@ package net.jibini.eb.teststand.impl;
 import net.jibini.eb.data.Document;
 import net.jibini.eb.data.DocumentDescriptor;
 import net.jibini.eb.data.impl.AbstractCachedDataSourceImpl;
+import net.jibini.eb.data.impl.DocumentSubmissionImpl;
 import net.jibini.eb.impl.EasyButtonContextImpl;
 import net.jibini.eb.teststand.TestStand;
 
@@ -35,6 +36,9 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
 
     // Required to access test-stand configuration
     private final TestStand testStand = EasyButtonContextImpl.getBean(TestStand.class);
+
+    // Required to submit documents to server
+    private final DocumentSubmissionImpl submit = EasyButtonContextImpl.getBean(DocumentSubmissionImpl.class);
 
     /**
      * Whether this source has loaded at least once. When false, existing pre-
@@ -98,6 +102,10 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
                         books.add(book);
                         writer.write(new JSONObject(book.getInternal()).toString());
                         writer.write("\n");
+
+                        submit.sendDocument(
+                            String.format("%s/document/%s", testStand.config.getServerAddress(), descriptor.getName()),
+                            book);
                     } else
                         unknown++;
                 } catch (Exception ex)
@@ -208,6 +216,10 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
                             Objects.requireNonNull(document.get("file_name")).toString(),
                             Objects.requireNonNull(document.get("hash_sha")).toString()
                         );
+
+                        submit.sendDocument(
+                            String.format("%s/document/%s", testStand.config.getServerAddress(), descriptor.getName()),
+                            document);
                     } catch (Exception ex)
                     {
                         log.error("Failed to load a store file line", ex);

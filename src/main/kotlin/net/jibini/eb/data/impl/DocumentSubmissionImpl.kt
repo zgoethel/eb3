@@ -5,10 +5,14 @@ import net.jibini.eb.data.Document
 import net.jibini.eb.data.DocumentDescriptor
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpEntity
+import org.springframework.http.HttpHeaders
+import org.springframework.http.MediaType
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.client.RestTemplate
 
 import java.lang.IllegalStateException
 import java.lang.NullPointerException
@@ -29,7 +33,7 @@ import javax.servlet.http.HttpSession
  * @author Zach Goethel
  */
 @Controller
-class CachedDocumentSubmissionImpl
+class DocumentSubmissionImpl
 {
     // Required to check configured secret key
     @Autowired
@@ -60,5 +64,16 @@ class CachedDocumentSubmissionImpl
         val document = Document(descriptor)
         document.internal.putAll(documentMap)
         DocumentRepositoryCachesImpl.put(document)
+    }
+
+    fun sendDocument(address: String, document: Document)
+    {
+        val rest = RestTemplate()
+        val headers = HttpHeaders()
+        headers["secret"] = easyButton.config.secret
+        headers.contentType = MediaType.APPLICATION_JSON
+
+        val request = HttpEntity(document, headers)
+        rest.postForObject(address, request, String::class.java)
     }
 }
