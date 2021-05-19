@@ -1,7 +1,5 @@
 package net.jibini.eb.teststand
 
-import java.util.UUID
-
 /**
  * Configuration file for settings related to the test-stand datasheet
  * extension. This is configuration is for a customer-specific
@@ -30,16 +28,6 @@ class TestStandConfig
     val definitionDirectory = "test_stand_definitions"
 
     /**
-     * Floor clients will need to be configured with this secret key in order to
-     * submit new and updated workbooks to the test-stand server.
-     *
-     * Do not post this secret publicly. The default secret key is random.
-     */
-    val clientSecret = UUID.randomUUID()
-        .toString()
-        .replace("-", "")
-
-    /**
      * Whether this node is a client or server.
      */
     val isClient = false
@@ -47,7 +35,7 @@ class TestStandConfig
     /**
      * If this node is a client, it requires an address for the server.
      */
-    val serverAddress = "localhost"
+    val serverAddress = "http://localhost:8080"
 
     /**
      * This directory will be recursively scanned for test stand datasheets.

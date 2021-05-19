@@ -7,6 +7,8 @@ import com.google.gson.GsonBuilder
 
 import org.slf4j.LoggerFactory
 
+import java.util.*
+
 /**
  * Core configuration for the indexing and querying engines; this
  * file allows configuration of security, performance, and usability
@@ -38,6 +40,16 @@ class EasyButtonConfig
 	 * repository. The document type can be changed per-session in the UI.
 	 */
 	val defaultSearchDocument = "NONE"
+
+	/**
+	 * Floor clients will need to be configured with this secret key in order to
+	 * submit new and updated document to the server.
+	 *
+	 * Do not post this secret publicly. The default secret key is random.
+	 */
+	val secret = UUID.randomUUID()
+		.toString()
+		.replace("-", "")
 	
 	companion object
 	{

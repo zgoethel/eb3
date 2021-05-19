@@ -60,7 +60,8 @@ public class SearchPage
         @RequestParam(defaultValue = "") String document,
         @RequestParam(defaultValue = "50") int top,
         @RequestParam(defaultValue = "0") int skip,
-        @RequestParam(defaultValue = "") String queryString
+        @RequestParam(defaultValue = "") String queryString,
+        @RequestParam(defaultValue = "") String search
     )
     {
         // Authenticate the current session
@@ -77,7 +78,34 @@ public class SearchPage
         // Filter the results for paging and search
         Collection<Document> repo = retrieval.getDocumentRepository(document)
             .stream()
-            .filter((element) -> (++i[0] > skip && i[0] <= top + skip))
+            .filter((element) ->
+            {
+                final boolean[] passed = { false };
+
+                if (search.length() > 0)
+                    element.getInternal()
+                        .forEach((k, v) ->
+                        {
+                            try
+                            {
+                                passed[0] |= element.getDescriptor()
+                                    .getFields()
+                                    .get(k)
+                                    .getFormat()
+                                    .formatString(v)
+                                    .toLowerCase()
+                                    .contains(search.toLowerCase());
+                            } catch (Exception ignored)
+                            {  }
+                        });
+                else
+                    passed[0] = true;
+
+                if (passed[0]) ++i[0];
+                ++i[1];
+
+                return passed[0] && (i[0] > skip && i[0] <= top + skip);
+            })
             .collect(Collectors.toList());
 
         // Add results and document type data
@@ -89,6 +117,7 @@ public class SearchPage
         model.addAttribute("size", i[0]);
         // Add data for search UI and filling URLs
         model.addAttribute("queryString", queryString);
+        model.addAttribute("search", search);
 
         return "search";
     }

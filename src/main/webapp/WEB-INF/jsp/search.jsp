@@ -129,6 +129,14 @@
                 text-align: center;
             }
 
+            div#search-container
+            {
+                float: right;
+                margin-bottom: 1em;
+                margin-top: -2em;
+                margin-right: 2em;
+            }
+
             @media only screen and (max-width: 680px)
             {
                 div#paging
@@ -145,6 +153,13 @@
 
             @media only screen and (max-width: 540px)
             {
+                div#search-container
+                {
+                    float: none;
+                    margin-top: 0;
+                    margin-left: 1em;
+                }
+
                 div#right-head-buttons
                 {
                     display: none;
@@ -172,6 +187,15 @@
             <img id="download-icon" src="/image/eos-icons/download.svg" title="Download as XLSX" />
         </h2>
 
+        <div id="search-container">
+            <form action="/s" method="GET" autocomplete="off">
+                <input type="text" style="display: none;" name="document" value="${descriptor.getName()}" />
+                <input type="text" style="display: none;" name="top" value="${top}" />
+                <input type="text" name="search" value="${search}" />
+                <input type="submit" value="Search" />
+            </form>
+        </div>
+
         <div id="table-container">
             <table>
                 <thead>
@@ -192,10 +216,16 @@
             </table>
         </div>
 
+        <c:url value="/s" var="pagingURL">
+          <c:param name="document" value="${descriptor.getName()}" />
+          <c:param name="top" value="${top}" />
+          <c:param name="search" value="${search}" />
+        </c:url>
+
         <div id="paging">
             <c:choose>
                 <c:when test="${skip - top >= 0}">
-                    <a href="/s?document=${descriptor.getName()}&top=${top}&skip=${skip - top}" class="button">Prev.</a>
+                    <a href="${pagingURL}&skip=${skip - top}" class="button">Prev.</a>
                 </c:when>
                 <c:otherwise>
                     <span style="background: grey;" class="button">Prev.</span>
@@ -204,12 +234,13 @@
 
             <span style="padding: 2em;">
                 Page <strong>${Integer.valueOf(skip / top) + 1}</strong>
-                (${skip + 1} - ${Math.min(size, Integer.valueOf(skip + top))} of ${size})
+                (${Math.min(size, Integer.valueOf(skip + 1))} - ${Math.min(size, Integer.valueOf(skip + top))}
+                of ${size})
             </span>
 
             <c:choose>
                 <c:when test="${skip + top < size}">
-                    <a href="/s?document=${descriptor.getName()}&top=${top}&skip=${skip + top}" class="button">Next</a>
+                    <a href="${pagingURL}&skip=${skip + top}" class="button">Next</a>
                 </c:when>
                 <c:otherwise>
                     <span style="background: grey;" class="button">Next</span>
