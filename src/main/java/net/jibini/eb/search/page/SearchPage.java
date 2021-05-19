@@ -59,27 +59,36 @@ public class SearchPage
 
         @RequestParam(defaultValue = "") String document,
         @RequestParam(defaultValue = "50") int top,
-        @RequestParam(defaultValue = "0") int skip
+        @RequestParam(defaultValue = "0") int skip,
+        @RequestParam(defaultValue = "") String queryString
     )
     {
         // Authenticate the current session
         AuthDetails authDetails = loginPage.validate(session, request, response);
         if (authDetails == null)
             return "login";
-
+        // Default to the configured document type
         if (document.equals(""))
             document = easyButton.config.getDefaultSearchDocument();
         model.addAttribute("username", authDetails.getUsername());
 
+        // Effectively final counters for the filtering
         final int[] i = { 0, 0 };
-
+        // Filter the results for paging and search
         Collection<Document> repo = retrieval.getDocumentRepository(document)
             .stream()
             .filter((element) -> (++i[0] > skip && i[0] <= top + skip))
             .collect(Collectors.toList());
 
+        // Add results and document type data
         model.addAttribute("repo", repo);
         model.addAttribute("descriptor", DocumentDescriptor.forName(document));
+        // Add data for paging UI
+        model.addAttribute("top", top);
+        model.addAttribute("skip", skip);
+        model.addAttribute("size", i[0]);
+        // Add data for search UI and filling URLs
+        model.addAttribute("queryString", queryString);
 
         return "search";
     }

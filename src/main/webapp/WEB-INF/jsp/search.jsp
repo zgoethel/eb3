@@ -94,6 +94,7 @@
                 padding: 0.5em;
                 background: #590069;
                 color: #ffffff;
+                filter: drop-shadow(0 0 4px grey);
             }
 
             td
@@ -109,6 +110,50 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
+            }
+
+            div#paging .button
+            {
+                margin-top: 1em;
+                background: purple;
+                filter: drop-shadow(0 10px 0.5rem lightgrey);
+            }
+
+            div#paging
+            {
+                position: absolute;
+                width: 50%;
+                left: 25%;
+                margin-top: 2em;
+                padding-bottom: 2em;
+                text-align: center;
+            }
+
+            @media only screen and (max-width: 680px)
+            {
+                div#paging
+                {
+                    width: 100%;
+                    left: 0;
+                }
+
+                div#paging *:nth-child(2)
+                {
+                    display: none;
+                }
+            }
+
+            @media only screen and (max-width: 540px)
+            {
+                div#right-head-buttons
+                {
+                    display: none;
+                }
+
+                img#download-icon
+                {
+                    display: none;
+                }
             }
         </style>
     </head>
@@ -145,6 +190,31 @@
                     </c:forEach>
                 </tbody>
             </table>
+        </div>
+
+        <div id="paging">
+            <c:choose>
+                <c:when test="${skip - top >= 0}">
+                    <a href="/s?document=${descriptor.getName()}&top=${top}&skip=${skip - top}" class="button">Prev.</a>
+                </c:when>
+                <c:otherwise>
+                    <span style="background: grey;" class="button">Prev.</span>
+                </c:otherwise>
+            </c:choose>
+
+            <span style="padding: 2em;">
+                Page <strong>${Integer.valueOf(skip / top) + 1}</strong>
+                (${skip + 1} - ${Math.min(size, Integer.valueOf(skip + top))} of ${size})
+            </span>
+
+            <c:choose>
+                <c:when test="${skip + top < size}">
+                    <a href="/s?document=${descriptor.getName()}&top=${top}&skip=${skip + top}" class="button">Next</a>
+                </c:when>
+                <c:otherwise>
+                    <span style="background: grey;" class="button">Next</span>
+                </c:otherwise>
+            </c:choose>
         </div>
     </body>
 </html>
