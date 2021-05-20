@@ -69,6 +69,7 @@
             <div class="contact-note">
                 <p>Please contact the administrator and include the following error details:</p>
             </div>
+            <br />
 
             <div class="error-log">
                 <div><strong>Error:</strong> ${error}</div>

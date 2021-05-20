@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
+
+import java.util.stream.Collectors
 
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
@@ -34,7 +37,53 @@ class CachedDocumentRetrievalImpl
     @Autowired
     private lateinit var loginPage: LoginPage
 
-    fun getDocumentRepository(repository: String) = DocumentRepositoryCachesImpl.get(repository).values
+    fun getDocumentRepository(
+        document: String,
+        top: Int = -1,
+        skip: Int = 0,
+        queryString: String = "",
+        search: String = ""
+    ) = getCountedDocumentRepository(document, top, skip, queryString, search).first
+
+    fun getCountedDocumentRepository(
+        document: String,
+        top: Int = -1,
+        skip: Int = 0,
+        queryString: String = "",
+        search: String = ""
+    ): Pair<Collection<Document>, Int>
+    {
+        val i = intArrayOf(0, 0)
+
+        return Pair(DocumentRepositoryCachesImpl.get(document).values
+            .stream()
+            .filter {
+                val passed = booleanArrayOf(false)
+
+                if (search.isNotBlank())
+                    it.internal
+                        .forEach { (k, v) ->
+                            try
+                            {
+                                passed[0] = passed[0] || it.descriptor
+                                    .fields[k]!!
+                                    .format
+                                    .formatString(v)
+                                    .toLowerCase()
+                                    .contains(search.toLowerCase())
+                            } catch (_: Exception)
+                            {  }
+                        }
+                else
+                    passed[0] = true
+
+                if (passed[0]) ++i[0]
+                ++i[1]
+
+                passed[0] && ((i[0] > skip && i[0] <= top + skip) || top == -1)
+            }
+            .collect(Collectors.toList()), i[0])
+    }
 
     @GetMapping("/document/{repository}")
     @ResponseBody
@@ -44,13 +93,18 @@ class CachedDocumentRetrievalImpl
 
         session: HttpSession,
 
-        @PathVariable repository: String
+        @PathVariable repository: String,
+
+        @RequestParam(defaultValue = "-1") top: Int,
+        @RequestParam(defaultValue = "0") skip: Int,
+        @RequestParam(defaultValue = "") queryString: String,
+        @RequestParam(defaultValue = "") search: String
     ): Collection<Document>?
     {
         // Authenticate the current session
         loginPage.validate(session, request, response) ?: return null
 
-        return getDocumentRepository(repository)
+        return getDocumentRepository(repository, top, skip, queryString, search)
     }
 
     fun getDocumentByPrimaryKey(repository: String, primaryKey: String) = DocumentRepositoryCachesImpl.get(repository, primaryKey)

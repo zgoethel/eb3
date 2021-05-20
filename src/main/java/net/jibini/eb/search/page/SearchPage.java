@@ -1,5 +1,7 @@
 package net.jibini.eb.search.page;
 
+import kotlin.Pair;
+
 import net.jibini.eb.EasyButton;
 import net.jibini.eb.auth.AuthDetails;
 import net.jibini.eb.auth.page.LoginPage;
@@ -18,7 +20,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 /**
  * The primary configurable search page. This is the primary page from which the
@@ -73,40 +74,9 @@ public class SearchPage
             document = easyButton.config.getDefaultSearchDocument();
         model.addAttribute("username", authDetails.getUsername());
 
-        // Effectively final counters for the filtering
-        final int[] i = { 0, 0 };
+        Pair<Collection<Document>, Integer> filtered = retrieval.getCountedDocumentRepository(document, top, skip, queryString, search);
         // Filter the results for paging and search
-        Collection<Document> repo = retrieval.getDocumentRepository(document)
-            .stream()
-            .filter((element) ->
-            {
-                final boolean[] passed = { false };
-
-                if (search.length() > 0)
-                    element.getInternal()
-                        .forEach((k, v) ->
-                        {
-                            try
-                            {
-                                passed[0] |= element.getDescriptor()
-                                    .getFields()
-                                    .get(k)
-                                    .getFormat()
-                                    .formatString(v)
-                                    .toLowerCase()
-                                    .contains(search.toLowerCase());
-                            } catch (Exception ignored)
-                            {  }
-                        });
-                else
-                    passed[0] = true;
-
-                if (passed[0]) ++i[0];
-                ++i[1];
-
-                return passed[0] && (i[0] > skip && i[0] <= top + skip);
-            })
-            .collect(Collectors.toList());
+        Collection<Document> repo = filtered.getFirst();
 
         // Add results and document type data
         model.addAttribute("repo", repo);
@@ -114,7 +84,7 @@ public class SearchPage
         // Add data for paging UI
         model.addAttribute("top", top);
         model.addAttribute("skip", skip);
-        model.addAttribute("size", i[0]);
+        model.addAttribute("size", filtered.getSecond());
         // Add data for search UI and filling URLs
         model.addAttribute("queryString", queryString);
         model.addAttribute("search", search);

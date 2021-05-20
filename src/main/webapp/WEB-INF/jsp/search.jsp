@@ -137,6 +137,28 @@
                 margin-right: 2em;
             }
 
+            .search-button
+            {
+                background-size: contain;
+                width: 3em;
+                margin-left: 0.3em;
+                border: 1px solid black;
+                border-radius: 0.2em;
+                margin-bottom: -1.2em;
+            }
+
+            #search-submit
+            {
+                background: url("/image/eos-icons/search.svg");
+            }
+
+            #search-menu
+            {
+                background: url("/image/eos-icons/menu.svg");
+                border: 1px solid #62006a;
+                cursor: pointer;
+            }
+
             @media only screen and (max-width: 680px)
             {
                 div#paging
@@ -182,9 +204,16 @@
             <a href="/logout"><span id="logout-button">Logout</span></a>
         </div>
 
+        <c:url value="/report/ExportWorkbook" var="reportURL">
+            <c:param name="document" value="${descriptor.getName()}" />
+            <c:param name="search" value="${search}" />
+        </c:url>
+
         <h2>
             <c:out value="${descriptor.getTitle()}" />
-            <img id="download-icon" src="/image/eos-icons/download.svg" title="Download as XLSX" />
+            <a href="${reportURL}" target="_blank">
+                <img id="download-icon" src="/image/eos-icons/download.svg" title="Download as XLSX" />
+            </a>
         </h2>
 
         <div id="search-container">
@@ -192,7 +221,8 @@
                 <input type="text" style="display: none;" name="document" value="${descriptor.getName()}" />
                 <input type="text" style="display: none;" name="top" value="${top}" />
                 <input type="text" name="search" value="${search}" />
-                <input type="submit" value="Search" />
+                <input type="submit" class="search-button" id="search-submit" value="" />
+                <input type="button" class="search-button" id="search-menu" />
             </form>
         </div>
 
@@ -217,9 +247,9 @@
         </div>
 
         <c:url value="/s" var="pagingURL">
-          <c:param name="document" value="${descriptor.getName()}" />
-          <c:param name="top" value="${top}" />
-          <c:param name="search" value="${search}" />
+            <c:param name="document" value="${descriptor.getName()}" />
+            <c:param name="top" value="${top}" />
+            <c:param name="search" value="${search}" />
         </c:url>
 
         <div id="paging">
