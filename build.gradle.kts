@@ -16,6 +16,10 @@ plugins {
 	id("com.github.kt3k.coveralls") version "2.10.2"
 }
 
+tasks.bootRun {
+	jvmArgs("-Xmx3600M")
+}
+
 java {
 	sourceCompatibility = JavaVersion.VERSION_11
 	targetCompatibility = JavaVersion.VERSION_11
