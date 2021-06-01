@@ -51,5 +51,5 @@ class TestStandConfig
     /**
      * Already-indexed documents will be stored in this file.
      */
-    val documentStore = "test_stand/store.json"
+    val documentStore = "test_stand/store.bin"
 }

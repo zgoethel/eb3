@@ -47,6 +47,11 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
     private boolean initialLoad = false;
 
     /**
+     * Contains data stored on disk to persist entries through restarts.
+     */
+    private StoreFile storeFile;
+
+    /**
      * A hash-map of all document file names which are loaded and their SHA
      * hashes. Files will be compared to this hash to determine if changes must
      * be loaded.
@@ -67,6 +72,8 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
         // Load from store file if not yet loaded
         if (!initialLoad)
         {
+            storeFile = new StoreFile(DocumentDescriptor.forName("TEST_STAND_SHEET"), new File(testStand.config.getDocumentStore()));
+
             initialLoad(books, descriptor);
             log.info("Loaded {} existing pre-scanned documents", books.size());
             initialLoad = true;
@@ -80,8 +87,6 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
             List<File> files = scanDirectory(scanDirectory);
             log.info("Found {} workbook(s) in recursive scan", files.size());
             int created = 0, unknown = 0;
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(testStand.config.getDocumentStore(), true));
 
             for (File file : files)
             {
@@ -100,8 +105,7 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
                         created++;
 
                         books.add(book);
-                        writer.write(new JSONObject(book.getInternal()).toString());
-                        writer.write("\n");
+                        storeFile.write(book);
 
                         submit.sendDocument(
                             String.format("%s/document/%s", testStand.config.getServerAddress(), descriptor.getName()),
@@ -116,9 +120,6 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
 
             log.info("Found {} new workbook(s) in the scan directory", created);
             log.warn("Found {} workbook(s) with no applicable parsing definitions", unknown);
-
-            writer.flush();
-            writer.close();
         } catch (IOException ex)
         {
             log.error("Failed to load test stand workbooks from scan", ex);
@@ -156,6 +157,7 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
      * @return A SHA-1 checksum of the provided file which may be used to
      *      determine if the file has changed from a point A to a point B.
      */
+    @Deprecated
     private String calculateSHA(File file)
     {
         try
@@ -191,57 +193,25 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
      */
     private void initialLoad(List<Document> books, DocumentDescriptor descriptor)
     {
-        File store = new File(testStand.config.getDocumentStore());
+        Collection<Document> store = storeFile.loadAll();
 
-        if (store.exists())
+        for (Document document : store)
         {
             try
             {
-                BufferedReader reader = new BufferedReader(new FileReader(store));
-                String line;
+                books.add(document);
 
-                while ((line = reader.readLine()) != null)
-                {
-                    try
-                    {
-                        if (line.length() == 0) continue;
+                loaded.put(
+                    Objects.requireNonNull(document.get("file_name")).toString(),
+                    Objects.requireNonNull(document.get("hash_sha")).toString()
+                );
 
-                        JSONObject entry = new JSONObject(line);
-
-                        Document document = new Document(descriptor);
-                        document.getInternal().putAll(entry.toMap());
-                        books.add(document);
-
-                        loaded.put(
-                            Objects.requireNonNull(document.get("file_name")).toString(),
-                            Objects.requireNonNull(document.get("hash_sha")).toString()
-                        );
-
-                        submit.sendDocument(
-                            String.format("%s/document/%s", testStand.config.getServerAddress(), descriptor.getName()),
-                            document);
-                    } catch (Exception ex)
-                    {
-                        log.error("Failed to load a store file line", ex);
-                    }
-                }
-
-                reader.close();
-            } catch (IOException ex)
+                submit.sendDocument(
+                    String.format("%s/document/%s", testStand.config.getServerAddress(), descriptor.getName()),
+                    document);
+            } catch (Exception ex)
             {
-                log.error("Failed to load already-scanned test sheets", ex);
-            }
-        } else
-        {
-            if (store.getParentFile() != null)
-                store.getParentFile().mkdirs();
-
-            try
-            {
-                store.createNewFile();
-            } catch (IOException ex)
-            {
-                log.error("Failed to create store file", ex);
+                log.error("Failed to load a store file line", ex);
             }
         }
     }
