@@ -3,11 +3,13 @@ package net.jibini.eb.teststand;
 import net.jibini.eb.EasyButtonConfig;
 import net.jibini.eb.data.DataSource;
 import net.jibini.eb.data.DocumentDescriptor;
+import net.jibini.eb.data.impl.DocumentSubmissionImpl;
 import net.jibini.eb.teststand.impl.TestStandClientSource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -27,6 +29,9 @@ import javax.annotation.PostConstruct;
 public class TestStand
 {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
+
+    @Autowired
+    private DocumentSubmissionImpl submission;
 
     /**
      * The test-stand extension's configuration file, which is loaded upon
@@ -77,7 +82,8 @@ public class TestStand
                         t.printStackTrace();
                     }
             }).start();
-        }
+        } else
+            submission.loadCache(DocumentDescriptor.forName("TEST_STAND_SHEET"));
     }
 
     /**

@@ -3,6 +3,7 @@ package net.jibini.eb.data.impl
 import net.jibini.eb.EasyButton
 import net.jibini.eb.data.Document
 import net.jibini.eb.data.DocumentDescriptor
+import net.jibini.eb.teststand.impl.StoreFile
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpEntity
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.client.RestTemplate
 
+import java.io.File
 import java.lang.IllegalStateException
 import java.lang.NullPointerException
 import java.lang.RuntimeException
@@ -64,6 +66,20 @@ class DocumentSubmissionImpl
         val document = Document(descriptor)
         document.internal.putAll(documentMap)
         DocumentRepositoryCachesImpl.put(document)
+
+        val storeFile = StoreFile(descriptor, File(".stores/$repository.bin"))
+        storeFile.write(document)
+        storeFile.close()
+    }
+
+    fun loadCache(descriptor: DocumentDescriptor)
+    {
+        val storeFile = StoreFile(descriptor, File(".stores/${descriptor.name}.bin"))
+        val loaded = storeFile.loadAll()
+        storeFile.close()
+
+        for (document in loaded)
+            DocumentRepositoryCachesImpl.put(document)
     }
 
     fun sendDocument(address: String, document: Document)
