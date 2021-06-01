@@ -26,4 +26,13 @@ interface FieldFormat
      *      formatting was impossible.
      */
     fun formatString(value: Any?): String
+
+    /**
+     * Filters a provided value (pass/fail) depending on the arguments provided.
+     *
+     * @param value Document to analyze and pass/fail based on contents.
+     * @param args Query arguments for field inputs (encoded).
+     * @return Whether this document passes the filter and should be displayed.
+     */
+    fun filter(value: Any?, fieldName: String, args: MutableMap<String, Array<String>>): Boolean
 }

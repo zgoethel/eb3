@@ -1,6 +1,7 @@
 package net.jibini.eb.teststand.impl
 
 import net.jibini.eb.data.FieldFormat
+import net.jibini.eb.data.impl.StringFormat
 import net.jibini.eb.impl.Classpath
 
 /**
@@ -9,7 +10,7 @@ import net.jibini.eb.impl.Classpath
  * @author Zach Goethel
  */
 @Classpath
-class ToUpperStringFormat : FieldFormat
+class ToUpperStringFormat : FieldFormat by StringFormat()
 {
     override fun format(value: Any?) = value?.toString()?.toUpperCase();
 

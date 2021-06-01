@@ -20,4 +20,13 @@ class FloatFormat : FieldFormat
     }
 
     override fun formatString(value: Any?) = format(value)?.toString() ?: "-"
+
+    override fun filter(value: Any?, fieldName: String, args: MutableMap<String, Array<String>>): Boolean
+    {
+        val min = (args["_${fieldName}_min"] ?: arrayOf(""))[0].toFloatOrNull()
+        val max = (args["_${fieldName}_max"] ?: arrayOf(""))[0].toFloatOrNull()
+
+        return (min == null || (format(value) as Float) >= min)
+            && (max == null || (format(value) as Float) <= max)
+    }
 }

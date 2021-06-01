@@ -5,6 +5,7 @@ import net.jibini.eb.impl.Classpath;
 
 import org.jetbrains.annotations.NotNull;
 
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,7 +15,9 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 /**
  * Parses a stored date in Epicor into an instance of {@link Instant}.
@@ -62,5 +65,16 @@ public class EpicorDateFormat implements FieldFormat
 
         return DISPLAY_FORMAT.format(instant)
             .replace(" 00:00:00", "");
+    }
+
+    @Override
+    public boolean filter(
+        @Nullable Object value,
+        @NotNull String fieldName,
+        @NotNull Map<String, String[]> args
+    )
+    {
+        //TODO
+        return true;
     }
 }

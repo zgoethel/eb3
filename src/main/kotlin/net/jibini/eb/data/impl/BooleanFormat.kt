@@ -20,4 +20,21 @@ class BooleanFormat : FieldFormat
     }
 
     override fun formatString(value: Any?) = format(value)?.toString()?.capitalize() ?: "-"
+
+    override fun filter(value: Any?, fieldName: String, args: MutableMap<String, Array<String>>): Boolean
+    {
+        val v = when ((args["_${fieldName}"] ?: arrayOf(""))[0].toIntOrNull())
+        {
+            0 -> false
+            1 -> true
+            else -> null
+        }
+
+        return when (v)
+        {
+            null -> true
+            format(value) -> true
+            else -> false
+        }
+    }
 }

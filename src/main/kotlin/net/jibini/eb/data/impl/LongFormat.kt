@@ -20,4 +20,13 @@ class LongFormat : FieldFormat
     }
 
     override fun formatString(value: Any?) = format(value)?.toString() ?: "-"
+
+    override fun filter(value: Any?, fieldName: String, args: MutableMap<String, Array<String>>): Boolean
+    {
+        val min = (args["_${fieldName}_min"] ?: arrayOf(""))[0].toLongOrNull()
+        val max = (args["_${fieldName}_max"] ?: arrayOf(""))[0].toLongOrNull()
+
+        return (min == null || (format(value) as Long) >= min)
+            && (max == null || (format(value) as Long) <= max)
+    }
 }

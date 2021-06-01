@@ -30,10 +30,9 @@ class ExportWorkbook : ReportFactory
         val document = args["document"]!![0]
         val top = args["top"]?.get(0)?.toIntOrNull() ?: -1
         val skip = args["skip"]?.get(0)?.toIntOrNull() ?: 0
-        val queryString = args["queryString"]?.get(0) ?: ""
         val search = args["search"]?.get(0) ?: ""
 
-        val elements = retrieval.getDocumentRepository(document, top, skip, queryString, search)
+        val elements = retrieval.getDocumentRepository(document, top, skip, search)
         val head = sheet.createRow(0)
 
         val style = workbook.createCellStyle()

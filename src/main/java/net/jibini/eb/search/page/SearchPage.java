@@ -61,7 +61,6 @@ public class SearchPage
         @RequestParam(defaultValue = "") String document,
         @RequestParam(defaultValue = "50") int top,
         @RequestParam(defaultValue = "0") int skip,
-        @RequestParam(defaultValue = "") String queryString,
         @RequestParam(defaultValue = "") String search
     )
     {
@@ -74,7 +73,7 @@ public class SearchPage
             document = easyButton.config.getDefaultSearchDocument();
         model.addAttribute("username", authDetails.getUsername());
 
-        Pair<Collection<Document>, Integer> filtered = retrieval.getCountedDocumentRepository(document, top, skip, queryString, search);
+        Pair<Collection<Document>, Integer> filtered = retrieval.getCountedDocumentRepository(document, top, skip, search, request.getParameterMap());
         // Filter the results for paging and search
         Collection<Document> repo = filtered.getFirst();
 
@@ -86,7 +85,6 @@ public class SearchPage
         model.addAttribute("skip", skip);
         model.addAttribute("size", filtered.getSecond());
         // Add data for search UI and filling URLs
-        model.addAttribute("queryString", queryString);
         model.addAttribute("search", search);
 
         return "search";

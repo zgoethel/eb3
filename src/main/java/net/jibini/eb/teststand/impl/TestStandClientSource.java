@@ -87,7 +87,7 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
                 try
                 {
                     long lastModified = file.lastModified();
-                    if (loaded.getOrDefault(file.getName(), -1L).equals(lastModified)) continue;
+                    if (loaded.getOrDefault(file.getName(), -1L) >= lastModified) continue;
 
                     Document book = loadDocument(file, descriptor);
 

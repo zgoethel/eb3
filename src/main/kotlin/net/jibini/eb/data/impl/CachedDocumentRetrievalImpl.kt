@@ -2,6 +2,7 @@ package net.jibini.eb.data.impl
 
 import net.jibini.eb.auth.page.LoginPage
 import net.jibini.eb.data.Document
+import net.jibini.eb.data.DocumentDescriptor
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
@@ -41,16 +42,16 @@ class CachedDocumentRetrievalImpl
         document: String,
         top: Int = -1,
         skip: Int = 0,
-        queryString: String = "",
-        search: String = ""
-    ) = getCountedDocumentRepository(document, top, skip, queryString, search).first
+        search: String = "",
+        args: MutableMap<String, Array<String>> = mutableMapOf()
+    ) = getCountedDocumentRepository(document, top, skip, search, args).first
 
     fun getCountedDocumentRepository(
         document: String,
         top: Int = -1,
         skip: Int = 0,
-        queryString: String = "",
-        search: String = ""
+        search: String = "",
+        args: MutableMap<String, Array<String>> = mutableMapOf()
     ): Pair<Collection<Document>, Int>
     {
         val i = intArrayOf(0, 0)
@@ -77,6 +78,13 @@ class CachedDocumentRetrievalImpl
                 else
                     passed[0] = true
 
+                for (each in DocumentDescriptor.forName(document).fields.values)
+                {
+                    if (!passed[0]) break
+                    passed[0] = passed[0] && each.format.filter(it[each.name], each.name, args)
+                    if (!passed[0]) println("FAIL ${each.format}")
+                }
+
                 if (passed[0]) ++i[0]
                 ++i[1]
 
@@ -97,14 +105,13 @@ class CachedDocumentRetrievalImpl
 
         @RequestParam(defaultValue = "-1") top: Int,
         @RequestParam(defaultValue = "0") skip: Int,
-        @RequestParam(defaultValue = "") queryString: String,
         @RequestParam(defaultValue = "") search: String
     ): Collection<Document>?
     {
         // Authenticate the current session
         loginPage.validate(session, request, response) ?: return null
 
-        return getDocumentRepository(repository, top, skip, queryString, search)
+        return getDocumentRepository(repository, top, skip, search, request.parameterMap)
     }
 
     fun getDocumentByPrimaryKey(repository: String, primaryKey: String) = DocumentRepositoryCachesImpl.get(repository, primaryKey)
