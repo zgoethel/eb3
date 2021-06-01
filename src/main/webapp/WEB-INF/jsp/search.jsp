@@ -60,7 +60,7 @@
                 border-radius: 0.25em;
                 overflow: hidden;
                 overflow-x: auto;
-                border: 1px solid #734272;
+                //border: 1px solid #734272;
                 background: #ffffff;
             }
 
@@ -85,7 +85,7 @@
 
             tr:nth-child(even)
             {
-                background: #efe9ff;
+                background: #fff9f3;
             }
 
             th
@@ -99,7 +99,7 @@
 
             td
             {
-                border-bottom: 1px solid #d4a5dcad;
+                border-bottom: 1px solid #c3cfe6ad;
                 padding: 0.5em;
             }
 

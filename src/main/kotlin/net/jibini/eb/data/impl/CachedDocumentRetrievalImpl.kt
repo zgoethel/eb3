@@ -82,7 +82,6 @@ class CachedDocumentRetrievalImpl
                 {
                     if (!passed[0]) break
                     passed[0] = passed[0] && each.format.filter(it[each.name], each.name, args)
-                    if (!passed[0]) println("FAIL ${each.format}")
                 }
 
                 if (passed[0]) ++i[0]
