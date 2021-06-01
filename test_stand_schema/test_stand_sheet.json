@@ -21,9 +21,9 @@
       "format": "StringFormat"
     },
     {
-      "name": "hash_sha",
-      "title": "Hash",
-      "format": "StringFormat"
+      "name": "last_modified",
+      "title": "Last Modified",
+      "format": "LongFormat"
     },
     {
       "name": "model",

@@ -12,16 +12,10 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import org.jetbrains.annotations.NotNull;
 
-import org.json.JSONObject;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
-
 import java.io.*;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 /**
@@ -52,11 +46,11 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
     private StoreFile storeFile;
 
     /**
-     * A hash-map of all document file names which are loaded and their SHA
-     * hashes. Files will be compared to this hash to determine if changes must
-     * be loaded.
+     * A hash-map of all document file names which are loaded and their last-
+     * modified dates. Files will be compared to this time to determine if file
+     * changes must be loaded.
      */
-    private final Map<String, String> loaded = new HashMap<>();
+    private final Map<String, Long> loaded = new HashMap<>();
 
     /**
      * Load in the workbook definitions for parsing workbooks.
@@ -92,15 +86,15 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
             {
                 try
                 {
-                    String hash = calculateSHA(file);
-                    if (loaded.getOrDefault(file.getName(), "none").equals(hash)) continue;
+                    long lastModified = file.lastModified();
+                    if (loaded.getOrDefault(file.getName(), -1L).equals(lastModified)) continue;
 
                     Document book = loadDocument(file, descriptor);
 
                     if (book != null)
                     {
-                        book.getInternal().put("hash_sha", hash);
-                        loaded.put(file.getName(), hash);
+                        book.getInternal().put("last_modified", lastModified);
+                        loaded.put(file.getName(), lastModified);
 
                         created++;
 
@@ -153,42 +147,6 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
     }
 
     /**
-     * @param file File whose contents to use to calculate a SHA-1 checksum.
-     * @return A SHA-1 checksum of the provided file which may be used to
-     *      determine if the file has changed from a point A to a point B.
-     */
-    @Deprecated
-    private String calculateSHA(File file)
-    {
-        try
-        {
-            MessageDigest sha = MessageDigest.getInstance("SHA-1");
-
-            try (InputStream input = new FileInputStream(file))
-            {
-                byte[] buffer = new byte[(int)file.length()];
-                int len = input.read(buffer);
-
-                while (len != -1)
-                {
-                    sha.update(buffer, 0, len);
-                    len = input.read(buffer);
-                }
-
-                byte[] d = sha.digest();
-                sha.reset();
-
-                return new HexBinaryAdapter().marshal(d);
-            }
-        } catch (IOException | NoSuchAlgorithmException ex)
-        {
-            log.error("Failed to calculate file SHA representation", ex);
-
-            return "";
-        }
-    }
-
-    /**
      * Loads already-indexed workbooks from store file into memory.
      */
     private void initialLoad(List<Document> books, DocumentDescriptor descriptor)
@@ -203,7 +161,7 @@ public class TestStandClientSource extends AbstractCachedDataSourceImpl
 
                 loaded.put(
                     Objects.requireNonNull(document.get("file_name")).toString(),
-                    Objects.requireNonNull(document.get("hash_sha")).toString()
+                    (Long)document.get("last_modified")
                 );
 
                 submit.sendDocument(
