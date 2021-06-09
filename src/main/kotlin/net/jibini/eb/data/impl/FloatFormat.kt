@@ -29,4 +29,6 @@ class FloatFormat : FieldFormat
         return (min == null || (format(value) as Float) >= min)
             && (max == null || (format(value) as Float) <= max)
     }
+
+    override val searchWidget = "search/float"
 }

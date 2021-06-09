@@ -37,4 +37,6 @@ class BooleanFormat : FieldFormat
             else -> false
         }
     }
+
+    override val searchWidget = "search/boolean"
 }

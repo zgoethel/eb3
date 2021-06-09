@@ -34,4 +34,6 @@ class StringFormat : FieldFormat
             else -> throw IllegalArgumentException("Unrecognized filter method '$method'")
         }
     }
+
+    override val searchWidget = "search/string"
 }

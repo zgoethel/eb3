@@ -29,4 +29,6 @@ class LongFormat : FieldFormat
         return (min == null || (format(value) as Long) >= min)
             && (max == null || (format(value) as Long) <= max)
     }
+
+    override val searchWidget = "search/long"
 }

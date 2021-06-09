@@ -35,4 +35,10 @@ interface FieldFormat
      * @return Whether this document passes the filter and should be displayed.
      */
     fun filter(value: Any?, fieldName: String, args: MutableMap<String, Array<String>>): Boolean
+
+    /**
+     * Path of the JSP file to use as a template for search inputs for fields
+     * of this type.
+     */
+    val searchWidget: String
 }

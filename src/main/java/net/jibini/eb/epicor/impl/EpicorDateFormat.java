@@ -77,4 +77,11 @@ public class EpicorDateFormat implements FieldFormat
         //TODO
         return true;
     }
+
+    @NotNull
+    @Override
+    public String getSearchWidget()
+    {
+        return "search/date";
+    }
 }
