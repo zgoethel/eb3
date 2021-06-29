@@ -57,37 +57,40 @@ public class TestStandDefinitionImpl
 
             String contents = "";
 
-            switch (cell.getCellType())
+            if (cell != null)
             {
-                case BLANK:
-                    contents = "";
-                    break;
-                case NUMERIC:
-                    if (cell.getCellStyle().getDataFormatString().contains("%"))
-                        contents = (cell.getNumericCellValue() * 100) + "%";
-                    else
-                        contents = cell.getNumericCellValue() + "";
-                    break;
-                case STRING:
-                    contents = cell.getStringCellValue();
-                    break;
-                case BOOLEAN:
-                    contents = cell.getBooleanCellValue() ? "True" : "False";
-                    break;
-                case ERROR:
-                    contents = "ERR" + cell.getErrorCellValue();
-                    break;
-                case FORMULA:
-                    contents = cell.getCellFormula();
-            }
+                switch (cell.getCellType())
+                {
+                    case BLANK:
+                        contents = "";
+                        break;
+                    case NUMERIC:
+                        if (cell.getCellStyle().getDataFormatString().contains("%"))
+                            contents = (cell.getNumericCellValue() * 100) + "%";
+                        else
+                            contents = cell.getNumericCellValue() + "";
+                        break;
+                    case STRING:
+                        contents = cell.getStringCellValue();
+                        break;
+                    case BOOLEAN:
+                        contents = cell.getBooleanCellValue() ? "True" : "False";
+                        break;
+                    case ERROR:
+                        contents = "ERR" + cell.getErrorCellValue();
+                        break;
+                    case FORMULA:
+                        contents = cell.getCellFormula();
+                }
 
-            if (appFinal.fieldRegex.containsKey(k))
-            {
-                String regex = appFinal.fieldRegex.get(k);
-                Pattern p = Pattern.compile(regex);
-                Matcher m = p.matcher(contents);
+                if (appFinal.fieldRegex.containsKey(k))
+                {
+                    String regex = appFinal.fieldRegex.get(k);
+                    Pattern p = Pattern.compile(regex);
+                    Matcher m = p.matcher(contents);
 
-                contents = m.find() ? m.group(m.groupCount()) : "";
+                    contents = m.find() ? m.group(m.groupCount()) : "";
+                }
             }
 
             document.getInternal().put(k, contents);

@@ -42,4 +42,9 @@ class EpicorConfig
      * defined here.
      */
     val schemaDirectory = "epicor_schema"
+
+    /**
+     * Whether the Epicor extension should be loaded and enabled at runtime.
+     */
+    val enabled = false
 }

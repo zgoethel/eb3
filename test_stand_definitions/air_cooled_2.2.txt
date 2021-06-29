@@ -1,0 +1,34 @@
+# Sheet Version Matching:
+#   Sheets with headers matching this regex pattern will be detected
+#   as using this parsing schema.
+category:    Air-Cooled
+version:     2.2
+odd_header:  .*Air-Cooled Product Test Data.*Version 2\.2.*
+
+# Field Descriptors:
+#   Contains field identifiers, titles, and other data necessary to
+#   properly parse this type of datasheet.
+
+field_descriptors
+
+# == Name  == # ============ Title ============= # == Cell(s) == #
+model,        Model,                             D3
+comp_a,       Compressor A,                      J7
+comp_b,       Compressor B,                      R7
+job_num,      Job #,                             R1
+job_name,     Job Name,                          D1
+serial,       S/N,                               K3
+ref_ch_a,     Refrigerant Charge Comp A,         J10
+ref_ch_b,     Refrigerant Charge Comp B,         R10
+suc_sat_a,    Suction Saturation Temp Comp A,    J13
+suc_sat_b,    Suction Saturation Temp Comp B,    R13
+dis_sat_a,    Discharge Saturation Temp Comp A,  J15
+dis_sat_b,    Discharge Saturation Temp Comp B,  R15
+super_a,      Superheat Comp A,                  J16
+super_b,      Superheat Comp B,                  R16
+evap_wf,      Evaporator Water Flow,             G24
+corr_water_e, Corr Water dP FT H20,              G26
+evap_temp_e,  Evap Temp Entering,                G27
+evap_temp_l,  Evap Temp Leaving,                 G28
+ckt_a_eev,    Ckt A EEV,                         A38, ([0-9\.]+%)
+ckt_b_eev,    Ckt B EEV,                         A38, (?<=%)(?:[^0-9\.]+)([0-9\.]+%)

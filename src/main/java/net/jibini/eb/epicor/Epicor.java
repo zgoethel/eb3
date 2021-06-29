@@ -57,8 +57,15 @@ public class Epicor
     @PostConstruct
     public void init()
     {
+
         log.info("Loading Epicor extension configuration settings");
         config = EasyButtonConfig.loadOrDefault(new EpicorConfig());
+
+        if (!config.getEnabled())
+        {
+            log.info("Epicor extension is disabled");
+            return;
+        }
 
         // Load the vendor plugin schemas from the assets
         descriptors = DocumentDescriptor.loadAll(new File(config.getSchemaDirectory()));

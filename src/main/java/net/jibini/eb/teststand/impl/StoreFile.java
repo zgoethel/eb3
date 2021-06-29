@@ -1,5 +1,8 @@
 package net.jibini.eb.teststand.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import net.jibini.eb.data.Document;
 import net.jibini.eb.data.DocumentDescriptor;
 
@@ -18,6 +21,8 @@ import java.util.*;
  */
 public class StoreFile implements Closeable
 {
+    private static final Logger log = LoggerFactory.getLogger(StoreFile.class);
+
     /**
      * Max string length for field names in the header.
      */
@@ -132,9 +137,14 @@ public class StoreFile implements Closeable
         {
             List<Document> result = new ArrayList<>();
             file.seek(dataStart);
-            byte[] buffer = new byte[MAX_FIELD_VALUE_LENGTH * 2];
 
-            while (file.getFilePointer() < file.length())
+            byte[] buffer = new byte[MAX_FIELD_VALUE_LENGTH * 2];
+            long offset = file.length() - this.dataStart;
+            offset %= MAX_FIELD_VALUE_LENGTH * 2;
+            if (offset != 0)
+                log.warn("A partial storefile entry was detected; possible data loss");
+
+            while (file.getFilePointer() < file.length() - offset)
                 try
                 {
                     Document document = new Document(descriptor);
@@ -169,12 +179,16 @@ public class StoreFile implements Closeable
     {
         try
         {
-            file.seek(file.length());
+            long offset = file.length() - this.dataStart;
+            offset %= MAX_FIELD_VALUE_LENGTH * 2;
+            if (offset != 0)
+                log.warn("A partial storefile entry was detected; possible data loss");
+            file.seek(file.length() - offset);
 
             for (int i = 0; i < fieldIndices.size(); i++)
             {
                 String value = document.getString(fieldIndices.get(i));
-                if (value == null) value = "null";
+                if (value == null) value = "";
 
                 int j = 0;
                 for (; j < MAX_FIELD_VALUE_LENGTH && j < value.length(); j++)
