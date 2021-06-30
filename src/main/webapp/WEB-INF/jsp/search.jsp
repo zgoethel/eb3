@@ -95,7 +95,7 @@
                 padding: 0.5em;
                 background: #3a003e;
                 color: #ffffff;
-                filter: drop-shadow(0 0 4px grey);
+                filter: drop-shadow(0 0 2px purple);
                 max-width: 70px;
 
                 min-height: 52px;
