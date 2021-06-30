@@ -55,26 +55,27 @@
 
             div#table-container
             {
-                width: 99%;
-                margin-left: 0.5%;
-                border-radius: 0.25em;
+                width: 100%;
+                padding: 0.25em;
+                border-radius: 0.12em;
                 overflow: hidden;
                 overflow-x: auto;
                 //border: 1px solid #734272;
-                background: #ffffff;
+                background: #e0dce6;
             }
 
             table
             {
                 border-collapse: collapse;
-                width: 100%;
+                //width: 100%;
+                background: #ffffff;
             }
 
             tbody *
             {
-                font-family: "Times New Roman", Times, serif;
-                font-size: 0.95em;
-                color: #7b4182;
+                font-family: monospace;
+                font-size: 1.05em;
+                color: #000000;
             }
 
             table *
@@ -85,16 +86,20 @@
 
             tr:nth-child(even)
             {
-                background: #fff9f3;
+                background: #fef7ff;
             }
 
             th
             {
                 font-size: 0.8em;
                 padding: 0.5em;
-                background: #590069;
+                background: #3a003e;
                 color: #ffffff;
                 filter: drop-shadow(0 0 4px grey);
+                max-width: 70px;
+
+                min-height: 52px;
+                box-sizing: border-box;
             }
 
             td
