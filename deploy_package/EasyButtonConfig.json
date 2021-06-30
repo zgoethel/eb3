@@ -1,0 +1,7 @@
+{
+  "disableCertCheck": true,
+  "defaultToLoginPage": true,
+  "primaryAuthenticator": "DumbAuthenticator",
+  "defaultSearchDocument": "TEST_STAND_SHEET",
+  "secret": "38c742a3f1f7477cadcf2ea4d1e91c8e"
+}

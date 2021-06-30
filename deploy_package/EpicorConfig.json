@@ -1,0 +1,8 @@
+{
+  "baseServerPath": "https://[epicor_path]/epicorerp/api/v1",
+  "username": "manager",
+  "password": "manager",
+  "refreshInterval": 60,
+  "schemaDirectory": "epicor_schema",
+  "enabled": false
+}

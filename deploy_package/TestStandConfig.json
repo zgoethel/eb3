@@ -1,0 +1,9 @@
+{
+  "schemaDirectory": "test_stand_schema",
+  "definitionDirectory": "test_stand_definitions",
+  "isClient": true,
+  "serverAddress": "https://eb.jibini.net",
+  "scanDirectory": "C:\\Program Files (x86)\\MultiStack\\Data Collection\\Info\\Reports",
+  "intervalMinutes": 120,
+  "documentStore": "test_stand/store.bin"
+}
