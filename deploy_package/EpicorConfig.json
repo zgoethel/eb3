@@ -1,5 +1,5 @@
 {
-  "baseServerPath": "https://[epicor_path]/epicorerp/api/v1",
+  "baseServerPath": "https:///epicorerp/api/v1",
   "username": "manager",
   "password": "manager",
   "refreshInterval": 60,
