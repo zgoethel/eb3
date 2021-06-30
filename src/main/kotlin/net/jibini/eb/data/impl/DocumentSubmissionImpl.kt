@@ -12,7 +12,9 @@ import net.jibini.eb.teststand.impl.StoreFile
 import org.slf4j.LoggerFactory
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.http.ResponseEntity
+import org.springframework.http.HttpEntity
+import org.springframework.http.HttpHeaders
+import org.springframework.http.MediaType
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -106,49 +108,60 @@ class DocumentSubmissionImpl
 
             while (true)
             {
-                runBlocking {
-                    bufferMutex.withLock {
-                        for ((address, sendBuffer) in sendBuffers)
-                        {
-                            if (sendBuffer.size > 0)
-                                log.info("Transfer of {} documents to central database", sendBuffer.size)
+                doFullSend(internal = false)
 
-                            try
-                            {
-                                doSend(address, sendBuffer)
-                            } catch (ex: Exception)
-                            {
-                                log.error("Failed to send documents", ex)
-                            }
-
-                            sendBuffer.clear()
-                        }
-
-                    }
-                }
-
-                Thread.sleep(200);
+                Thread.sleep(100)
             }
         }
     }
 
+    private fun doFullSend(internal: Boolean = false)
+    {
+        if (!internal)
+            runBlocking {
+                bufferMutex.lock()
+            }
+
+        for ((address, sendBuffer) in sendBuffers)
+        {
+            if (sendBuffer.size > 0)
+                log.info("Transfer of {} documents to central database", sendBuffer.size)
+
+            try
+            {
+                doSend(address, sendBuffer)
+            } catch (ex: Exception)
+            {
+                log.error("Failed to send documents", ex)
+            }
+
+            sendBuffer.clear()
+        }
+
+        if (!internal)
+            bufferMutex.unlock()
+    }
+
     private fun doSend(address: String, documents: List<Document>)
     {
-            val rest = RestTemplate()
-//            val headers = HttpHeaders()
-//            headers["secret"] = easyButton.config.secret
-//            headers.contentType = MediaType.APPLICATION_JSON
+        val rest = RestTemplate()
+        val headers = HttpHeaders()
+        headers["secret"] = easyButton.config.secret
+        headers.contentType = MediaType.APPLICATION_JSON
 
-//            val request = HttpEntity(documents, headers)
-            rest.postForObject(address, documents, ResponseEntity::class.java)
+        val request = HttpEntity(documents, headers)
+        rest.postForEntity(address, request, String::class.java)
     }
 
     fun sendDocument(address: String, document: Document)
     {
         runBlocking {
             bufferMutex.withLock {
-                val properSend = sendBuffers.putIfAbsent(address, mutableListOf())!!
+                val properSend = sendBuffers.getOrPut(address) { mutableListOf() }
                 properSend += document
+
+                if (properSend.size >= 120)
+                    doFullSend(internal = true)
             }
         }
     }
