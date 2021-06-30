@@ -10,8 +10,13 @@
     "job_num",
     "job_name",  
     "model",
+    "serial",
     "comp_a",
-    "comp_b"
+    "ref_ch_a",
+    "comp_b",
+    "ref_ch_b",
+    "evap_hx",
+    "cond_hx"
   ],
 
   "fields": [
