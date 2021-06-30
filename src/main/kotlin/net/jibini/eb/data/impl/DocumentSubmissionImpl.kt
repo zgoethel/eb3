@@ -110,7 +110,7 @@ class DocumentSubmissionImpl
             {
                 doFullSend(internal = false)
 
-                Thread.sleep(100)
+                Thread.sleep(10000)
             }
         }
     }
