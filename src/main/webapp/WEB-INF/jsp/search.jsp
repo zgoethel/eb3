@@ -225,7 +225,7 @@
             <form action="/s" method="GET" autocomplete="off">
                 <input type="text" style="display: none;" name="document" value="${descriptor.getName()}" />
                 <input type="text" style="display: none;" name="top" value="${top}" />
-                <input type="text" name="search" value="${search}" />
+                <input type="text" name="search" value="${search}" placeholder="Quick search" />
                 <input type="submit" class="search-button" id="search-submit" value="" />
                 <input type="button" class="search-button" id="search-menu" />
             </form>
