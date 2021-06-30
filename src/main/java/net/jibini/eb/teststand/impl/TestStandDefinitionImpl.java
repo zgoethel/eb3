@@ -5,10 +5,10 @@ import net.jibini.eb.data.Document;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellReference;
 
-import java.io.*;
-import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.io.*;
+import java.util.*;
 
 public class TestStandDefinitionImpl
 {
