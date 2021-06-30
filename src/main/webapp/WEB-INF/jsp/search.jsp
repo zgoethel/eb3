@@ -55,8 +55,10 @@
 
             div#table-container
             {
+                box-shadow: inset 0 0.15em 0.2em grey;
                 width: 100%;
-                padding: 0.25em;
+                padding: 0.5em;
+                padding-top: 1em;
                 border-radius: 0.12em;
                 overflow: hidden;
                 overflow-x: auto;
@@ -66,6 +68,7 @@
 
             table
             {
+                box-shadow: 0 0 4px black;
                 border-collapse: collapse;
                 //width: 100%;
                 background: #ffffff;
