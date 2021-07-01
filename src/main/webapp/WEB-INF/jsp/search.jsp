@@ -329,6 +329,19 @@
                             <c:forEach var="f" items="${descriptor.getDefaultDisplayFields()}">
                                 <td><span><c:out value="${doc.getString(f)}" /></span></td>
                             </c:forEach>
+
+                            <c:url value="/report/ExportWorkbook" var="rowReportURL">
+                                <c:param name="top" value="1" />
+                                <c:param name="document" value="${args.get('document')[0]}" />
+                                <c:param name="_file_name_method" value="Matches" />
+                                <c:param name="_file_name_regex" value="${doc.getString('file_name')}" />
+                            </c:url>
+
+                            <td><span>
+                                <a href="${rowReportURL}" target="_blank">
+                                    <img id="download-icon" src="/image/eos-icons/download.svg" title="Download row as XLSX" />
+                                </a>
+                            </span></td>
                         </tr>
                     </c:forEach>
                 </tbody>
