@@ -16,7 +16,8 @@
     "comp_b",
     "ref_ch_b",
     "evap_hx",
-    "cond_hx"
+    "cond_hx",
+    "file_name"
   ],
 
   "fields": [
@@ -38,12 +39,12 @@
     {
       "name": "evap_hx",
       "title": "Evap. Heat Ex.",
-      "format": "ToUpperStringFormat"
+      "format": "RemoveDecimalFormat"
     },
     {
       "name": "cond_hx",
       "title": "Cond. Heat Ex.",
-      "format": "ToUpperStringFormat"
+      "format": "RemoveDecimalFormat"
     },
     {
       "name": "comp_a",
@@ -58,7 +59,7 @@
     {
       "name": "job_num",
       "title": "Job Number",
-      "format": "ToUpperStringFormat"
+      "format": "RemoveDecimalFormat"
     },
     {
       "name": "job_name",
@@ -68,7 +69,7 @@
     {
       "name": "serial",
       "title": "Serial",
-      "format": "ToUpperStringFormat"
+      "format": "RemoveDecimalFormat"
     },
     {
       "name": "ref_ch_a",
