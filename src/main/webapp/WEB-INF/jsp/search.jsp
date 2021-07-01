@@ -167,6 +167,41 @@
                 cursor: pointer;
             }
 
+            div#search-stuff
+            {
+                float: right;
+                position: absolute;
+                right: 2em;
+                background: white;
+                padding: 1em;
+                margin-top: 0;
+                box-shadow: 0 0 2px black;
+                border-radius: 2px;
+                width: 24em;
+                z-index: 1000;
+            }
+
+            span#search-stuff-container div#search-stuff
+            {
+                display: none;
+            }
+
+            span#search-stuff-container:hover div#search-stuff
+            {
+                display: block;
+            }
+
+            span#search-stuff-container div#search-stuff input
+            {
+                width: 120px;
+            }
+
+            span#search-stuff-container div#search-stuff select
+            {
+                width: 100px;
+                padding: 1em 0;
+            }
+
             @media only screen and (max-width: 680px)
             {
                 div#paging
@@ -215,6 +250,10 @@
         <c:url value="/report/ExportWorkbook" var="reportURL">
             <c:param name="document" value="${descriptor.getName()}" />
             <c:param name="search" value="${search}" />
+
+            <c:forEach var="entry" items="${args}">
+                <c:param name="${entry.key}" value="${entry.value[0]}" />
+            </c:forEach>
         </c:url>
 
         <h2>
@@ -230,7 +269,41 @@
                 <input type="text" style="display: none;" name="top" value="${top}" />
                 <input type="text" name="search" value="${search}" placeholder="Quick search" />
                 <input type="submit" class="search-button" id="search-submit" value="" />
-                <input type="button" class="search-button" id="search-menu" />
+
+                <span id="search-stuff-container">
+                    <input type="button" class="search-button" id="search-menu">
+                    <div id="search-stuff"><span style="text-decoration: underline;">Granular search</span>
+                    <br />
+                    <i>Supports wildcards via <a href="https://regexr.com/" target="_blank">regex</a> search.</i>
+                    <br />
+                    <br />
+
+                    <span style="font-family: monospace; text-decoration: bold;">Comp. A&nbsp;</span>
+                    <select name="_comp_a_method" id="_comp_a_method">
+                        <option value="Contains" selected>Contains</option>
+                        <option value="Matches">Matches</option>
+                        <option value=">=">&gt;=</option>
+                        <option value="<=">&lt;=</option>
+                    </select>
+                    <script>document.getElementById('_comp_a_method').value = '${args.get("_comp_a_method")[0]}';</script>
+                    <input type="text" name="_comp_a_regex" value="${args.get("_comp_a_regex")[0]}" />
+                    <br />
+
+                    <span style="font-family: monospace; text-decoration: bold;">Comp. B&nbsp;</span>
+                    <select name="_comp_b_method" id="_comp_b_method">
+                        <option value="Contains" selected>Contains</option>
+                        <option value="Matches">Matches</option>
+                        <option value=">=">&gt;=</option>
+                        <option value="<=">&lt;=</option>
+                    </select>
+                    <script>document.getElementById('_comp_b_method').value = '${args.get("_comp_b_method")[0]}';</script>
+                    <input type="text" name="_comp_b_regex" value="${args.get("_comp_b_regex")[0]}" />
+                    <br />
+
+                    <br />
+                    <hr />
+                    <input type="submit" value="Search" /></div>
+                </span>
             </form>
         </div>
 
@@ -258,6 +331,10 @@
             <c:param name="document" value="${descriptor.getName()}" />
             <c:param name="top" value="${top}" />
             <c:param name="search" value="${search}" />
+
+            <c:forEach var="entry" items="${args}">
+                <c:param name="${entry.key}" value="${entry.value[0]}" />
+            </c:forEach>
         </c:url>
 
         <div id="paging">

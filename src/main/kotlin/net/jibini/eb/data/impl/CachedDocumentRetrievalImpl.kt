@@ -71,7 +71,7 @@ class CachedDocumentRetrievalImpl
                                     .format
                                     .formatString(v)
                                     .toLowerCase()
-                                    .contains(search.toLowerCase())
+                                    .contains(Regex(search.toLowerCase()))
                             } catch (_: Exception)
                             {  }
                         }

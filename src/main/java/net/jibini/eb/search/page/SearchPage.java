@@ -86,6 +86,7 @@ public class SearchPage
         model.addAttribute("size", filtered.getSecond());
         // Add data for search UI and filling URLs
         model.addAttribute("search", search);
+        model.addAttribute("args", request.getParameterMap());
 
         return "search";
     }

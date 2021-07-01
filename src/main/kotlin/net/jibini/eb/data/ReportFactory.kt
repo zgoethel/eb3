@@ -4,5 +4,5 @@ import java.io.File
 
 interface ReportFactory
 {
-    fun createReport(args: Map<String, Array<String>>): File
+    fun createReport(args: MutableMap<String, Array<String>>): File
 }
