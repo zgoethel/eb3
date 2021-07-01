@@ -20,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The primary configurable search page. This is the primary page from which the
@@ -71,7 +73,12 @@ public class SearchPage
         // Default to the configured document type
         if (document.equals(""))
             document = easyButton.config.getDefaultSearchDocument();
-        model.addAttribute("username", authDetails.getUsername());
+
+        Map<String, String[]> args = new HashMap<>(request.getParameterMap());
+        args.put("document", new String[] { document });
+        args.put("top", new String[] { top + "" });
+        args.put("skip", new String[] { skip + "" });
+        args.put("search", new String[] { search });
 
         Pair<Collection<Document>, Integer> filtered = retrieval.getCountedDocumentRepository(document, top, skip, search, request.getParameterMap());
         // Filter the results for paging and search
@@ -86,7 +93,8 @@ public class SearchPage
         model.addAttribute("size", filtered.getSecond());
         // Add data for search UI and filling URLs
         model.addAttribute("search", search);
-        model.addAttribute("args", request.getParameterMap());
+        model.addAttribute("args", args);
+        model.addAttribute("username", authDetails.getUsername());
 
         return "search";
     }

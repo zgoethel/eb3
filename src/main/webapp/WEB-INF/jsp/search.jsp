@@ -4,6 +4,7 @@
         <title>Search</title>
 
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
 
@@ -248,11 +249,10 @@
         </div>
 
         <c:url value="/report/ExportWorkbook" var="reportURL">
-            <c:param name="document" value="${descriptor.getName()}" />
-            <c:param name="search" value="${search}" />
-
             <c:forEach var="entry" items="${args}">
-                <c:param name="${entry.key}" value="${entry.value[0]}" />
+                <c:if test="${entry.key != 'top' && entry.key != 'skip'}">
+                    <c:param name="${entry.key}" value="${entry.value[0]}" />
+                </c:if>
             </c:forEach>
         </c:url>
 
@@ -328,12 +328,10 @@
         </div>
 
         <c:url value="/s" var="pagingURL">
-            <c:param name="document" value="${descriptor.getName()}" />
-            <c:param name="top" value="${top}" />
-            <c:param name="search" value="${search}" />
-
             <c:forEach var="entry" items="${args}">
-                <c:param name="${entry.key}" value="${entry.value[0]}" />
+                <c:if test="${entry.key != 'skip'}">
+                    <c:param name="${entry.key}" value="${entry.value[0]}" />
+                </c:if>
             </c:forEach>
         </c:url>
 
