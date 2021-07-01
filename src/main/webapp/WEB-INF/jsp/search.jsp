@@ -148,6 +148,7 @@
 
             .search-button
             {
+                transition: 0.2s;
                 background-size: contain;
                 width: 3em;
                 margin-left: 0.3em;
@@ -190,6 +191,12 @@
             span#search-stuff-container:hover div#search-stuff
             {
                 display: block;
+            }
+
+            span#search-stuff-container:hover .search-button
+            {
+                border-radius: 0.2em 0.2em 0 0;
+                border-bottom: none;
             }
 
             span#search-stuff-container div#search-stuff input
@@ -272,6 +279,7 @@
 
                 <span id="search-stuff-container">
                     <input type="button" class="search-button" id="search-menu">
+
                     <div id="search-stuff"><span style="text-decoration: underline;">Granular search</span>
                     <br />
                     <i>Supports wildcards via <a href="https://regexr.com/" target="_blank">regex</a> search.</i>
